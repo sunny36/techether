@@ -1,0 +1,17 @@
+@import 'config';
+
+/* Devise views */
+
+.headspace {
+	margin-top: 65px;
+	letter-spacing: 1.3px;
+	h2, h4, p {
+		text-align: center;
+	}
+	.field {
+		margin-bottom: 25px;
+	}
+	.actions {
+		text-align: center;
+	}
+}
