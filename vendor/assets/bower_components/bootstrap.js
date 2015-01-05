@@ -1,0 +1,1 @@
+//= require ./bootstrap-sass-official/assets/javascripts/bootstrap-sprockets.js
