@@ -1,17 +1,41 @@
 class SubjectsController < ApplicationController
   def new
-    @subject = current_user.build_subject
+    @subject = Subject.new
   end
 
   def create
-    @user = current_user
-    @subject = @user.build_subject(subject_params)
-    if @user.save
+    @subject = current_user.build_subject(subject_params)
+    if current_user.save
       redirect_to current_user
     else
       redirect_to new_subject_url
     end
   end
+
+  def edit
+    if current_user.subject.nil?
+      @subject = current_user.build_subject
+    else
+      @subject = current_user.subject
+    end
+  end
+
+  def update
+    @subject = Subject.find(params[:id])
+    if @subject.update_attributes(subject_params)
+      redirect_to current_user
+    else
+      redirect_to edit_subject_url
+    end
+  end
+
+  def destroy
+    if current_user.subject
+      current_user.subject.destroy
+      redirect_to current_user
+    end
+  end
+
 
   private
 

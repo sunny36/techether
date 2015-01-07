@@ -9,6 +9,10 @@
         You are learning <%= @user.subject_name %>! Good luck.
 
         <p><%= @user.subject_name %>: <%= @user.subject_description %></p>
+        <div class="actions">
+        <%= link_to "Edit", edit_subject_path %>
+        <%= link_to "Delete", @user.subject , method: :delete %>
+        </div>
       <% end %>
     </p>
   </div>
