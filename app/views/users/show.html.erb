@@ -2,11 +2,13 @@
   <div class="col-md-6 col-md-offset-3 headspace">
     <h2><%= @user.name %></h2>
     <p>
-      <% if @subject.nil? %>
+      <% if @user.subject.nil? %>
         You should start learning a subject!
         <%= link_to "Learn a subject", new_subject_path %>
       <% else %>
-        You are learning <%= @subject.name %>! Good luck.
+        You are learning <%= @user.subject_name %>! Good luck.
+
+        <p><%= @user.subject_name %>: <%= @user.subject_description %></p>
       <% end %>
     </p>
   </div>
