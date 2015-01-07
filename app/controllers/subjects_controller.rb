@@ -36,7 +36,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-
   private
 
   def subject_params
