@@ -30,10 +30,9 @@ class SubjectsController < ApplicationController
   end
 
   def destroy
-    if current_user.subject
-      current_user.subject.destroy
-      redirect_to current_user
-    end
+    @subject = Subject.find(params[:id])
+    @subject.users.delete(current_user)
+    redirect_to current_user
   end
 
   private

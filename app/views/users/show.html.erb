@@ -11,7 +11,7 @@
         <p><%= @user.subject_name %>: <%= @user.subject_description %></p>
         <div class="actions">
         <%= link_to "Edit", edit_subject_path %>
-        <% if false %><%= link_to "Delete", @user.subject , method: :delete %><% end %>
+        <%= link_to "Delete", @user.subject , method: :delete %>
         </div>
       <% end %>
     </p>
