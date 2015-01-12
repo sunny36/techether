@@ -9,4 +9,4 @@ only the best material. This application is using Ruby on Rails, Bootstrap and j
 
 Database: SQLite3 for development and PostgreSQL for production.
 
-Heroku address: https://obscure-refuge-5134.herokuapp.com/
+Heroku address: https://educateme.herokuapp.com 
