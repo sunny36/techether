@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
 
   resources :users, only: [:show]
-  resources :subjects
+  resources :subjects do
+    member do
+      post 'add'
+    end
+  end
 end

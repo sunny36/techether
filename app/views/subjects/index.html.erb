@@ -4,7 +4,7 @@
 			<h1>Subjects</h1></br>
 			<% @subjects.each do |subject| %>
 				<div id="subjects">
-					<h3><%= subject.name %></h3>
+					<h3><%= link_to subject.name, subject_path(subject) %></h3>
 					<p><%= subject.description %></p>
 				</div>
 			<% end %>

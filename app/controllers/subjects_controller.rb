@@ -4,6 +4,23 @@ class SubjectsController < ApplicationController
     @subjects = Subject.all
   end
 
+  def show
+    @subject = Subject.find(params[:id])
+  end
+
+  def add
+    
+    @subject = Subject.find(params[:id])
+    current_user.subject = @subject
+    if current_user.save
+      flash[:success] = "Success"
+      redirect_to current_user
+    else
+      flash[:danger] = "Failed"
+      redirect_to @subject
+    end
+  end
+
   def new
     @subject = Subject.new
   end
