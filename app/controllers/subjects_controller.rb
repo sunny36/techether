@@ -9,14 +9,13 @@ class SubjectsController < ApplicationController
   end
 
   def add
-    
     @subject = Subject.find(params[:id])
     current_user.subject = @subject
     if current_user.save
-      flash[:success] = "Success"
+      flash[:success] = "Successfully added subject."
       redirect_to current_user
     else
-      flash[:danger] = "Failed"
+      flash[:danger] = "Failed to add subject."
       redirect_to @subject
     end
   end
@@ -30,14 +29,23 @@ class SubjectsController < ApplicationController
     # If subject already exists use that subject
     if check_name
       current_user.subject = check_name
+      if current_user.save
+        flash[:success] = "Subject already exists."
+        redirect_to current_user
+      else
+        flash[:danger] = "Failed to create."
+        redirect_to new_subject_url
+      end
     # Else use the new subject
     else
       current_user.subject = @subject
-    end
-    if current_user.save
-      redirect_to current_user
-    else
-      redirect_to new_subject_url
+      if current_user.save
+        flash[:success] = "Successfully created subject."
+        redirect_to current_user
+      else
+        flash[:danger] = "Failed to create."
+        redirect_to new_subject_url
+      end
     end
   end
 
@@ -61,6 +69,7 @@ class SubjectsController < ApplicationController
   def destroy
     @subject = Subject.find(params[:id])
     @subject.users.delete(current_user)
+    flash[:danger] = "Stopped learning #{@subject.name}"
     redirect_to current_user
   end
 

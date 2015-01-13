@@ -3,7 +3,7 @@
 /* Devise views */
 
 .headspace {
-	margin-top: 65px;
+	margin-top: 85px;
 	letter-spacing: 1.3px;
 	h2, h4, p {
 		text-align: center;
@@ -14,4 +14,11 @@
 	.actions {
 		text-align: center;
 	}
+}
+
+.alert {
+	margin-top: 50px;
+	position: fixed;
+	width: 100vw;
+	text-align: center;
 }
