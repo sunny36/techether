@@ -3,14 +3,14 @@
 		<div id="indexcol">
 			<h1>Subjects</h1></br>
 			<% @subjects.each do |subject| %>
-				<div id="subjects">
-					<h3><%= link_to subject.name, subject_path(subject) %></h3>
+				<div class="subjects">
+					<h3><%= link_to subject.name, subject_path(subject), class:"links" %></h3>
 					<p><%= subject.description %></p>
 				</div>
 			<% end %>
 			</br>
 			<p id="spacer">Can't find what you're looking for?</p>
-			<p><%= link_to "Click here", new_subject_path %> to create a new subject.</p>
+			<p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
 		</div>
 	</div>
 </div>

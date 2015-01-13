@@ -4,14 +4,14 @@
     <p>
       <% if @user.subject.nil? %>
         You should start learning a subject!
-        <%= link_to "Learn a subject", new_subject_path %>
+        <%= link_to "Learn a subject", new_subject_path, class:"links" %>
       <% else %>
         You are learning <%= @user.subject_name %>! Good luck.
 
         <p><%= @user.subject_name %>: <%= @user.subject_description %></p>
         <div class="actions">
         <% if false %><%= link_to "Edit", edit_subject_path %><% end %>
-        <%= link_to "Delete", @user.subject , method: :delete %>
+        <%= link_to "Delete", @user.subject , method: :delete, class:"links" %>
         </div>
       <% end %>
     </p>

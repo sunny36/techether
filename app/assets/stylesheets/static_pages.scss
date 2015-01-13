@@ -83,3 +83,11 @@
 		font-size: 1.5em;
 	}
 }
+
+/* General */
+
+.links {
+	&:hover {
+		text-decoration: none;
+	}
+}
