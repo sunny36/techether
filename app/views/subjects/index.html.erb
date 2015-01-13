@@ -1,10 +1,16 @@
 <div class="row">
 	<div class="col-md-4 col-md-offset-4 headspace">
-		<% @subjects.each do |subject| %>
-			<div class="subjects">
-				<h2><%= subject.name %></h2>
-				<p><%= subject.description %></p>
-			</div>
-		<% end %>
+		<div id="indexcol">
+			<h1>Subjects</h1></br>
+			<% @subjects.each do |subject| %>
+				<div id="subjects">
+					<h3><%= subject.name %></h3>
+					<p><%= subject.description %></p>
+				</div>
+			<% end %>
+			</br>
+			<p id="spacer">Can't find what you're looking for?</p>
+			<p><%= link_to "Click here", new_subject_path %> to create a new subject.</p>
+		</div>
 	</div>
 </div>
