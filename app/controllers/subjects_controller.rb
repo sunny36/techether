@@ -1,5 +1,9 @@
 class SubjectsController < ApplicationController
 
+  def index
+    @subjects = Subject.all
+  end
+
   def new
     @subject = Subject.new
   end
@@ -51,6 +55,10 @@ class SubjectsController < ApplicationController
 
   def check_name
     Subject.where(name: @subject[:name]).first
+  end
+
+  def search(query)
+    Subject.where(name: query).first
   end
 
 end

@@ -7,8 +7,9 @@
         <div class="panel-body">
           <form class="form-inline">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder="Search for knowledge..." /></br>
-              <button type="submit" class="btn btn-default" id="mainbutt">Find Resources<span class="fa fa-arrow-right"></span></button>
+                <input class="form-control" type="text" placeholder="Search for knowledge..." /></br>
+                <% if false %><button type="submit" class="btn btn-default" id="mainbutt">Find Resources<span class="fa fa-arrow-right"></span></button> <% end %>
+                <%= link_to "Find Resources", subjects_path, class:"btn btn-default", id:"mainbutt" %>
             </div>
           </form>
         </div>

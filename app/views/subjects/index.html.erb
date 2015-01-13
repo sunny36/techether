@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 headspace">
+		<% @subjects.each do |subject| %>
+			<div class="subjects">
+				<h2><%= subject.name %></h2>
+				<p><%= subject.description %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
