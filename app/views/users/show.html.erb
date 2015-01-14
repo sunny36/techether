@@ -4,7 +4,7 @@
     <p>
       <% if @user.subject.nil? %>
         You should start learning a subject!
-        <%= link_to "Learn a subject", new_subject_path, class:"links" %>
+        <%= link_to "Learn a subject", subjects_path, class:"links" %>
       <% else %>
         You are learning <%= @user.subject_name %>! Good luck.
 

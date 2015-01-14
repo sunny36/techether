@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
 
   def index
-    @subjects = Subject.all
+    @subjects = Subject.search(params[:search])
   end
 
   def show
