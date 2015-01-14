@@ -7,7 +7,7 @@ class Subject < ActiveRecord::Base
   	if search.present?
   		where("name LIKE ?", "%#{search}%")
   	else
-  		where(true)
+  		Subject.all
   	end
   end
 
