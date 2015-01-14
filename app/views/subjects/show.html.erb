@@ -2,6 +2,10 @@
   <div class="col-md-4 col-md-offset-4 headspace">
     <h2><%= @subject.name %></h2>
     <p><%= @subject.description %></p>
-    <p><%= link_to "Click to learn #{@subject.name}", add_subject_path(@subject), method: :post %></p>
+    <% if user_signed_in? %>
+      <p><%= link_to "Click to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"links" %></p>
+    <% else %>
+      <p><%= link_to "Log in to learn #{@subject.name}", new_user_session_path, class:"links" %></p>
+    <% end %>
   </div>
 </div>

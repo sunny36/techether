@@ -10,7 +10,11 @@
 			<% end %>
 			</br>
 			<p id="spacer">Can't find what you're looking for?</p>
-			<p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
+			<% if user_signed_in? %>
+				<p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
+			<% else %>
+				<p><%= link_to "Log in", new_user_session_path, class:"links" %> to create a new subject.</p>
+			<% end %>
 		</div>
 	</div>
 </div>
