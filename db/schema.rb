@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114221615) do
+ActiveRecord::Schema.define(version: 20150115141329) do
 
   create_table "resources", force: :cascade do |t|
     t.string  "title"
-    t.string  "type"
+    t.string  "source"
     t.string  "description"
     t.string  "difficulty"
     t.integer "rating"

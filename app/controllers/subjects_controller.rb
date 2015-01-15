@@ -6,6 +6,7 @@ class SubjectsController < ApplicationController
 
   def show
     @subject = Subject.find(params[:id])
+    @resources = Resource.where(subject_id: @subject.id)
   end
 
   def add

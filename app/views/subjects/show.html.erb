@@ -2,8 +2,23 @@
   <div class="col-md-4 col-md-offset-4 headspace">
     <h2><%= @subject.name %></h2>
     <p><%= @subject.description %></p>
+    <% if @resources.present? %>
+      <h3>Resources</h3>
+      <% @resources.each do |resource| %>
+        <div class="resource">
+          <h4><%= resource.title %></h4>
+          <h5><%= resource.difficulty %> - <%= resource.source %></h5>
+          <p><%= resource.description %></p></br>
+        </div>
+      <% end %>
+    <% end %>
+    </br>
     <% if user_signed_in? %>
-      <p><%= link_to "Click to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"links" %></p>
+      <% if current_user.subject = @subject %>
+        <p><%= link_to "Add a resource", new_resource_path, class:"links" %></p>
+      <% else %>
+        <p><%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"links" %></p>
+      <% end %>
     <% else %>
       <p><%= link_to "Log in to learn #{@subject.name}", new_user_session_path, class:"links" %></p>
     <% end %>

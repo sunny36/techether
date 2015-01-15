@@ -6,11 +6,13 @@
         You should start learning a subject!
         <%= link_to "Learn a subject", subjects_path, class:"links" %>
       <% else %>
-        You are learning <%= @user.subject_name %>! Good luck.
+        You are learning <%= link_to @user.subject_name, subject_path(@user.subject), class:"links" %>! Good luck.
 
         <p><%= @user.subject_name %>: <%= @user.subject_description %></p>
         <div class="actions">
         <% if false %><%= link_to "Edit", edit_subject_path %><% end %>
+
+        <%= link_to "Add Resource", new_resource_path, class:"links" %></br>
         <%= link_to "Delete", @user.subject , method: :delete, class:"links" %>
         </div>
       <% end %>

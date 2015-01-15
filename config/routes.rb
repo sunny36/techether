@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       post 'add'
     end
   end
+  resources :resources
 end

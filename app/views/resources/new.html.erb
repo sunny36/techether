@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 headspace">
+    <h1>Add a Resource</h1>
+
+    <%= form_for @resource do |f| %>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, class:"form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, class:"form-control description" %>
+      </div>
+      <div class="field">
+        <%= f.label :source %>
+        <%= f.select :source do %>
+          <% ['Book', 'Internet', 'Course'].each do |c| -%>
+            <%= content_tag(:option, c, value: c) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="field">
+        <%= f.label :difficulty %>
+        <%= f.select :difficulty do %>
+          <% ['Beginner', 'Intermediate', 'Advanced'].each do |c| %>
+            <%= content_tag(:option, c, value: c) %>
+          <% end %>
+        <% end %>
+      </div>
+      <% if false %>
+      <div class="field">
+        <%= f.label :rating %>
+        <%= f.number_field :rating, class:"form-control" %>
+      </div>
+      <% end %>
+      <div class="actions">
+        <%= f.submit "Add Resource", class:"btn btn-default" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
