@@ -1,8 +1,8 @@
 Educate Me
 
 This application is to be used as a bank of resources used to learn various 
-technologies and subjects. You are able to signup for a profile where you will be able to 
-add resources you are using the learn technologies. When you see fit you can review the 
+technologies and subjects. You are able to signup for a profile where you are  able to 
+add resources you are using the learn technologies. Soon you will be able to review the 
 resource and if it was good recommend it to others. With so many different ways to learn 
 specific technologies this will be a way to filter out the less useful ones and focus on 
 only the best material. This application is using Ruby on Rails, Bootstrap and jQuery.
@@ -10,3 +10,6 @@ only the best material. This application is using Ruby on Rails, Bootstrap and j
 Database: SQLite3 for development and PostgreSQL for production.
 
 Heroku address: https://educateme.herokuapp.com 
+
+Feel free to create an account and play around with the mechanics of adding subjects and 
+resources.
