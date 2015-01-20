@@ -14,7 +14,7 @@
     <% end %>
     </br>
     <% if user_signed_in? %>
-      <% if current_user.subject = @subject %>
+      <% if current_user.subject == @subject %>
         <p><%= link_to "Add a resource", new_resource_path, class:"links" %></p>
       <% else %>
         <p><%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"links" %></p>
