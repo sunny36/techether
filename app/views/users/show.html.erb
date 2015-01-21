@@ -13,8 +13,20 @@
         <% if false %><%= link_to "Edit", edit_subject_path %><% end %>
 
         <%= link_to "Add Resource", new_resource_path, class:"links" %></br>
-        <%= link_to "Delete", @user.subject , method: :delete, class:"links" %>
+        <%= link_to "Stop Learning", @user.subject , method: :delete, class:"links" %>
         </div>
+
+        <% if @resources.present? %>
+            <h4>Resources for <%= @user.subject_name %></h4>
+            <% @resources.each do |resource| %>
+                <div class="resource">
+                  <h4><%= resource.title %></h4>
+                  <h5><%= resource.difficulty %> - <%= resource.source %></h5>
+                  <p><%= resource.description %></p></br>
+                </div>
+            <% end %>
+        <% end %>
+
       <% end %>
     </p>
   </div>
