@@ -8,5 +8,19 @@ one:
   name: Rails
   description: Web framework written in ruby
 #
-two: {}
-#  column: value
+two:
+  name: AngularJS
+  description: Front end JavaScript framework
+three:
+  name: PHP
+  description: Scripting programming language
+four:
+  name: WordPress
+  description: Library written in PHP
+five:
+  name: Java
+  description: Object-oriented programming language
+six:
+  name: Sinatra
+  description: Lightweight Web framework written in ruby.
+

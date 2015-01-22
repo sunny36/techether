@@ -5,5 +5,4 @@ class UsersControllerTest < ActionController::TestCase
   #   assert true
   # end
 
-
 end

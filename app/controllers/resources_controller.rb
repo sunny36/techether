@@ -1,8 +1,10 @@
 class ResourcesController < ApplicationController
+
   def new
     @resource = Resource.new
   end
 
+  # Gets called after submit from new.html.erb is pressed
   def create
     @resource = Resource.new(resource_params)
     @resource.subject = current_user.subject
