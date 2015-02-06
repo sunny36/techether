@@ -22,6 +22,7 @@
 html, body {
 	letter-spacing: 1.5px;
 	font-weight: 200;
+	overflow-x: hidden;
 }
 /* Navbar */
 
@@ -34,7 +35,8 @@ html, body {
 	background-color: rgba(1, 1, 1, 0.9);
 	margin-bottom: 0;
 	.navbar-brand {
-		text-transform: uppercase;
+		font-size: 20px;
+		letter-spacing: 1.3px;
 	}
 	.dropdown-menu {
 		background-color: rgba(1, 1, 1, 0.9);
