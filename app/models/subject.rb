@@ -8,7 +8,11 @@ class Subject < ActiveRecord::Base
   # Main search bar functionality
   def self.search(search)
   	if search.present?
-  		where("name LIKE ?", "%#{search}%")
+      if connection.adapter_name == 'PostgreSQL'
+        where("name ILIKE ?", "%#{search}%")
+      else
+        where("name LIKE ?", "%#{search}%")
+      end
   	else
   		Subject.all
   	end
