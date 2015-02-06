@@ -2,13 +2,6 @@
   <div class="col-md-4 col-md-offset-4 headspace">
     <h2>Log in</h2>
 
-    <% if false %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />

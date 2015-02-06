@@ -11,5 +11,8 @@ Database: SQLite3 for development and PostgreSQL for production.
 
 Heroku address: https://educateme.herokuapp.com 
 
-Feel free to create an account and play around with the mechanics of adding subjects and 
-resources.
+Feel free to create an account or use the example account below and play around with the
+mechanics of adding subjects and resources.
+
+email: example@email.com
+password: examplepass

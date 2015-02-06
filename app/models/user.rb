@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   belongs_to :subject
   accepts_nested_attributes_for :subject
 
+  validates :name, presence: true
+
   delegate :name, :description, to: :subject, prefix: true, allow_nil: true
 
 end

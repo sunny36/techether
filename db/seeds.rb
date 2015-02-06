@@ -62,3 +62,5 @@ subject_list = [
 subject_list.each do | name, description |
 	Subject.create(name: name, description: description)
 end
+
+User.create(name: "Example User", email: "example@email.com", password: "examplepass")
