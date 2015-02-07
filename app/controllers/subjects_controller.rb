@@ -1,8 +1,8 @@
 class SubjectsController < ApplicationController
 
   def index
-    #@subjects = Subject.search(params[:search])
-    @subjects = Subject.paginate(page: params[:page], per_page: 10).search(params[:search])
+    @search = params[:search]
+    @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
   end
 
   def show

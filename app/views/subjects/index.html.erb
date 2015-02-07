@@ -2,19 +2,32 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 headspace">
 		<div id="indexcol">
-			<h1>Subjects</h1></br>
+            <% if @subjects.present? %>
+                <% if @search.present? %>
+                  <h1>Subjects with '<%= @search %>'</h1></br>
+                <% else %>
+                  <h1>All Subjects</h1></br>
+                <% end %>
+                    <%= render @subjects %>
+                <div class="apple_pagination">
+                    <%= will_paginate %>
+                </div>
+                <p id="spacer">Can't find what you're looking for?</p>
+                <% if user_signed_in? %>
+                  <p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
+                <% else %>
+                  <p><%= link_to "Log in", new_user_session_path, class:"links" %> to create a new subject.</p>
+                <% end %>
+            <% else %>
+                <h4>Unfortunately, we have no results for your search.</h4>
+                  <% if user_signed_in? %>
+                      <p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
+                  <% else %>
+                      <p><%= link_to "Log in", new_user_session_path, class:"links" %> to create a new subject.</p>
+                  <% end %>
+            <% end %>
 
-                <%= render @subjects %>
 
-            <div class="apple_pagination">
-                <%= will_paginate %>
-            </div>
-			<p id="spacer">Can't find what you're looking for?</p>
-			<% if user_signed_in? %>
-				<p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
-			<% else %>
-				<p><%= link_to "Log in", new_user_session_path, class:"links" %> to create a new subject.</p>
-			<% end %>
 		</div>
 	</div>
 </div>
