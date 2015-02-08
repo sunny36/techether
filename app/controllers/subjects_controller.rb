@@ -3,6 +3,7 @@ class SubjectsController < ApplicationController
   def index
     @search = params[:search]
     @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
+    #For each subject get category and split into array. if main array doesn't contain that category add to main array.
   end
 
   def show
