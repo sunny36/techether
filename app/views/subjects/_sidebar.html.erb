@@ -3,11 +3,9 @@
   <ul class="nav nav-stacked" id="sidebar">
     <li>
       <h5>Categories</h5>
-      <ul>
         <% @categories.each do | category | %>
-            <li><%= category %></li>
+          <%= category %></br>
         <% end %>
-      </ul>
 
     </li>
     <li><h5>Sort by</h5></li>
