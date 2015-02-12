@@ -10,7 +10,7 @@
         You are learning <%= link_to @user.subject_name, subject_path(@user.subject), class:"links" %>! Good luck.
 
         <p><%= @user.subject_description %></p>
-        <div class="actions bordbott">
+        <div class="actions">
         <% if false %><%= link_to "Edit", edit_subject_path %><% end %>
 
         <%= link_to "Add Resource", new_resource_path, class:"links" %></br>
