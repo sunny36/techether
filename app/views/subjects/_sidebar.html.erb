@@ -1,14 +1,17 @@
-<div class="col-md-3 headspace" id="leftCol">
+<div class="col-md-3" id="leftCol">
 
-  <ul class="nav nav-stacked" id="sidebar">
+  <ul class="nav nav-stacked headspace" id="sidebar">
+    <% if @search.present? %>
+        <li><p class="side_titles">YOU SEARCHED FOR</p></li>
+        <li><h3 id="search_query"><%= @search %></h3></li>
+    <% end %>
     <li>
-      <h5>Categories</h5>
+      <p class="side_titles">CATEGORIES</p>
         <% @categories.each do | category | %>
-          <%= category %></br>
+          <p class="category_results"><%= category %></p>
         <% end %>
 
     </li>
-    <li><h5>Sort by</h5></li>
   </ul>
 
 </div>

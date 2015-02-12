@@ -24,6 +24,26 @@ html, body {
 	font-weight: 200;
 	overflow-x: hidden;
 }
+
+/* Font Config */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+p, li {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+  color: rgb(255, 153, 0);
+  &:hover {
+    color: rgb(255, 102, 0);
+    text-transform: none;
+  }
+}
+
 /* Navbar */
 
 .navbar {
@@ -36,6 +56,8 @@ html, body {
 	margin-bottom: 0;
 	.navbar-brand {
 		font-size: 20px;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
 		letter-spacing: 1.3px;
 	}
 	.dropdown-menu {

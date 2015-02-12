@@ -133,11 +133,32 @@
 
 /* side bar */
 
-#sidebar {
+#leftCol {
+  background-color: rgb(230, 230, 230);
+  height: 100vh;
   position: fixed;
-  margin-left: 2vw;
-  padding: 10px;
-  border: 1px solid #9D9D9D;
-  border-radius: 2px;
+  #sidebar {
+    width: inherit;
+    position: fixed;
+    padding: 10px;
+    #search_query {
+      width: 96%;
+      background-color: rgb(255, 153, 0);
+      border-radius: 5px;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 0;
+      overflow-x: scroll;
+    }
+    .side_titles {
+      font-size: 1.3em
+    }
+    p {
+      text-align: left;
+    }
+    .category_results {
+      margin-left: 5px;
+    }
+  }
 }
 

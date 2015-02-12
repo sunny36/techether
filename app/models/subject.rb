@@ -9,9 +9,9 @@ class Subject < ActiveRecord::Base
   def self.search(search)
   	if search.present?
       if connection.adapter_name == 'PostgreSQL'
-        where("name ILIKE ?", "%#{search}%")
+        where("name ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%")
       else
-        where("name LIKE ?", "%#{search}%")
+        where("name LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
       end
   	else
   		Subject.all

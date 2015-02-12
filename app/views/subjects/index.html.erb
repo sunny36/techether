@@ -1,15 +1,10 @@
 <% provide(:title, 'Subjects') %>
 <div class="row">
     <%= render partial: "sidebar" %>
-	<div class="col-md-6 headspace">
+	<div class="col-md-7 col-md-offset-4 headspace">
 		<div id="indexcol">
             <% if @subjects.present? %>
-                <% if @search.present? %>
-                  <h1>Subjects with '<%= @search %>'</h1></br>
-                <% else %>
-                  <h1>All Subjects</h1></br>
-                <% end %>
-                    <%= render @subjects %>
+                <%= render @subjects %>
                 <div class="apple_pagination">
                     <%= will_paginate %>
                 </div>

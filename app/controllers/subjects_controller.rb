@@ -2,9 +2,10 @@ class SubjectsController < ApplicationController
 
   def index
     @search = params[:search]
+    allSubjects = Subject.all.search(@search)
     @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
     @categories = []
-    @subjects.each do |subject |
+    allSubjects.each do |subject |
       tempCategories = subject.category.split(',')
       tempCategories.each do | category |
         if !@categories.include?(category)
