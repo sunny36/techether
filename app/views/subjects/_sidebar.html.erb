@@ -6,10 +6,12 @@
         <li><h3 id="search_query"><%= @search %></h3></li>
     <% end %>
     <li>
-      <p class="side_titles">CATEGORIES</p>
-        <% @categories.each do | category | %>
-          <p class="category_results"><%= category %></p>
-        <% end %>
+      <% if @categories.present? %>
+          <p class="side_titles">CATEGORIES</p>
+            <% @categories.each do | category | %>
+              <p class="category_results"><%= category %></p>
+            <% end %>
+      <% end %>
 
     </li>
   </ul>

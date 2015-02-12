@@ -25,9 +25,18 @@ html, body {
 	overflow-x: hidden;
 }
 
+.btn-default {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.form-control:focus {
+  border-color: rgb(255,153,0);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+}
+
 /* Font Config */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, label {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
 }
