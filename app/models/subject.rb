@@ -5,6 +5,7 @@ class Subject < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
 
+  # Method used to filter subject by category
   def self.in_category(category)
     if category.present?
       where("category LIKE ?", "%#{category}%")
@@ -13,6 +14,7 @@ class Subject < ActiveRecord::Base
     end
   end
 
+  # Sort categories by predefined order
   def self.sort(unsorted)
     sorted = ["General-Purpose", "Web Development", "Mobile Development", "Frameworks", "Mathematics-Oriented", "Database Manipulation", "Content Management Systems", "Other"]
     sorted.delete_if do | item |
@@ -27,9 +29,11 @@ class Subject < ActiveRecord::Base
   def self.search(search)
   	if search.present?
       if connection.adapter_name == 'PostgreSQL'
-        where("name ILIKE ? OR description ILIKE ? OR category ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+        where("name ILIKE ? OR description ILIKE ? OR category ILIKE ? OR tags ILIKE ?",
+              "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
       else
-        where("name LIKE ? OR description LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+        where("name LIKE ? OR description LIKE ? OR category LIKE ? OR tags LIKE ?",
+              "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
       end
   	else
   		Subject.all
