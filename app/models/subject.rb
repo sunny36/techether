@@ -15,9 +15,9 @@ class Subject < ActiveRecord::Base
 
   def self.sort(unsorted)
     sorted = ["General-Purpose", "Web Development", "Mobile Development", "Frameworks", "Mathematics-Oriented", "Database Manipulation", "Content Management Systems", "Other"]
-    sorted.each do | item |
+    sorted.delete_if do | item |
       if !unsorted.include?(item)
-        sorted.delete(item)
+        true
       end
     end
     return sorted
