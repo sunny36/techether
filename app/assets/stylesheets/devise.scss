@@ -28,3 +28,10 @@
 .alert, .alert-success, .alert-danger {
     color: $dark-gray;
 }
+
+/* Forms */
+
+select {
+  width: 100%;
+  font-family: $paragraph;
+}
