@@ -159,6 +159,24 @@
     }
     .category_results {
       margin-left: 5px;
+      padding:10px 15px;
+      margin-bottom: 0;
+    }
+    #current {
+      background-color: white;
+      color: $dark-gray;
+      position: relative;
+      display: inline-block;
+      padding-right: 5px;
+      width: 90%;
+    }
+    .reset {
+      width: 9%;
+      padding: 10px 5px;
+      display: inline-block;
+      position: absolute;
+      z-index: 999;
+      background-color: white;
     }
   }
 }

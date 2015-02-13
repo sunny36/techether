@@ -6,10 +6,19 @@
         <li><h3 id="search_query"><%= @search %></h3></li>
     <% end %>
     <li>
-      <% if @sortedCategories.present? %>
-          <p class="side_titles">CATEGORIES</p>
-            <% @sortedCategories.each do | category | %>
-              <p class="category_results"><%= category %></p>
+      <% if @categories.present? %>
+          <p class="side_titles">
+            CATEGORIES
+          </p>
+            <% @categories.each do | category | %>
+              <% if category == @filter %>
+                  <p class="category_results" id="current"><%= category %></p>
+                  <%= link_to subjects_path(search: @search)  , class: "reset" do%>
+                      <span class="glyphicon glyphicon-remove"></span>
+                  <% end %>
+              <% else %>
+                 <%= link_to category, subjects_path(filter: category, search: @search), class: "category_results" %>
+              <% end %>
             <% end %>
       <% end %>
 

@@ -1,26 +1,50 @@
 class SubjectsController < ApplicationController
 
   def index
-    @search = params[:search]
-    allSubjects = Subject.all.search(@search)
-    @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
-    categories = []
+    if params[:search].present?
+      @search = params[:search]
+      if params[:filter].present?
+        @filter = params[:filter]
+        allSubjects = Subject.all.search(@search).in_category(@filter)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter)
+      else
+        allSubjects = Subject.all.search(@search)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
+      end
+    else
+      if params[:filter].present?
+        @filter = params[:filter]
+        allSubjects = Subject.all.in_category(@filter)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter)
+      else
+        allSubjects = Subject.all
+        @subjects = Subject.paginate(page: params[:page], per_page: 10)
+      end
+    end
+
+    @categories = []
     @sortedCategories = ["General-Purpose", "Web Development", "Mobile Development", "Frameworks", "Mathematics-Oriented", "Database Manipulation", "Content Management Systems", "Other"]
     # Get all unique categories from results and put in categories
-    allSubjects.each do | subject |
-      tempCategories = subject.category.split(',')
-      tempCategories.each do | category |
-        if !categories.include?(category)
-          categories << category
+    if allSubjects.present?
+      allSubjects.each do | subject |
+        tempCategories = subject.category.split(',')
+        tempCategories.each do | category |
+          if !@categories.include?(category)
+            @categories << category
+          end
         end
       end
     end
     # Remove from sortedCategories any that are not in categories to maintain order
-    @sortedCategories.each do | category |
-      if !categories.include?(category)
-        @sortedCategories.delete(category)
-      end
-    end
+    #if categories.present?
+    #  @sortedCategories.each do | category |
+    #    if !categories.include?(category)
+    #      @sortedCategories.delete(category)
+    #    end
+    #  end
+    #else
+    #  @sortedCategories = []
+    #end
   end
 
   def show
