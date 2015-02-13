@@ -14,7 +14,7 @@
               <% if category == @filter %>
                   <p class="category_results" id="current"><%= category %></p>
                   <%= link_to subjects_path(search: @search)  , class: "reset" do%>
-                      <span class="glyphicon glyphicon-remove"></span>
+                      <i class="fa fa-times"></i>
                   <% end %>
               <% else %>
                  <%= link_to category, subjects_path(filter: category, search: @search), class: "category_results" %>
