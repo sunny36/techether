@@ -13,6 +13,16 @@ class Subject < ActiveRecord::Base
     end
   end
 
+  def self.sort(unsorted)
+    sorted = ["General-Purpose", "Web Development", "Mobile Development", "Frameworks", "Mathematics-Oriented", "Database Manipulation", "Content Management Systems", "Other"]
+    sorted.each do | item |
+      if !unsorted.include?(item)
+        sorted.delete(item)
+      end
+    end
+    return sorted
+  end
+
   # Main search bar functionality
   def self.search(search)
   	if search.present?
