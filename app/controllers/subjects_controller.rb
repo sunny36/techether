@@ -3,21 +3,19 @@ class SubjectsController < ApplicationController
   def index
     if params[:search].present?
       @search = params[:search]
+      allSubjects = Subject.all.search(@search)
       if params[:filter].present?
         @filter = params[:filter]
-        allSubjects = Subject.all.search(@search).in_category(@filter)
         @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter)
       else
-        allSubjects = Subject.all.search(@search)
         @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
       end
     else
+      allSubjects = Subject.all
       if params[:filter].present?
         @filter = params[:filter]
-        allSubjects = Subject.all.in_category(@filter)
         @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter)
       else
-        allSubjects = Subject.all
         @subjects = Subject.paginate(page: params[:page], per_page: 10)
       end
     end
@@ -35,10 +33,7 @@ class SubjectsController < ApplicationController
       end
     end
     if categories.present?
-      if params[:categories].present?
-        @sortedCategories 
-      end
-      @sortedCategories = Subject.sort(@categories)
+      @sortedCategories = Subject.sort(categories)
     end
 
   end
