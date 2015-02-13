@@ -30,7 +30,7 @@ subject_list = [
 	["C#", "Multi-paradigm programming language encompassing strong typing, imperative, generic, object-oriented, and component-oriented programming disciplines.", 
 		"General-Purpose"],#High-Level,Statically-Typed,General-Purpose,Object-Oriented,Memory Manageable
 	["Django", "Open source web application framework written in Python, which follows the model-view-controller (MVC) architectural pattern.", 
-		"Frameworks,Web development"], #Web Applications,MVC Frameworks,Python
+		"Frameworks,Web Development"], #Web Applications,MVC Frameworks,Python
 	["HTML", "HyperText Markup Language is the standard markup language used to create web pages.", 
 		"Web Development"], #Web-Focused,Markup
 	["CSS", "Cascading Style Sheets is a style sheet language used for describing the look and formatting of a document written in a markup language.", 

@@ -4,13 +4,21 @@ class SubjectsController < ApplicationController
     @search = params[:search]
     allSubjects = Subject.all.search(@search)
     @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
-    @categories = []
-    allSubjects.each do |subject |
+    categories = []
+    @sortedCategories = ["General-Purpose", "Web Development", "Mobile Development", "Frameworks", "Mathematics-Oriented", "Database Manipulation", "Content Management Systems", "Other"]
+    # Get all unique categories from results and put in categories
+    allSubjects.each do | subject |
       tempCategories = subject.category.split(',')
       tempCategories.each do | category |
-        if !@categories.include?(category)
-          @categories << category
+        if !categories.include?(category)
+          categories << category
         end
+      end
+    end
+    # Remove from sortedCategories any that are not in categories to maintain order
+    @sortedCategories.each do | category |
+      if !categories.include?(category)
+        @sortedCategories.delete(category)
       end
     end
   end
