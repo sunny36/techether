@@ -8146,6 +8146,7 @@ button.close {
 }
 /*
 
+
  */
 /* Variables */
 /* Variables */
@@ -8423,84 +8424,79 @@ button.close {
   color: black;
 }
 
-/* line 102, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
-.apple_pagination a:hover, .apple_pagination a:focus {
-  text-decoration: underline;
-}
-
-/* line 105, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 103, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination {
   text-align: center;
   padding: 0.3em;
   cursor: default;
 }
 
-/* line 109, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 107, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
   padding: 0.2em 0.5em;
 }
 
-/* line 111, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 109, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination .disabled {
   color: #aaaaaa;
 }
 
-/* line 113, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 111, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination .current {
   font-style: normal;
   font-weight: bold;
   color: #ff0084;
 }
 
-/* line 117, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 115, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination a {
   border: 1px solid #dddddd;
   color: #0063dc;
   text-decoration: none;
 }
 
-/* line 121, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 119, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination a:hover, .flickr_pagination a:focus {
   border-color: #003366;
   background: #0063dc;
   color: white;
 }
 
-/* line 125, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 123, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination .page_info {
   color: #aaaaaa;
   padding-top: 0.8em;
 }
 
-/* line 128, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 126, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination .previous_page, .flickr_pagination .next_page {
   border-width: 2px;
 }
 
-/* line 130, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 128, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination .previous_page {
   margin-right: 1em;
 }
 
-/* line 132, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 130, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 .flickr_pagination .next_page {
   margin-left: 1em;
 }
 
 /* side bar */
-/* line 137, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 135, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol {
   background-color: #e6e6e6;
   height: 100vh;
   position: fixed;
 }
-/* line 141, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 139, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar {
   width: inherit;
   position: fixed;
   padding: 10px;
 }
-/* line 145, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 143, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar #search_query {
   width: 96%;
   background-color: #ff9900;
@@ -8510,21 +8506,21 @@ button.close {
   margin-top: 0;
   overflow-x: auto;
 }
-/* line 154, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 152, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar .side_titles {
   font-size: 1.3em;
 }
-/* line 157, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 155, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar p {
   text-align: left;
 }
-/* line 160, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 158, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar .category_results {
   margin-left: 5px;
   padding: 10px 15px;
   margin-bottom: 0;
 }
-/* line 165, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 163, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar #current {
   background-color: white;
   color: #333333;
@@ -8533,7 +8529,7 @@ button.close {
   padding-right: 5px;
   width: 90%;
 }
-/* line 173, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
+/* line 171, /Users/Azalea/Documents/Workspaces/Ruby/Projects/educate_me/app/assets/stylesheets/subjects.scss */
 #leftCol #sidebar .reset {
   width: 9%;
   height: 39px;

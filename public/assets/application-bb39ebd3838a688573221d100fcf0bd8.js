@@ -9836,6 +9836,7 @@ return jQuery;
   })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: alert.js v3.3.1
  * http://getbootstrap.com/javascript/#alerts
@@ -9843,7 +9844,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -9931,6 +9931,7 @@ return jQuery;
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: button.js v3.3.1
  * http://getbootstrap.com/javascript/#buttons
@@ -9938,7 +9939,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -10048,6 +10048,7 @@ return jQuery;
     })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: carousel.js v3.3.1
  * http://getbootstrap.com/javascript/#carousel
@@ -10055,7 +10056,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -10289,6 +10289,7 @@ return jQuery;
   })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: collapse.js v3.3.1
  * http://getbootstrap.com/javascript/#collapse
@@ -10296,7 +10297,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -10501,6 +10501,7 @@ return jQuery;
   })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: dropdown.js v3.3.1
  * http://getbootstrap.com/javascript/#dropdowns
@@ -10508,7 +10509,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -10663,6 +10663,7 @@ return jQuery;
     .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: tab.js v3.3.1
  * http://getbootstrap.com/javascript/#tabs
@@ -10670,7 +10671,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -10817,6 +10817,7 @@ return jQuery;
     .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: transition.js v3.3.1
  * http://getbootstrap.com/javascript/#transitions
@@ -10824,7 +10825,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -10877,6 +10877,7 @@ return jQuery;
   })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: scrollspy.js v3.3.1
  * http://getbootstrap.com/javascript/#scrollspy
@@ -10884,7 +10885,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -11053,6 +11053,7 @@ return jQuery;
   })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: modal.js v3.3.1
  * http://getbootstrap.com/javascript/#modals
@@ -11060,7 +11061,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -11378,6 +11378,7 @@ return jQuery;
   })
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: tooltip.js v3.3.1
  * http://getbootstrap.com/javascript/#tooltip
@@ -11386,7 +11387,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -11857,6 +11857,7 @@ return jQuery;
   }
 
 }(jQuery);
+
 /* ========================================================================
  * Bootstrap: popover.js v3.3.1
  * http://getbootstrap.com/javascript/#popovers
@@ -11864,7 +11865,6 @@ return jQuery;
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -11977,15 +11977,6 @@ return jQuery;
   }
 
 }(jQuery);
-
-
-
-
-
-
-
-
-
 
 
 
