@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :subject
+  has_many :ratings
   accepts_nested_attributes_for :subject
 
   validates :name, presence: true

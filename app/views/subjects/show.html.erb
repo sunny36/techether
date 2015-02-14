@@ -9,7 +9,11 @@
         <div class="resource">
           <h4><%= resource.title %></h4>
           <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-          <p><%= resource.description %></p></br>
+          <p><%= resource.link %></p></br>
+          <% Rating.where(resource_id:resource.id).each do | rating | %>
+              <p><%= rating.value %></p>
+          <% end %>
+          <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
         </div>
       <% end %>
     <% end %>
