@@ -3,12 +3,5 @@
 
 $( document ).ready(function() {
 
-    $('input, textarea').each(function() {
-        $(this).on('focus', function() {
-            $(this).parent('.input').addClass('active');
-        });
-
-        if($(this).val() != '') $(this).parent('.input').addClass('active');
-    });
 
 });

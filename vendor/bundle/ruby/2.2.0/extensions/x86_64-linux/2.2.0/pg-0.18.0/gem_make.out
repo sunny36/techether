@@ -1,0 +1,36 @@
+/home/anthony/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20150213-17288-1ymid6v.rb extconf.rb --with-pg-config=/home/anthony/.rvm/rubies/ruby-2.2.0/bin/ruby
+Using config values from /home/anthony/.rvm/rubies/ruby-2.2.0/bin/ruby
+/home/anthony/.rvm/rubies/ruby-2.2.0/bin/ruby: invalid option --includedir  (-h will show valid options) (RuntimeError)
+/home/anthony/.rvm/rubies/ruby-2.2.0/bin/ruby: invalid option --libdir  (-h will show valid options) (RuntimeError)
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/home/anthony/.rvm/rubies/ruby-2.2.0/bin/$(RUBY_BASE_NAME)
+	--with-pg
+	--without-pg
+	--enable-windows-cross
+	--disable-windows-cross
+	--with-pg-config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/lib
+
+extconf failed, exit code 1
