@@ -4,8 +4,12 @@
 
     <%= form_for @rating do |f| %>
         <div class="field">
-          <%= f.label :value , "Rating"%>
-          <%= f.number_field :value, class:"form-control" %>
+          <%= f.label :value, "Rating" %>
+          <%= f.select :value do %>
+              <% [1, 2, 3, 4, 5].each do |c| %>
+                  <%= content_tag(:option, c, value: c) %>
+              <% end %>
+          <% end %>
         </div>
 
         <%= f.hidden_field :resource, value: @resource%>

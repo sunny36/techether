@@ -9,10 +9,12 @@
         <div class="resource">
           <h4><%= resource.title %></h4>
           <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-          <p><%= resource.link %></p></br>
+          <p><%= resource.link %></p>
+          <% sum = 0.0 %>
           <% Rating.where(resource_id:resource.id).each do | rating | %>
-              <p><%= rating.value %></p>
+              <% sum += rating.value %>
           <% end %>
+          <p><%= sum / Rating.where(resource_id:resource.id).count %></p>
           <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
         </div>
       <% end %>
