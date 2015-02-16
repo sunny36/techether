@@ -9,7 +9,7 @@
 subject_list = [
 	["Ruby on Rails", "Open source web applications framework written in Ruby, which follows the model-view-controller (MVC) architectural pattern.", 
 		"Frameworks,Web Development", "Framework,Web-Focused,Web Applications,MVC,Ruby",
-    "http://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Ruby_on_Rails.svg/150px-Ruby_on_Rails.svg.png"],
+    "http://upload.wikimedia.org/wikipedia/en/e/e9/Ruby_on_Rails.svg"],
 	["Ruby", "Dynamic, reflective, object-oriented, general-purpose programming language.", 
 		"General-Purpose", "General-Purpose,High-Level,Object-Oriented,Dynamically-Typed,Scripting",
     "http://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg"],
@@ -161,8 +161,8 @@ subject_list = [
   	"Other", "JavaScript,Server-Side",
     "http://www.nicklascoker.uk/images/node-js.png"]];
 
-subject_list.each do | name, description, category, tags |
-	Subject.create(name:name, description:description, category:category, tags:tags)
+subject_list.each do | name, description, category, tags, image |
+	Subject.create(name:name, description:description, category:category, tags:tags, image:image)
 end
 
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")
