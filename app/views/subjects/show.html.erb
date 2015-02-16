@@ -16,12 +16,12 @@
         <div class="subject_button">
             <% if user_signed_in? %>
                 <% if current_user.subject == @subject %>
-                    <%= link_to "Add a resource", new_resource_path, class:"links subject_button" %>
+                    <%= link_to "Add a resource", new_resource_path, class:"links subject_butt" %>
                 <% else %>
                     <%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"links subject_butt" %>
                 <% end %>
             <% else %>
-                <%= link_to "Log in to learn #{@subject.name}", new_user_session_path, class:"btn-default btn" %>
+                <%= link_to "Log in to learn #{@subject.name}", new_user_session_path, class:"links subject_butt" %>
             <% end %>
         </div>
       </div>
