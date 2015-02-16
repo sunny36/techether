@@ -48,7 +48,7 @@ class SubjectsController < ApplicationController
     current_user.subject = @subject
     if current_user.save
       flash[:success] = "Successfully added subject."
-      redirect_to current_user
+      redirect_to @subject
     else
       flash[:danger] = "Failed to add subject."
       redirect_to @subject

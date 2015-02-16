@@ -83,9 +83,12 @@
                   <% if current_user.subject == @subject %>
                       <%= link_to "Add a resource", new_resource_path, class:"links subject_butt" %>
                   <% else %>
-                      <%= link_to "Log in to learn #{@subject.name} and add a resource", new_user_session_path, class:"links subject_butt" %>
+                      <%= link_to "Start learning #{@subject.name} to add a resource", add_subject_path(@subject), method: :post, class:"links subject_butt" %>
                   <% end %>
+              <% else %>
+                <%= link_to "Log in to learn #{@subject.name} and add a resource", new_user_session_path, class:"links subject_butt" %>
               <% end %>
+
         <% end %>
 
     </div>
