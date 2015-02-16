@@ -4,7 +4,7 @@
 
 @import 'config';
 
-#indexcol {
+.indexcol {
 	.subjects {
 		padding-bottom: 15px;
 		h2 {
@@ -196,14 +196,19 @@
   overflow-y: hidden;
 }
 
+.right_subject {
+  margin-top: 80px;
+  overflow-y: scroll;
+}
+
 .subject_image {
-  margin-top: 50px;
+  margin-top: 80px;
   height: 55vh;
   width: 100%;
 }
 
 .subject_details {
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 15px;
   .subject_description {
     font-size: 1.5em;
@@ -245,7 +250,7 @@
   .main_stat {
     font-size: 4em;
     text-align: center;
-    padding: 3vh 0;
+    padding: 1vh 0;
   }
 }
 

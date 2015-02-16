@@ -42,39 +42,52 @@
         <p class="main_stat">
           <% totalSum = 0.0 %>
           <% count = 0 %>
-          <% nan = totalSum / count %>
           <% if @resources.present? %>
             <% @resources.each do |resource| %>
-              <% ratings = Rating.where(resource_id: resouce.id) %>
+              <% ratings = Rating.where(resource_id: resource.id) %>
               <% ratings.each do | rating | %>
                   <% totalSum += rating.value %>
                   <% count += 1 %>
               <% end %>
             <% end %>
           <% end %>
+          <% nan = totalSum / count %>
           <%= (nan.is_a?(Float) && nan.nan?) ? 0 : nan %>
         </p>
       </div>
     </div>
-      <% if @resources.present? %>
-          <h3>Resources</h3>
-          <% @resources.each do |resource| %>
-              <div class="resource">
-                <h4><%= resource.title %></h4>
-                <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-                <p><%= resource.link %></p>
-                <% ratings = Rating.where(resource_id:resource.id) %>
-                <% sum = 0.0 %>
-                <% ratings.each do | rating | %>
-                    <% sum += rating.value %>
-                <% end %>
-                <% if ratings.present? %>
-                    <p><%= sum / ratings.count %></p>
-                <% end %>
-                <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
-              </div>
-          <% end %>
-      <% end %>
+  </div>
+  <div class="col-md-6 right_subject">
+    <div class="indexcol">
+      <h1>Resources</h1>
+        <% if @resources.present? %>
+            <% @resources.each do |resource| %>
+                <div class="resource">
+                  <h4><%= resource.title %></h4>
+                  <h5><%= resource.difficulty %> - <%= resource.source %></h5>
+                  <p><%= resource.link %></p>
+                  <% ratings = Rating.where(resource_id:resource.id) %>
+                  <% sum = 0.0 %>
+                  <% ratings.each do | rating | %>
+                      <% sum += rating.value %>
+                  <% end %>
+                  <% if ratings.present? %>
+                      <p><%= sum / ratings.count %></p>
+                  <% end %>
+                  <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
+                </div>
+            <% end %>
+        <% else %>
+            <h3>Unfortunately, we have no resources for this subject</h3>
+              <% if user_signed_in? %>
+                  <% if current_user.subject == @subject %>
+                      <%= link_to "Add a resource", new_resource_path, class:"links subject_butt" %>
+                  <% else %>
+                      <%= link_to "Log in to learn #{@subject.name} and add a resource", new_user_session_path, class:"links subject_butt" %>
+                  <% end %>
+              <% end %>
+        <% end %>
 
+    </div>
   </div>
 </div>
