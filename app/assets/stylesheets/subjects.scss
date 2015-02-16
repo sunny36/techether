@@ -22,7 +22,6 @@
 .tags {
   display: inline-block;
   color: $dark-gray;
-  background-color: white;
   border: 1px solid $gray;
   border-radius: 5px;
   padding: 4px 6px;
@@ -192,12 +191,19 @@
 /* Subject page */
 
 
+.left_subject {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .subject_image {
+  margin-top: 50px;
   height: 55vh;
   width: 100%;
 }
 
 .subject_details {
+  margin-top: 50px;
   margin-bottom: 15px;
   .subject_description {
     font-size: 1.5em;
@@ -229,16 +235,17 @@
 }
 
 .subject_stats {
+  margin-top: 5vh;
   border-top: 1px solid $gray;
   p {
-    margin-top: 5px;
+    margin-top: 5vh;
     font-size: 1.3em;
     text-align: center;
   }
   .main_stat {
     font-size: 4em;
     text-align: center;
-    padding: 5vh 0;
+    padding: 3vh 0;
   }
 }
 
