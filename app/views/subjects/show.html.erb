@@ -1,6 +1,6 @@
 <% provide(:title, @subject.name) %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 headspace">
+  <div class="col-md-6 headspace">
     <div class="row">
       <div class="col-md-6">
         <img src="<%= @subject.image %>" alt="" class="subject_image"/>
@@ -26,6 +26,35 @@
         </div>
       </div>
 
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-md-4 subject_stats">
+        <p>Users Learning</p>
+        <p class="main_stat"><%= User.where(subject_id: @subject.id).count %></p>
+      </div>
+      <div class="col-md-4 subject_stats">
+        <p>Resources</p>
+        <p class="main_stat"><%= @resources.count %></p>
+      </div>
+      <div class="col-md-4 subject_stats">
+        <p>Average Rating</p>
+        <p class="main_stat">
+          <% totalSum = 0.0 %>
+          <% count = 0 %>
+          <% nan = totalSum / count %>
+          <% if @resources.present? %>
+            <% @resources.each do |resource| %>
+              <% ratings = Rating.where(resource_id: resouce.id) %>
+              <% ratings.each do | rating | %>
+                  <% totalSum += rating.value %>
+                  <% count += 1 %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <%= (nan.is_a?(Float) && nan.nan?) ? 0 : nan %>
+        </p>
+      </div>
     </div>
       <% if @resources.present? %>
           <h3>Resources</h3>
