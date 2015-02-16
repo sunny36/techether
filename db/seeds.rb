@@ -161,8 +161,65 @@ subject_list = [
   	"Other", "JavaScript,Server-Side",
     "http://www.nicklascoker.uk/images/node-js.png"]];
 
+subjects = []
+
 subject_list.each do | name, description, category, tags, image |
-	Subject.create(name:name, description:description, category:category, tags:tags, image:image)
+  subjects << Subject.create(name:name, description:description, category:category, tags:tags, image:image)
 end
+
+rails_resources = [
+  ["The Ruby on Rails Tutorial (3rd Ed.) by Michael Hartl", "Book", "Intermediate", "https://www.railstutorial.org"],
+  ["UT on Rails by Schneems", "Video", "Beginner", "http://www.schneems.com/ut-rails/"],
+  ["Rails for Zombies by EnvyLabs", "Course", "Beginner", "http://railsforzombies.org"],
+  ["Rails AntiPatterns: Best Practice Ruby on Rails Refactoring", "Book", "Intermediate", "http://www.amazon.ca/Rails-AntiPatterns-Best-Practice-Refactoring/dp/0321604814"],
+  ["Getting Started with Rails", "Guide", "Beginner", "http://guides.rubyonrails.org/getting_started.html"],
+  ["Learn Rails Development", "Course", "Beginner", "http://teamtreehouse.com/tracks/rails-development"],
+  ["The Odin Project: Ruby on Rails", "Course", "Intermediate", "http://www.theodinproject.com/ruby-on-rails"],
+  ["Crafting Rails 4 Applications: Expert Practices for Everyday Rails Development", "Book", "Advanced", "http://www.amazon.ca/Crafting-Rails-Applications-Practices-Development/dp/1937785556"]];
+
+rails_resources.each do | title, source, difficulty, link |
+  rails = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[0].id, link:link)
+end  
+
+ruby_resources = [
+  ["Codecademy: Ruby", "Course", "Beginner", "http://www.codecademy.com/en/tracks/ruby"],
+  ["Learn Ruby the Hard Way", "Book", "Beginner", "http://learnrubythehardway.org/book"],
+  ["Why's (Poignant) Guide to Ruby", "Book", "Intermediate", "http://mislav.uniqpath.com/poignant-guide/"],
+  ["The Pragmatic Programmer's Guide: Programming Ruby", "Book", "Beginner", "http://ruby-doc.com/docs/ProgrammingRuby/"],
+  ["Humble Little Ruby Book", "Book", "Beginner", "http://humblelittlerubybook.com/book/"],
+  ["Practicing Ruby", "Guide", "Intermediate", "https://practicingruby.com"],
+  ["Learn to Program: Ruby", "Guide", "Beginner", "https://pine.fm/LearnToProgram/"]]
+
+ruby_resources.each do | title, source, difficulty, link |
+  ruby = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[1].id, link:link)
+end  
+
+python_resources = [
+  ["The Official Python Tutorial", "Guide", "Beginner", "https://docs.python.org/2/tutorial/"],
+  ["Codecademy: Python", "Course", "Beginner", "http://www.codecademy.com/en/tracks/python"],
+  ["TheNewBoston: Python 3.4 Playlist", "Video", "Beginner", "https://www.youtube.com/playlist?list=PL6gx4Cwl9DGAcbMi1sH6oAMk4JHw91mC_&spfreload=10"],
+  ["Learn Python the Hard Way", "Book", "Beginner", "http://learnpythonthehardway.org"],
+  ["Code Like a Pythonista: Idiomatic Python", "Guide", "Intermediate", "http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html"],
+  ["A Byte of Python", "Guide", "Beginner", "http://www.swaroopch.com/notes/python/"],
+  ["Understanding Python", "Video", "Advanced", "https://www.youtube.com/watch?v=HlNTheck1Hk"]]
+
+python_resources.each do | title, source, difficulty, link |
+  python = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[2].id, link:link)
+end  
+
+javascript_resources = [
+  ["Codecademy: Python", "Course", "Beginner", "http://www.codecademy.com/en/tracks/javascript"],
+  ["A Smarter Way to Learn JavaScript", "Book", "Beginner", "http://www.amazon.ca/Smarter-Way-Learn-JavaScript-technology-ebook/dp/B00H1W9I6C"],
+  ["JavaScript: The Good Parts", "Book", "Intermediate", "http://www.amazon.ca/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742"],
+  ["Eloquent JavaScript: A Modern Introduction to Programming", "Book", "Beginner", "http://www.amazon.ca/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820"],
+  ["Learn JavaScript in 14 Days", "Video", "Beginner", "https://ilovecoding.org/courses/learn-javascript-in-14-days/"],
+  ["Learning Advanced JavaScript", "Guide", "Advanced", "http://ejohn.org/apps/learn/#"],
+  ["JavaScript Foundations", "Course", "Beginner", "http://teamtreehouse.com/library/javascript-foundations"],
+  ["A Re-Introduction to JavaScript", "Guide", "Beginner", "https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript"]]
+
+javascript_resources.each do | title, source, difficulty, link |
+  javascript = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[3].id, link:link)
+end 
+
 
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")

@@ -197,8 +197,11 @@
 }
 
 .right_subject {
-  margin-top: 80px;
+  height: 100vh;
   overflow-y: scroll;
+  h1 {
+    margin-top: 80px;
+  }
 }
 
 .subject_image {
