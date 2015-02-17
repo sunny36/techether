@@ -6,17 +6,17 @@ class SubjectsController < ApplicationController
       allSubjects = Subject.all.search(@search)
       if params[:filter].present?
         @filter = params[:filter]
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_id
       else
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_id
       end
     else
       allSubjects = Subject.all
       if params[:filter].present?
         @filter = params[:filter]
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_id
       else
-        @subjects = Subject.paginate(page: params[:page], per_page: 10)
+        @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_id
       end
     end
 

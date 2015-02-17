@@ -11,13 +11,11 @@
 
         <p><%= @user.subject_description %></p>
         <div class="actions">
-        <% if false %><%= link_to "Edit", edit_subject_path %><% end %>
-
         <%= link_to "Add Resource", new_resource_path, class:"links" %></br>
         <%= link_to "Stop Learning", @user.subject , method: :delete, class:"links" %>
         </div>
 
-        <% if @resources.present? %>
+        <% if false #@resources.present? %>
             <h3>Resources for <%= @user.subject_name %></h3>
             <% @resources.each do |resource| %>
                 <div class="resource">

@@ -58,14 +58,15 @@
     </div>
   </div>
   <div class="col-md-6 right_subject">
-    <div class="indexcol">
+    <div>
       <h1>Resources</h1>
         <% if @resources.present? %>
             <% @resources.each do |resource| %>
                 <div class="resource">
-                  <h4><%= resource.title %></h4>
+                  <h4>
+                    <%= link_to resource.title, resource.link %>
+                  </h4>
                   <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-                  <p><%= resource.link %></p>
                   <% ratings = Rating.where(resource_id:resource.id) %>
                   <% sum = 0.0 %>
                   <% ratings.each do | rating | %>
@@ -74,7 +75,11 @@
                   <% if ratings.present? %>
                       <p><%= sum / ratings.count %></p>
                   <% end %>
-                  <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
+                  <% if user_signed_in? %>
+                    <% if current_user.subject == @subject %>
+                      <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
+                    <% end %>
+                  <% end %>  
                 </div>
             <% end %>
         <% else %>

@@ -161,6 +161,8 @@ subject_list = [
   	"Other", "JavaScript,Server-Side",
     "http://www.nicklascoker.uk/images/node-js.png"]];
 
+    # Meteor.js, React.js
+
 subjects = []
 
 subject_list.each do | name, description, category, tags, image |
@@ -168,14 +170,14 @@ subject_list.each do | name, description, category, tags, image |
 end
 
 rails_resources = [
-  ["The Ruby on Rails Tutorial (3rd Ed.) by Michael Hartl", "Book", "Intermediate", "https://www.railstutorial.org"],
-  ["UT on Rails by Schneems", "Video", "Beginner", "http://www.schneems.com/ut-rails/"],
-  ["Rails for Zombies by EnvyLabs", "Course", "Beginner", "http://railsforzombies.org"],
-  ["Rails AntiPatterns: Best Practice Ruby on Rails Refactoring", "Book", "Intermediate", "http://www.amazon.ca/Rails-AntiPatterns-Best-Practice-Refactoring/dp/0321604814"],
+  ["The Ruby on Rails Tutorial", "Book", "Intermediate", "https://www.railstutorial.org"],
+  ["UT on Rails", "Video", "Beginner", "http://www.schneems.com/ut-rails/"],
+  ["Rails for Zombies", "Course", "Beginner", "http://railsforzombies.org"],
+  ["Rails AntiPatterns: Best Practice Ruby on Rails Refactoring", "Book", "Intermediate", "http://www.amazon.ca/gp/product/B004C04QE0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B004C04QE0&linkCode=as2&tag=techether-20c"],
   ["Getting Started with Rails", "Guide", "Beginner", "http://guides.rubyonrails.org/getting_started.html"],
   ["Learn Rails Development", "Course", "Beginner", "http://teamtreehouse.com/tracks/rails-development"],
   ["The Odin Project: Ruby on Rails", "Course", "Intermediate", "http://www.theodinproject.com/ruby-on-rails"],
-  ["Crafting Rails 4 Applications: Expert Practices for Everyday Rails Development", "Book", "Advanced", "http://www.amazon.ca/Crafting-Rails-Applications-Practices-Development/dp/1937785556"]];
+  ["Crafting Rails 4 Applications: Expert Practices for Everyday Rails Development", "Book", "Advanced", "http://www.amazon.ca/gp/product/1937785556/ref=as_li_tf_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1937785556&linkCode=as2&tag=techether-20"]];
 
 rails_resources.each do | title, source, difficulty, link |
   rails = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[0].id, link:link)
@@ -183,7 +185,7 @@ end
 
 ruby_resources = [
   ["Codecademy: Ruby", "Course", "Beginner", "http://www.codecademy.com/en/tracks/ruby"],
-  ["Learn Ruby the Hard Way", "Book", "Beginner", "http://learnrubythehardway.org/book"],
+  ["Learn Ruby the Hard Way", "Guide", "Beginner", "http://learnrubythehardway.org/book"],
   ["Why's (Poignant) Guide to Ruby", "Book", "Intermediate", "http://mislav.uniqpath.com/poignant-guide/"],
   ["The Pragmatic Programmer's Guide: Programming Ruby", "Book", "Beginner", "http://ruby-doc.com/docs/ProgrammingRuby/"],
   ["Humble Little Ruby Book", "Book", "Beginner", "http://humblelittlerubybook.com/book/"],
@@ -197,8 +199,8 @@ end
 python_resources = [
   ["The Official Python Tutorial", "Guide", "Beginner", "https://docs.python.org/2/tutorial/"],
   ["Codecademy: Python", "Course", "Beginner", "http://www.codecademy.com/en/tracks/python"],
-  ["TheNewBoston: Python 3.4 Playlist", "Video", "Beginner", "https://www.youtube.com/playlist?list=PL6gx4Cwl9DGAcbMi1sH6oAMk4JHw91mC_&spfreload=10"],
-  ["Learn Python the Hard Way", "Book", "Beginner", "http://learnpythonthehardway.org"],
+  ["TheNewBoston: Python Programming Tutorials", "Video", "Beginner", "https://www.thenewboston.com/videos.php?cat=98"],
+  ["Learn Python the Hard Way", "Guide", "Beginner", "http://learnpythonthehardway.org"],
   ["Code Like a Pythonista: Idiomatic Python", "Guide", "Intermediate", "http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html"],
   ["A Byte of Python", "Guide", "Beginner", "http://www.swaroopch.com/notes/python/"],
   ["Understanding Python", "Video", "Advanced", "https://www.youtube.com/watch?v=HlNTheck1Hk"]]
@@ -209,9 +211,9 @@ end
 
 javascript_resources = [
   ["Codecademy: Python", "Course", "Beginner", "http://www.codecademy.com/en/tracks/javascript"],
-  ["A Smarter Way to Learn JavaScript", "Book", "Beginner", "http://www.amazon.ca/Smarter-Way-Learn-JavaScript-technology-ebook/dp/B00H1W9I6C"],
-  ["JavaScript: The Good Parts", "Book", "Intermediate", "http://www.amazon.ca/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742"],
-  ["Eloquent JavaScript: A Modern Introduction to Programming", "Book", "Beginner", "http://www.amazon.ca/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820"],
+  ["A Smarter Way to Learn JavaScript", "Book", "Beginner", "http://www.amazon.ca/gp/product/B00H1W9I6C/ref=as_li_tf_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00H1W9I6C&linkCode=as2&tag=techether-20"],
+  ["JavaScript: The Good Parts", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0596517742/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0596517742&linkCode=as2&tag=techether-20"],
+  ["Eloquent JavaScript: A Modern Introduction to Programming", "Book", "Beginner", "http://www.amazon.ca/gp/product/1593275846/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1593275846&linkCode=as2&tag=techether-20"],
   ["Learn JavaScript in 14 Days", "Video", "Beginner", "https://ilovecoding.org/courses/learn-javascript-in-14-days/"],
   ["Learning Advanced JavaScript", "Guide", "Advanced", "http://ejohn.org/apps/learn/#"],
   ["JavaScript Foundations", "Course", "Beginner", "http://teamtreehouse.com/library/javascript-foundations"],
@@ -219,7 +221,78 @@ javascript_resources = [
 
 javascript_resources.each do | title, source, difficulty, link |
   javascript = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[3].id, link:link)
-end 
+end
 
+java_resources = [
+  ["Stanford University CS106A - Introduction to Java", "Course", "Beginner", "http://web.stanford.edu/class/cs106a/"],
+  ["Mark Dexter's Eclipse and Java Tutorials", "Video", "Beginner", "http://eclipsetutorial.sourceforge.net"],
+  ["Java: The Complete Reference", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0071808558/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0071808558&linkCode=as2&tag=techether-20"],
+  ["Effective Java", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0321356683/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321356683&linkCode=as2&tag=techether-20"],
+  ["Head First Java", "Book", "Beginner", "http://www.amazon.ca/gp/product/0596009208/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0596009208&linkCode=as2&tag=techether-20"],
+  ["The Java Tutorials", "Guide", "Beginner", "http://docs.oracle.com/javase/tutorial/"],
+  ["Thinking in Java", "Book", "Beginner", "http://www.amazon.ca/gp/product/0131872486/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0131872486&linkCode=as2&tag=techether-20"]]
+
+java_resources.each do | title, source, difficulty, link |
+  java = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[4].id, link:link)
+end
+
+cpp_resources = [
+  ["C++ Language Tutorial", "Guide", "Beginner", "http://www.cplusplus.com/doc/tutorial/"],
+  ["TheNewBoston: C++ Programming Tutorials", "Video", "Beginner", "https://www.thenewboston.com/videos.php?cat=16"],
+  ["Programming: Principles and Practises Using C++", "Book", "Beginner", "http://www.amazon.ca/gp/product/0321992784/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321992784&linkCode=as2&tag=techether-20"],
+  ["C++ Primer", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0321714113/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321714113&linkCode=as2&tag=techether-20"],
+  ["Effective C++", "Book", "Advanced", "http://www.amazon.ca/gp/product/0321334876/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321334876&linkCode=as2&tag=techether-20"],
+  ["A Tour of C++", "Intermediate", "http://www.amazon.ca/gp/product/0321958314/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321958314&linkCode=as2&tag=techether-20"]]
+
+cpp_resources.each do | title, source, difficulty, link |
+  cpp = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[5].id, link:link)
+end
+
+php_resources = [
+  ["Codecademy: PHP", "Course", "Beginner", "http://www.codecademy.com/en/tracks/php"],
+  ["TheNewBoston: PHP Programming Tutorials", "Video", "Beginner", "https://www.thenewboston.com/videos.php?cat=11"],
+  ["PHPAcademy: Create a CMS with PHP", "Video", "Intermediate", "https://www.youtube.com/playlist?list=PLfdtiltiRHWE7kPatbL3y774836LrmINX"],
+  ["PHPAcademy: Register & Login", "Video", "Intermediate", "https://www.youtube.com/playlist?list=PLE134D877783367C7"],
+  ["PHP The Right Way", "Guide", "Beginner", "http://www.phptherightway.com"],
+  ["The Joy of PHP", "Book", "Beginner", "http://www.amazon.ca/gp/product/B00BALXN70/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00BALXN70&linkCode=as2&tag=techether-20"],
+  ["PHP Advanced and Object-Oriented Programming", "Book", "Advanced", "http://www.amazon.ca/gp/product/0321832183/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321832183&linkCode=as2&tag=techether-20"],
+  ["PHP for the Web: Visual QuickStart Guide", "Book", "Beginner", "http://www.amazon.ca/gp/product/0321733452/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321733452&linkCode=as2&tag=techether-20"]]
+
+php_resources.each do | title, source, difficulty, link |
+  php = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[6].id, link:link)
+end
+
+sql_resources = [
+  ["SQL Tutorial", "Guide", "Beginner", "http://www.w3schools.com/sql/"],
+  ["Sams Teach Yourself SQL in 24 Hours", "Book", "Beginner", "http://www.amazon.ca/gp/product/0672335417/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0672335417&linkCode=as2&tag=techether-20"],
+  ["Database Design with UML and SQL", "Guide", "Beginner", "http://www.tomjewett.com/dbdesign/dbdesign.php"],
+  ["Learn SQL by Calculating Customer Lifetime Value", "Guide", "Intermediate", "http://blog.treasuredata.com/2014/12/05/learn-sql-by-calculating-customer-lifetime-value-part-1/"]]
+
+sql_resources.each do | title, source, difficulty, link |
+  sql = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[7].id, link:link)
+end
+
+c_resources = [
+  ["Learn C The Hard Way", "Guide", "Beginner", "http://c.learncodethehardway.org/book/"],
+  ["C Programming Language", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0131103628/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0131103628&linkCode=as2&tag=techether-20"],
+  ["The C Book", "Book", "Beginner", "http://publications.gbdirect.co.uk/c_book/"],
+  ["The Practice of Programming", "Book", "Intermediate", "http://www.amazon.ca/gp/product/020161586X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=020161586X&linkCode=as2&tag=techether-20"],
+  ["Object Oriented Programming in C", "Book", "Intermediate", "http://www.planetpdf.com/codecuts/pdfs/ooc.pdf"]]
+
+c_resources.each do | title, source, difficulty, link |
+  c = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[8].id, link:link)
+end
+
+asp_resources = [
+  ["Learning ASP.NET", "Guide", "Intermediate", "http://www.asp.net"],
+  ["ASP.NET MVC Tutorial", "Video", "Beginner", "https://www.youtube.com/watch?v=VAtVv1Q7ufM&spfreload=10"],
+  ["Beginning ASP.NET 4.5: in C# and VB", "Book", "Beginner", "http://www.amazon.ca/gp/product/1118311809/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1118311809&linkCode=as2&tag=techether-20"],
+  ["Beginning ASP.NET 4.5 Databases", "Book", "Beginner", "http://www.amazon.ca/gp/product/1430243805/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1430243805&linkCode=as2&tag=techether-20"],
+  ["ASP.NET Music Store", "Guide", "Intermediate" ,"http://mvcmusicstore.codeplex.com"],
+  ["Simple MVC Training", "Video", "Beginner", "https://www.youtube.com/playlist?list=PLuHX3xy0EKircW6z3tSDMGtgJgkHEWYi1"]]
+
+asp_resources.each do | title, source, difficulty, link |
+  asp = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[9].id, link:link)
+end
 
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")

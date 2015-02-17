@@ -45,4 +45,9 @@ class Subject < ActiveRecord::Base
     order("updated_at").limit(5)
   end
 
+  # Sort by id
+  def self.sort_id
+    order("id")
+  end
+
 end
