@@ -295,4 +295,81 @@ asp_resources.each do | title, source, difficulty, link |
   asp = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[9].id, link:link)
 end
 
+csharp_resources = [
+  ["C# Programming Tutorial", "Video", "Beginner", "https://www.youtube.com/watch?v=OBsGRqXzOhk"],
+  ["C# for Programmers", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0133440575/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0133440575&linkCode=as2&tag=techether-20"],
+  ["CLR Via C#", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0735667454/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0735667454&linkCode=as2&tag=techether-20"],
+  ["C# Tutorials", "Guide", "Beginner", "https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx"],
+  ["C# Programming", "Guide", "Beginner", "http://www.functionx.com/csharp/index.htm"],
+  ["TheNewBoston: C# Beginner's Tutorial", "Video", "Beginner", "https://www.thenewboston.com/videos.php?cat=15"],
+  ["Threading in C#", "Guide", "Advanced", "http://www.albahari.com/threading/"]]
+
+csharp_resources.each do | title, source, difficulty, link |
+  csharp = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[10].id, link:link)
+end
+
+django_resources = [
+  ["Writing Your First Django App", "Guide", "Beginner", "https://docs.djangoproject.com/en/dev/intro/tutorial01/"],
+  ["The Django Book", "Book", "Beginner", "http://www.djangobook.com/en/2.0/index.html"],
+  ["Test-Driven Development With Python", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1449364829/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1449364829&linkCode=as2&tag=techether-20"],
+  ["Two Scoops of Django", "Book", "Beginner", "http://www.amazon.ca/gp/product/098146730X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=098146730X&linkCode=as2&tag=techether-20"]]
+
+django_resources.each do | title, source, difficulty, link |
+  django = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[11].id, link:link)
+end
+
+html_resources = [
+  ["Codecademy: HTML & CSS", "Course", "Beginner", "http://www.codecademy.com/en/tracks/web"],
+  ["Code School: HTML/CSS", "Course", "Beginner", "https://www.codeschool.com/paths/html-css"],
+  ["HTML and CSS: Design and Build Websites", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1118008189/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1118008189&linkCode=as2&tag=techether-20"]]
+
+html_resources.each do | title, source, difficulty, link |
+  html = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[12].id, link:link)
+end
+
+css_resources = [
+  ["Codecademy: HTML & CSS", "Course", "Beginner", "http://www.codecademy.com/en/tracks/web"],
+  ["Code School: HTML/CSS", "Course", "Beginner", "https://www.codeschool.com/paths/html-css"],
+  ["HTML and CSS: Design and Build Websites", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1118008189/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1118008189&linkCode=as2&tag=techether-20"],
+  ["CSS Tricks", "Guide", "Intermediate", "http://css-tricks.com"],
+  ["A List Apart", "Guide", "Intermediate", "http://alistapart.com"]]
+
+css_resources.each do | title, source, difficulty, link |
+  css = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[13].id, link:link)
+end
+
+smalltalk_resources = [
+  ["Laser Game: A Development Example", "Guide", "Intermediate", "http://squeak.preeminent.org/tut2007/html/index.html"],
+  ["On to Smalltalk", "Book", "Beginner", "http://www.amazon.ca/gp/product/0201498278/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0201498278&linkCode=as2&tag=techether-20"],
+  ["Pharo By Example", "Guide", "Beginner", "http://pharobyexample.org"]]
+
+smalltalk_resources.each do | title, source, difficulty, link |
+  smalltalk = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[14].id, link:link)
+end
+
+objectivec_resources = [
+  ["Learn Objective-C on the Mac: For OS X and iOS", "Book", "Beginner", "http://www.amazon.ca/gp/product/1430241888/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1430241888&linkCode=as2&tag=techether-20"],
+  ["iPhone Tutorials", "Guide", "Beginner", "http://www.raywenderlich.com/tutorials"],
+  ["Programming with Objective-C", "Guide", "Beginner", "https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html"],
+  ["iOS Programming: The Big Nerd Ranch Guide", "Book" ,"Intermediate", "http://www.amazon.ca/gp/product/0321942051/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321942051&linkCode=as2&tag=techether-20"],
+  ["Stanford: Developing Apps for iOS", "Course", "Intermediate", "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=395605774"],
+  ["Objective-C Programming: The Big Nerd Ranch Guide", "Book", "http://www.amazon.ca/gp/product/B00GSRITM0/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00GSRITM0&linkCode=as2&tag=techether-20"],
+  ["iOS Development with Objective-C", "Course", "Beginner", "http://teamtreehouse.com/tracks/ios-development-with-objectivec"]]
+
+objectivec_resources.each do | title, source, difficulty, link |
+  objectivec = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[15].id, link:link)
+end
+
+swift_resources = [
+  ["iOS Development with Swift", "Course", "Beginner", "http://teamtreehouse.com/tracks/ios-development-with-swift"],
+  ["Stanford: Developing iOS Apps with Swift", "Course", "Intermediate", "https://itunes.apple.com/us/course/developing-ios-8-apps-swift/id961180099"],
+  ["Exploring and Evaluating Swift Code in Playground", "Guide", "Beginner", "https://developer.apple.com/library/ios/recipes/xcode_help-source_editor/chapters/ExploringandEvaluatingSwiftCodeinaPlayground.html"],
+  ["Build Your First iOS Game with Swift", "Guide", "Intermediate", "https://www.bloc.io/swiftris-build-your-first-ios-game-with-swift"],
+  ["The Internet's Most Comprehensive Swift Resource", "Guide", "Intermediate", "http://www.sososwift.com"],
+  ["The Complete iOS8 and Swift Course: Learn by Building 15 Real World Apps", "Course", "Beginner", "https://www.udemy.com/complete-ios-developer-course/"]]
+
+swift_resources.each do | title, source, difficulty, link |
+  swift = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[16].id, link:link)
+end
+
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")
