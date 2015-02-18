@@ -64,7 +64,7 @@
             <% @resources.each do |resource| %>
                 <div class="resource">
                   <h4>
-                    <%= link_to resource.title, resource.link %>
+                    <%= link_to resource.title, resource.link, target: "_blank" %>
                   </h4>
                   <h5><%= resource.difficulty %> - <%= resource.source %></h5>
                   <% ratings = Rating.where(resource_id:resource.id) %>
