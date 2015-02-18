@@ -419,5 +419,52 @@ ember_resources.each do | title, source, difficulty, link |
   ember = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[20].id, link:link)
 end  
 
+r_resources = [
+  ["An Introduction to R", "Book", "Beginner", "http://cran.r-project.org/doc/manuals/R-intro.pdf"],
+  ["The Art of R Programming", "Book", "Beginner", "http://www.amazon.ca/gp/product/1593273843/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1593273843&linkCode=as2&tag=techether-20"],
+  ["R Cookbook", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0596809158/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0596809158&linkCode=as2&tag=techether-20"],
+  ["Econometrics in R", "Book", "Intermediate", "http://cran.r-project.org/doc/contrib/Farnsworth-EconometricsInR.pdf"],
+  ["Statistics with R", "Book", "Advanced", "http://zoonek2.free.fr/UNIX/48_R/all.html"]]
+
+r_resources.each do | title, source, difficulty, link |
+  r = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[21].id, link:link)
+end
+
+matlab_resources = [
+  ["MATLAB Documentation", "Guide", "Beginner", "http://www.mathworks.com/help/matlab/"],
+  ["MATLAB Cody", "Guide", "Intermediate", "http://www.mathworks.com/matlabcentral/cody"],
+  ["Getting Started with MATLAB", "Book", "Beginner", "http://www.amazon.ca/gp/product/0199731241/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0199731241&linkCode=as2&tag=techether-20"],
+  ["MIT: Introduction to MATLAB Programming", "Course", "Beginner", "http://ocw.mit.edu/courses/mathematics/18-s997-introduction-to-matlab-programming-fall-2011/"],
+  ["MATLAB: An Introduction with Applications", "Book", "Beginner", "http://www.amazon.ca/gp/product/1118629868/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1118629868&linkCode=as2&tag=techether-20"]]
+
+matlab_resources.each do | title, source, difficulty, link |
+  matlab = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[22].id, link:link)
+end
+
+haskell_resources = [
+  ["Learning Haskell", "Guide", "Beginner", "https://github.com/bitemyapp/learnhaskell"],
+  ["Ninety-Nine Haskell Problems", "Guide", "Intermediate", "https://wiki.haskell.org/99_questions"],
+  ["Learn You a Haskell", "Book", "Beginner", "http://www.amazon.ca/gp/product/1593272839/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1593272839&linkCode=as2&tag=techether-20"],
+  ["Try Haskell", "Guide", "Beginner", "http://tryhaskell.org"],
+  ["Haskell: The Craft of Functional Programming", "Book", "http://www.amazon.ca/gp/product/0201882957/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0201882957&linkCode=as2&tag=techether-20"]]
+
+haskell_resources.each do | title, source, difficulty, link |
+  haskell = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[23].id, link:link)
+end
+
+clojure_resources = [
+  ["The Joy of Clojure", "Book", "Beginner", "http://www.amazon.ca/gp/product/1617291412/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1617291412&linkCode=as2&tag=techether-20"],
+  ["Clojure Documentation", "Guide", "Beginner", "http://clojure.org/documentation"],
+  ["4Clojure", "Guide", "Intermediate", "http://www.4clojure.com"],
+  ["Try Clojure", "Guide", "Beginner", "http://www.tryclj.com"],
+  ["Clojure Cookbook", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1449366171/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1449366171&linkCode=as2&tag=techether-20"],
+  ["Clojure for the Brave and True", "Guide", "Beginner", "http://www.braveclojure.com"],
+  ["Programming Clojure", "Book", "Beginner", "http://www.amazon.ca/gp/product/1934356867/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1934356867&linkCode=as2&tag=techether-20"]]
+
+clojure_resources.each do | title, source, difficulty, link |
+  clojure = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[24].id, link:link)
+end
+
+
 
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")
