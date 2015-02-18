@@ -372,4 +372,52 @@ swift_resources.each do | title, source, difficulty, link |
   swift = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[16].id, link:link)
 end
 
+scala_resources = [
+  ["Scala By Example", "Book", "Beginner", "http://www.scala-lang.org/docu/files/ScalaByExample.pdf"],
+  ["Functional Programming Principles in Scala", "Course", "Intermediate", "https://www.coursera.org/course/progfun"],
+  ["Scala Tutorials", "Guide", "Beginner", "http://scalatutorials.com/tour/"],
+  ["Twitter Scala School", "Guide", "Beginner", "http://twitter.github.io/scala_school/"],
+  ["Programming in Scala", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0981531644/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0981531644&linkCode=as2&tag=techether-20"],
+  ["Beginning Scala", "Book", "Beginner", "http://www.amazon.ca/gp/product/1430219890/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1430219890&linkCode=as2&tag=techether-20"]]
+
+scala_resources.each do | title, source, difficulty, link |
+  scala = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[17].id, link:link)
+end
+
+git_resources = [
+  ["Git Community Book", "Book", "Beginner", "http://git-scm.com/book/en/v2"],
+  ["Getting Git", "Guide", "Beginner", "http://www.slideshare.net/chacon/getting-git"],
+  ["A Visual Git Reference", "Guide", "Beginner", "http://marklodato.github.io/visual-git-guide/index-en.html"]]
+
+git_resources.each do | title, source, difficulty, link |
+  git = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[18].id, link:link)
+end
+
+angular_resources = [
+  ["AngularJS Fundamentals in 60 Minutes", "Video", "Beginner", "https://www.youtube.com/watch?v=i9MHigUZKEM"],
+  ["AngularJS: Tutorial", "Guide", "Beginner", "https://docs.angularjs.org/tutorial"],
+  ["How to Learn AngularJS", "Guide", "Beginner", "http://www.ng-newsletter.com/posts/how-to-learn-angular.html"],
+  ["AngularJS - From Beginner to Expert", "Guide" ,"Intermediate", "http://www.ng-newsletter.com/posts/beginner2expert-how_to_start.html"],
+  ["AngularJS Lessons", "Video", "Intermediate", "https://egghead.io/technologies/angularjs"],
+  ["Mastering Web Application Development with AngularJS", "Book", "Advanced" ,"http://www.amazon.ca/gp/product/B00EQ67J30/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00EQ67J30&linkCode=as2&tag=techether-20"],
+  ["The Complete Book on AngularJS", "Book", "Advanced", "http://www.amazon.ca/gp/product/099134460X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=099134460X&linkCode=as2&tag=techether-20"]]
+
+angular_resources.each do | title, source, difficulty, link |
+  angular = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[19].id, link:link)
+end
+
+ember_resources = [
+  ["Ember Core Concepts", "Guide", "Beginner", "http://emberjs.com/guides/concepts/core-concepts/"],
+  ["Embercasts", "Video", "Beginner", "http://www.embercasts.com"],
+  ["Emberwatch", "Video", "Beginners", "http://emberwatch.com/screencasts.html"],
+  ["Ember.js Code Walkthrough", "Guide", "Intermediate", "http://www.lukaszielinski.de/blog/posts/2013/02/23/ember-dot-js-code-walkthrough-video/"],
+  ["Introduction to Ember", "Course", "Beginner", "http://www.tilde.io/events/introduction-to-ember-online/"],
+  ["Ember for Beginners", "Course", "Beginner", "http://code.tutsplus.com/courses/ember-for-beginners"],
+  ["Ember-CLI 101", "Book", "Beginner", "https://leanpub.com/ember-cli-101"]]
+
+ember_resources.each do | title, source, difficulty, link |
+  ember = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[20].id, link:link)
+end  
+
+
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")
