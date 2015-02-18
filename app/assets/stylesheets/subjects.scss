@@ -243,10 +243,12 @@
 }
 
 .subject_stats {
-  margin-top: 5vh;
+  top: 75vh;
+  width: 50vw;
+  position: fixed;
   border-top: 1px solid $gray;
   p {
-    margin-top: 5vh;
+    margin-top: 2vh;
     font-size: 1.3em;
     text-align: center;
   }

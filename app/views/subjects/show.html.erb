@@ -28,16 +28,16 @@
 
     </div>
     </br>
-    <div class="row">
-      <div class="col-md-4 subject_stats">
+    <div class="row subject_stats">
+      <div class="col-md-4">
         <p>Users Learning</p>
         <p class="main_stat"><%= User.where(subject_id: @subject.id).count %></p>
       </div>
-      <div class="col-md-4 subject_stats">
+      <div class="col-md-4">
         <p>Resources</p>
         <p class="main_stat"><%= @resources.count %></p>
       </div>
-      <div class="col-md-4 subject_stats">
+      <div class="col-md-4">
         <p>Average Rating</p>
         <p class="main_stat">
           <% totalSum = 0.0 %>
