@@ -82,9 +82,9 @@ subject_list = [
 	["Clojure", "A dialect of the Lisp programming language with an emphasis on function programming.",
 		"General-Purpose", "Lisp Dialect,Functional,Dynamically-Typed",
     "https://lh5.googleusercontent.com/-CXtzXkFByt0/AAAAAAAAAAI/AAAAAAAAAAY/2MLu0BIONTY/photo.jpg"],
-	["Common Lisp", "A dialect of the Lisp programming language with the support of procedural, functional and object-oriented programming paradigms.",
-		"General-Purpose", "Lisp Dialect,Object-Oriented,Functional,Dynamically-Typed,General-Purpose",
-    "http://fc05.deviantart.net/fs71/i/2010/085/f/6/Common_Lisp_Wallpaper_by_Pocket7878.png"],
+	["Meteor.js", "A complete open source platform for building web and mobile apps in pure JavaScript.",
+		"Frameworks", "Framework,JavaScript,Web Applications,Web-Focused, Single-Page Applcations",
+    "http://alexbachuk.com/wp-content/uploads/2014/05/universe.png"],
 	[".NET", "Software framework developed by Microsoft that runs primarily on Microsoft Windows.",
 		"Frameworks", "Framework,Web Applications,C#,Visual Basic",
     "http://upload.wikimedia.org/wikipedia/de/thumb/5/5b/Microsoft_.NET_Logo.svg/1075px-Microsoft_.NET_Logo.svg.png"],
@@ -100,7 +100,7 @@ subject_list = [
 	["WordPress", "Open-source blogging tool and a content management system (CMS) based on PHP and MySQL.",
 		"Content Management Systems", "Content Management System,PHP,MySQL",
     "https://s.w.org/about/images/logos/wordpress-logo-simplified-rgb.png"],
-	["Joomla", "Open-source content management system (CMS) for publishing web content.",
+	["Joomla!", "Open-source content management system (CMS) for publishing web content.",
 		"Content Management Systems", "Content Management System,PHP",
     "http://www.pixelsparadise.com/joomla_logo.png"],
 	["Drupal", "Open-source content-management framework written in PHP and distributed under the GNU General Public License.",
@@ -464,6 +464,44 @@ clojure_resources = [
 clojure_resources.each do | title, source, difficulty, link |
   clojure = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[24].id, link:link)
 end
+
+meteor_resources = [
+  ["Meteor Documentation", "Guide", "Beginner", "http://docs.meteor.com/#/basic/"],
+  ["Official Meteor Tutorial", "Guide", "Beginner", "https://www.meteor.com/install"],
+  ["The Meteor Manual", "Guide", "Beginner", "http://manual.meteor.com/"],
+  ["The Meteor Cookbook", "Guide", "Intermediate", "https://github.com/awatson1978/meteor-cookbook"],
+  ["Learn Meteor Fundamentals and Best Practices", "Guide", "Beginner", "http://andrewscala.com/meteor/"],
+  ["Writing Your First Meteor Application", "Guide", "Beginner", "http://sebastiandahlgren.se/2013/07/17/tutorial-writing-your-first-metor-application/"],
+  ["Lunch and Hack", "Video", "Intermediate", "https://www.youtube.com/playlist?list=PLT6qiYgD0zz2JWuMkbsOiuvM2plDn536r"],
+  ["Diving into Meteor.JS", "Video", "Beginner", "https://www.youtube.com/watch?v=LPIgeRkyOFs&list=PLWOwgptSFZ6SyW3D4KsuAbDrTWWz0Hqa2"],
+  ["Meteor Explained", "Book", "Advanced", "https://gumroad.com/l/meteor-explained"],
+  ["Discover Meteor", "Book", "Beginner", "https://www.discovermeteor.com/yauh"]]
+
+meteor_resources.each do | title, source, difficulty, link |
+  meteor = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[25].id, link:link)
+end
+
+net_resources = [
+  ["Microsoft .NET Documentation", "Guide", "Beginner", "http://www.microsoft.com/net"],
+  ["Microsoft API and Reference", "Guide", "Beginner", "https://msdn.microsoft.com/en-us/library/ms123401.aspx"],
+  [".NET Basics Tutorial", "Video", "Beginner", "https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1"]]
+
+net_resources.each do | title, source, difficulty, link |
+  net = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[26].id, link:link)
+end
+
+bash_resources = [
+  ["The Linux Documentation Project Advanced Bash Scripting", "Guide", "Intermediate", "http://www.tldp.org/LDP/abs/html/"],
+  ["Learning the bash Shell: Unix Programming", "Book", "Beginner", "http://www.amazon.ca/gp/product/B0043GXMSY/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B0043GXMSY&linkCode=as2&tag=techether-20"],
+  ["Linux Shell Scripting Tutorial", "Guide", "Beginner", "http://froghs.net/"],
+  ["CommandLineFu: All Commands", "Guide", "Intermediate", "http://www.commandlinefu.com/commands/browse"],
+  ["Shell Scripting Tutorials", "Video", "Beginner", "https://www.youtube.com/watch?v=nVt3Rst-2H8&list=PL7B7FA4E693D8E790"],
+  ["A Practical Guide to Linux Commands, Editors and Shell Programming", "Book", "Beginner", "http://www.amazon.ca/gp/product/013308504X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=013308504X&linkCode=as2&tag=techether-20"]]
+
+bash_resources.each do | title, source, difficulty, link |
+  bash = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[27].id, link:link)
+end
+
 
 
 
