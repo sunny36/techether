@@ -502,6 +502,28 @@ bash_resources.each do | title, source, difficulty, link |
   bash = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[27].id, link:link)
 end
 
+fsharp_resources = [
+    ["Try F#", "Guide", "Beginner", "http://www.tryfsharp.org/Learn"],
+    ["F# Cheatsheet", "Guide", "Beginner", "http://dungpa.github.io/fsharp-cheatsheet/"],
+    ["F# for Fun and Profit", "Guide", "Beginner", "http://fsharpforfunandprofit.com/"],
+    ["Building Web, Cloud, and Mobile Solutions with F#", "Book", "Intermediate", "http://www.amazon.ca/gp/product/B00AANFL60/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00AANFL60&linkCode=as2&tag=techether-20"],
+    ["Beginning F#", "Book", "Beginner", "http://www.amazon.ca/gp/product/1430223898/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1430223898&linkCode=as2&tag=techether-20"],
+    ["F# for Scientists", "Book", "Advanced", "http://www.amazon.ca/gp/product/B005PS97RO/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B005PS97RO&linkCode=as2&tag=techether-20"]]
+
+fsharp_resources.each do | title, source, difficulty, link |
+  fsharp = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[28].id, link:link)
+end
+
+nosql_resources = [
+    ["NoSQL Distilled: A Brief Guide to the Emerging World of Polygot Persistence", "Book", "Beginner", "http://www.amazon.ca/gp/product/0321826620/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321826620&linkCode=as2&tag=techether-20"],
+    ["Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement", "Book", "Beginner", "http://www.amazon.ca/gp/product/1934356921/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1934356921&linkCode=as2&tag=techether-20"],
+    ["NoSQL Databases", "Book", "Beginner", "http://www.christof-strauch.de/nosqldbs.pdf"],
+    ["The Little MongoDB Book", "Book", "Intermediate", "http://openmymind.net/mongodb.pdf"],
+    ["The Little Redis Book", "Book", "Intermediate", "http://openmymind.net/redis.pdf"]]
+
+nosql_resources.each do | title, source, difficulty, link |
+  nosql = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[29].id, link:link)
+end
 
 
 
