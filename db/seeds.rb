@@ -525,6 +525,101 @@ nosql_resources.each do | title, source, difficulty, link |
   nosql = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[29].id, link:link)
 end
 
+wordpress_resources = [
+  ["WordPress Codex", "Guide", "Beginner", "http://codex.wordpress.org/"],
+  ["Beginner's Guide for WordPress", "Guide", "Beginner", "http://www.wpbeginner.com/category/wp-tutorials/"],
+  ["How to Create a WordPress Theme", "Guide", "Beginner", "http://themeshaper.com/2009/06/22/wordpress-themes-templates-tutorial/"],
+  ["Create WordPress Theme from Scratch", "Video", "Beginner", "https://www.youtube.com/watch?v=uwecNcdAUaY&feature=player_embedded"],
+  ["Smashing WordPress Themes: Making WordPress Beautiful", "Book", "Intermediate", "http://www.amazon.ca/gp/product/047066990X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=047066990X&linkCode=as2&tag=techether-20"],
+  ["Digging into WordPress", "Book", "Beginner", "http://digwp.com/book/"],
+  ["Build Your Own Wicked WordPress Themes", "Book", "Beginner", "http://www.amazon.ca/gp/product/0980455294/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0980455294&linkCode=as2&tag=techether-20"],
+  ["Web Designer's Guide to WordPress", "Book", "Beginner", "https://associates.amazon.ca/gp/associates/network/build-links/individual/get-html.html?ie=UTF8&asin=B008TW1HMG&marketplace=amazon&quicklinks=1&subflow=sp_"]]
 
+wordpress_resources.each do | title, source, difficulty, link |
+  wordpress = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[30].id, link:link)
+end
+
+joomla_resources = [
+  ["Joomla!: Component Development", "Guide", "Beginner", "https://docs.joomla.org/Portal:Component_Development"],
+  ["Joomla!: Developing a MVC Component", "Guide", "Beginner", "https://docs.joomla.org/J3.x:Developing_a_MVC_Component/Developing_a_Basic_Component"],
+  ["Joomla! Explained: Your Step-by-Step Guide", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0321943228/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321943228&linkCode=as2&tag=techether-20"],
+  ["Joomla! 3: Beginner's Guide", "Book", "Beginner", "http://www.amazon.ca/gp/product/B00M0G81AI/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00M0G81AI&linkCode=as2&tag=techether-20"]]
+
+joomla_resources.each do | title, source, difficulty, link |
+  joomla = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[31].id, link:link)
+end
+
+drupal_resources = [
+  ["Drupal Training", "Guide", "Beginner", "http://buildamodule.com/"],
+  ["Drupal Training Tutorials", "Video", "Beginner", "http://www.lynda.com/Drupal-training-tutorials/186-0.html?lpk0=413"],
+  ["Premium Drupal Video Training", "Video", "Intermediate", "http://www.lynda.com/Drupal-training-tutorials/186-0.html?lpk0=413"],
+  ["Drupal Documentation", "Guide", "Beginner", "https://www.drupal.org/"],
+  ["Drupal Gardens", "Guide", "Beginner", "https://www.drupalgardens.com/"],
+  ["How to Build a Website with Drupal", "Guide", "Beginner", "http://websitesetup.org/build-website-drupal/"]]
+
+drupal_resources.each do | title, source, difficulty, link |
+  drupal = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[32].id, link:link)
+end  
+
+vb_resources = [
+  ["Excel VBA: Information, Tutorials, Examples & Resources", "Guide", "Beginner", "http://chandoo.org/wp/excel-vba/"],
+  ["Microsoft Visual Basic Tutorial", "Guide", "Beginner", "http://learningcomputer.com/visualbasic/visualbasic.html"],
+  ["Excel VBA Programming for Dummies", "Book", "Beginner", "http://www.amazon.ca/gp/product/1118490371/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1118490371&linkCode=as2&tag=techether-20"],
+  ["Excel 2013 Power Programming with VBA", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1118490398/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1118490398&linkCode=as2&tag=techether-20"]]
+
+vb_resources.each do | title, source, difficulty, link |
+  vb = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[33].id, link:link)
+end
+
+perl_resources = [
+  ["Perl Tutorial Hub", "Guide", "Beginner", "http://perl-tutorial.org/"],
+  ["Perl Documentation", "Guide", "Beginner", "http://perldoc.perl.org/"],
+  ["Learning Perl", "Book", "Beginner", "http://www.amazon.ca/gp/product/1449303587/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1449303587&linkCode=as2&tag=techether-20"],
+  ["Programming Perl", "Book", "Beginner", "http://www.amazon.ca/gp/product/0596004923/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0596004923&linkCode=as2&tag=techether-20"],
+  ["Perl Cookbook", "Book", "Intermediate", "http://www.amazon.ca/gp/product/0596003137/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0596003137&linkCode=as2&tag=techether-20"],
+  ["Intermediate Perl", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1449393098/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1449393098&linkCode=as2&tag=techether-20"]]
+
+perl_resources.each do | title, source, difficulty, link |
+  perl = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[34].id, link:link)
+end 
+
+assembly_resources = [
+  ["PC Assembly Tutorial", "Guide", "Beginner", "http://www.drpaulcarter.com/pcasm/"],
+  ["Learn Assembly Language from Scratch", "Video", "Beginner", "http://www.xorpd.net/pages/x86_adventures.html"],
+  ["Xchg Rax, Rax", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1502958082/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1502958082&linkCode=as2&tag=techether-20"]]
+
+assembly_resources.each do | title, source, difficulty, link |
+  assembly = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[35].id, link:link)
+end
+
+grails_resources = [
+  ["Getting Started with Grails", "Book", "Beginner", "http://www.infoq.com/minibooks/grails-getting-started"],
+  ["Grails Tutorials", "Guide", "Beginner", "https://grails.org/tutorials"],
+  ["The Definitive Guide to Grails", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1430243775/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1430243775&linkCode=as2&tag=techether-20"],
+  ["Grails 2: A Quick Start Guide", "Book", "Beginner", "http://www.amazon.ca/gp/product/1937785777/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1937785777&linkCode=as2&tag=techether-20"],
+  ["Grails in Action", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1617290963/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1617290963&linkCode=as2&tag=techether-20"]]
+
+grails_resources.each do | title, source, difficulty, link |
+  grails = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[36].id, link:link)
+end
+
+groovy_resources = [
+  ["Groovy in Action", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1935182447/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1935182447&linkCode=as2&tag=techether-20"],
+  ["Making Java Groovy", "Book", "Beginner", "http://www.amazon.ca/gp/product/1935182943/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1935182943&linkCode=as2&tag=techether-20"],
+  ["Programming Groovy 2", "Book", "Beginner", "http://www.amazon.ca/gp/product/B00I9GR4UG/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B00I9GR4UG&linkCode=as2&tag=techether-20"],
+  ["Groovy Documentation", "Guide", "Beginner", "http://groovy.codehaus.org/Documentation"]]
+
+groovy_resources.each do | title, source, difficulty, link |
+  groovy = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[37].id, link:link)
+end
+
+xml_resources = [
+  ["XML Documentation", "Guide", "Beginner", "http://www.xml.com/pub/a/2000/11/29/schemas/part1.html?page=8"],
+  ["W3Schools XML", "Guide", "Beginner", "http://www.w3schools.com/xml/xml_dtd.asp"],
+  ["Java and XML", "Book", "Intermediate", "http://www.amazon.ca/gp/product/059610149X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=059610149X&linkCode=as2&tag=techether-20"]]
+
+xml_resources.each do | title, source, difficulty, link |
+  xml = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[38].id, link:link)
+end
 
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")
