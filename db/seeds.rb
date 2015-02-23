@@ -622,4 +622,137 @@ xml_resources.each do | title, source, difficulty, link |
   xml = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[38].id, link:link)
 end
 
+sinatra_resources = [
+  ["Sinatra Documentation", "Guide", "Beginner", "http://www.sinatrarb.com/"],
+  ["Singing with Sinatra", "Guide", "Beginner", "http://code.tutsplus.com/tutorials/singing-with-sinatra--net-18965"],
+  ["Just Do It: Learn Sinatra", "Guide", "Intermediate", "http://www.sitepoint.com/just-do-it-learn-sinatra-i/"]]
+
+sinatra_resources.each do | title, source, difficulty, link |
+  sinatra = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[39].id, link:link)
+end
+
+sass_resources = [
+  ["Sass Documentation", "Guide", "Beginner", "http://sass-lang.com/guide"],
+  ["Theme SASSification", "Video", "Beginner", "http://wordpress.tv/2014/06/23/rona-kilmer-theme-sassification/"],
+  ["Sass for Web Designers", "Book", "Intermediate", "http://www.abookapart.com/products/sass-for-web-designers"],
+  ["CSS with LESS and SASS", "Course", "Intermediate", "http://www.lynda.com/CSS-tutorials/CSS-LESS-SASS/107921-2.html"]]
+
+sass_resources.each do | title, source, difficulty, link |
+  sass = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[40].id, link:link)
+end
+
+coffee_resources = [
+  ["CoffeeScript: Accelerated JavaScript Development", "Book", "Beginner" ,"http://www.amazon.ca/gp/product/1941222269/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1941222269&linkCode=as2&tag=techether-20"],
+  ["A Sip of CoffeeScript", "Course", "Beginner", "http://coffeescript.codeschool.com/"],
+  ["The Little Book on CoffeeScript", "Book", "Beginner", "http://arcturo.github.io/library/coffeescript/01_introduction.html"],
+  ["Learn X in Y Minutes", "Guide", "Intermediate", "http://learnxinyminutes.com/docs/coffeescript/"],
+  ["CoffeeScript Documentation", "Guide", "Beginner", "http://coffeescript.org/"]]
+
+coffee_resources.each do | title, source, difficulty, link |
+  coffee = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[41].id, link:link)
+end
+
+jquery_resources = [
+  ["Codecademy: jQuery", "Course", "Beginner", "http://www.codecademy.com/tracks/jquery"],
+  ["Try jQuery", "Course", "Beginner", "https://www.codeschool.com/courses/try-jquery"],
+  ["A Guide to the Basics of jQuery", "Guide", "Beginner", "http://jqfundamentals.com/"],
+  ["jQuery Documentation", "Guide", "Intermediate", "http://learn.jquery.com/"],
+  ["30 Days to Learn jQuery", "Course", "Intermediate", "http://code.tutsplus.com/courses/30-days-to-learn-jquery"],
+  ["jQuery Tutorial", "Guide", "Beginner", "http://www.w3schools.com/jquery/default.asp"]]
+
+jquery_resources.each do | title, source, difficulty, link |
+  jquery = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[42].id, link:link)
+end
+
+backbone_resources = [
+  ["Backbone Documentation", "Guide", "Beginner" ,"http://documentcloud.github.io/backbone/"],
+  ["Backbone Patterns", "Guide", "Beginner", "http://ricostacruz.com/backbone-patterns/"],
+  ["Anatomy of Backbone.js", "Course", "Beginner", "https://www.codeschool.com/courses/anatomy-of-backbone-js"],
+  ["Backbone Fundamentals", "Book", "Beginner", "https://github.com/addyosmani/backbone-fundamentals/"],
+  ["Full Stack Web Development with Backbone.js", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1449370985/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1449370985&linkCode=as2&tag=techether-20"],
+  ["Recipes with Backbone", "Book", "Intermediate", "http://recipeswithbackbone.com/"],
+  ["Single Page Web Apps with Backbone.js", "Guide", "Intermediate", "http://blog.sendhub.com/post/19349219519/single-page-web-apps-with-backbone-js"]]
+
+backbone_resources.each do | title, source, difficulty, link |
+  backbone = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[43].id, link:link)
+end  
+
+ajax_resources = [
+  ["Bulletproof AJAX", "Book", "Beginner", "http://www.amazon.ca/gp/product/0321472667/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321472667&linkCode=as2&tag=techether-20"],
+  ["Ajax and PHP, Building Responsive Web Applications", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1904811825/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1904811825&linkCode=as2&tag=techether-20"],
+  ["jQuery: Ajax Documentation", "Guide", "Beginner", "http://api.jquery.com/category/ajax/"],
+  ["Ajax: Getting Started", "Guide", "Beginner", "https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started"]]
+
+ajax_resources.each do | title, source, difficulty, link |
+  ajax = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[44].id, link:link)
+end
+
+dart_resources = [
+  ["Dart Documentation", "Guide", "Beginner", "https://www.dartlang.org/"],
+  ["Writing Dart Applications", "Book", "Beginner", "https://wiki.eclipse.org/images/e/e1/Daniel_Rubel_-_Writing_Dart_Applications.pdf"],
+  ["Learn Dart with these Videos", "Video", "Beginner", "http://googledevelopers.blogspot.in/2013/04/learn-dart-language-and-libraries-with.html"],
+  ["Seth Ladd's Blog", "Guide", "Intermediate", "http://blog.sethladd.com/"],
+  ["Dart for Hipsters", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1937785033/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1937785033&linkCode=as2&tag=techether-20"],
+  ["Dart: A Structured Web Programming Language", "Video", "Beginner", "http://www.infoq.com/presentations/Dart"]]
+
+dart_resources.each do | title, source, difficulty, link |
+  dart = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[45].id, link:link)
+end  
+
+go_resources = [
+  ["Go Documentation", "Guide", "Beginner", "http://golang.org/doc/"],
+  ["A Tour of Go", "Guide", "Beginner", "http://tour.golang.org/welcome/1"],
+  ["How to Write Go Code", "Guide", "Beginner", "http://golang.org/doc/code.html"],
+  ["Effective Go", "Guide", "Intermediate", "http://golang.org/doc/effective_go.html"],
+  ["Go Bootcamp", "Book", "Beginner", "http://www.golangbootcamp.com/book"],
+  ["An Introduction to Programming in Go", "Book", "Beginner", "http://www.golang-book.com/"],
+  ["Build Web Application with Golang", "Book", "Intermediate", "https://github.com/astaxie/build-web-application-with-golang/tree/master/en"]]
+
+go_resources.each do | title, source, difficulty, link |
+  go = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[46].id, link:link)
+end
+
+erlang_resources = [
+  ["Learn You Some Erlang for Great Good!: A Beginner's Guide", "Book", "Beginner", "http://www.amazon.ca/gp/product/1593274351/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1593274351&linkCode=as2&tag=techether-20"],
+  ["Programming Erlang: Software for a Concurrent World", "Book", "Beginner", "http://www.amazon.ca/gp/product/193435600X/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=193435600X&linkCode=as2&tag=techether-20"],
+  ["Erldocs", "Guide", "Intermediate", "http://erldocs.com/"]]
+
+erlang_resources.each do | title, source, difficulty, link |
+  erlang = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[47].id, link:link)
+end 
+
+fortran_resources = [
+  ["High Performance Scientific Computing", "Course", "Intermediate", "https://www.coursera.org/course/scicomp"],
+  ["Fortran: Lessons", "Course", "Beginner", "http://math.hawaii.edu/wordpress/fortran-1/"],
+  ["Fortran Tutorial", "Guide", "Beginner", "http://www.fortrantutorial.com/basics/index.php"],
+  ["Fortran Tutorial", "Guide", "Intermediate", "http://folk.uio.no/hpl/scripting/doc/f77/tutorial/"]]
+
+fortran_resources.each do | title, source, difficulty, link |
+  fortran = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[48].id, link:link)
+end  
+
+latex_resources = [
+  ["The Not so Short Introduction to Latex", "Book", "Beginner", "http://ctan.mirror.rafal.ca/info/lshort/english/lshort.pdf"],
+  ["Practical Latex for Public Health and Medicine", "Book", "Intermediate" "http://www1.maths.leeds.ac.uk/LaTeX/epitex.pdf"],
+  ["Getting Started with Latex", "Book", "Beginner", "http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/"],
+  ["Getting to Grips with Latex", "Guide", "Beginner", "http://www.andy-roberts.net/writing/latex"]]
+
+latex_resources.each do | title, source, difficulty, link |
+  latex = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[49].id, link:link)
+end  
+
+node_resources = [
+  ["Learn Node.js in a Week", "Course", "Beginner", "https://ilovecoding.org/courses/learn-node-js-in-a-week/"],
+  ["Node Tuts", "Video", "Beginner", "http://nodetuts.com/"],
+  ["Learn all the Nodes", "Video", "Intermediate", "http://www.learnallthenodes.com/"],
+  ["Nodeschool Interactive Lessons", "Course", "Beginner", "http://nodeschool.io/"],
+  ["The Node Beginner Book", "Book", "Beginner", "http://www.nodebeginner.org/"],
+  ["Node: Up and Running", "Book", "Intermediate", "http://www.amazon.ca/gp/product/1449398588/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1449398588&linkCode=as2&tag=techether-20"],
+  ["Sams Teach Yourself Node.js in 24 Hours", "Book", "Beginner", "http://www.amazon.ca/gp/product/0672335956/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0672335956&linkCode=as2&tag=techether-20"]]
+
+node_resources.each do | title, source, difficulty, link |
+  node = Resource.create(title:title, source:source, difficulty:difficulty, subject_id:subjects[50].id, link:link)
+end   
+
+
 User.create(name:"Example User", email:"example@email.com", password:"examplepass")
