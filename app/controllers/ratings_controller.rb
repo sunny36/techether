@@ -7,10 +7,12 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(rating_params)
-    @rating.resource = Resource.find(params[:rating][:resource])
+    resource = Resource.find(params[:rating][:resource])
+    @rating.resource = resource
+    @rating.user = current_user
     if @rating.save
       flash[:success] = "Thanks for rating!"
-      redirect_to subject_url(current_user.subject)
+      redirect_to subject_url(resource.subject)
     else
       flash[:danger] = "Failed to submit rating"
       redirect_to new_rating_url

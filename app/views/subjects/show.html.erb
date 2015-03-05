@@ -52,7 +52,7 @@
             <% end %>
           <% end %>
           <% nan = totalSum / count %>
-          <%= (nan.is_a?(Float) && nan.nan?) ? 0 : nan %>
+          <%= (nan.is_a?(Float) && nan.nan?) ? 0 : nan.round(2) %>
         </p>
       </div>
     </div>
@@ -73,12 +73,10 @@
                       <% sum += rating.value %>
                   <% end %>
                   <% if ratings.present? %>
-                      <p><%= sum / ratings.count %></p>
+                      <p><%= (sum / ratings.count).round(2) %></p>
                   <% end %>
-                  <% if user_signed_in? %>
-                    <% if current_user.subject == @subject %>
+                  <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
                       <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
-                    <% end %>
                   <% end %>  
                 </div>
             <% end %>

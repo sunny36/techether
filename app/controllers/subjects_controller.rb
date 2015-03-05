@@ -35,12 +35,11 @@ class SubjectsController < ApplicationController
     if categories.present?
       @sortedCategories = Subject.sort(categories)
     end
-
   end
 
   def show
     @subject = Subject.find(params[:id])
-    @resources = Resource.where(subject_id: @subject.id)
+    @resources = Resource.sort(Resource.where(subject_id: @subject.id).to_a)
   end
 
   def add
