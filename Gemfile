@@ -27,6 +27,5 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor', '0.0.2'
   gem 'mysql2'
-  gem 'capistrano', '~> 3.3.0'
 end
 
