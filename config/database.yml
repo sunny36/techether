@@ -27,4 +27,4 @@ production:
   pool: 5
   username: root
   password: Submarine7
-  host: 104.131.113.189
+  host: localhost

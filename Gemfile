@@ -9,7 +9,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
 gem 'font-awesome-sass'
-gem 'mysql2'
 
 group :development, :test do
   gem 'byebug'
@@ -27,5 +26,6 @@ end
 group :production do
   gem 'unicorn'
   gem 'rails_12factor', '0.0.2'
+  gem 'mysql2'
 end
 
