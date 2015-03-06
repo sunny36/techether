@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/models/subject.rb" line="29" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="311340cb-cc32-4fd7-931c-4313424212b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-    </list>
+    <list default="true" id="311340cb-cc32-4fd7-931c-4313424212b4" name="Default" comment="" />
     <ignored path="educate_me.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/tmp/" />
