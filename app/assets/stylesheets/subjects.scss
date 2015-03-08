@@ -197,11 +197,10 @@
 }
 
 .right_subject {
-  height: calc(100vh - 100px);
-  top: 100px;
+  height: 100vh;
   overflow-y: scroll;
   h1 {
-    margin-top: 0px;
+    margin-top: 100px;
   }
 }
 
