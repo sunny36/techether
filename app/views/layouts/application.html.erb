@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="We help you find the best learning material for all programming languages and frameworks.
   Sign up and contribute to the vast database of technology learning resources!">
+  <meta name="keywords" content="<% Subject.all.each do | subject | %><%= subject.name %> <% end %>">
+  <meta name="author" content="Anthony Bobsin">
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
