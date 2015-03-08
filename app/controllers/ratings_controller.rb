@@ -2,7 +2,8 @@ class RatingsController < ApplicationController
 
   def new
     @rating = Rating.new
-    @resource = params[:resource_id]
+    @resource = Resource.find(params[:resource_id])
+    @resource_id = params[:resource_id]
   end
 
   def create
