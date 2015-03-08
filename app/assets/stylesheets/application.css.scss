@@ -48,6 +48,14 @@ p, li, label {
   font-weight: 400;
 }
 
+.paragraphfont {
+  font-family: $paragraph;
+}
+
+.headfont {
+  font-family: $head;
+}
+
 a {
   color: $orange;
   &:hover {
@@ -65,27 +73,38 @@ a {
 	position: fixed;
 	border: none;
 	border-radius: 0;
-	background-color: rgba(1, 1, 1, 0.9);
+	//background-color: rgba(1, 1, 1, 0.9);
+    background-color: rgba(1, 1, 1, 0.1);
+    border-bottom: 1px solid $gray;
 	margin-bottom: 0;
+    .navbar-right li a {
+      color: $dark-gray;
+      &:hover {
+        color: white;
+      }
+    }
 	.navbar-brand {
 		font-size: 20px;
         font-family: $head;
         font-weight: 700;
 		letter-spacing: 1.3px;
-        color: $orange;
+        color: $dark-orange;
         &:hover {
-          color: $dark-orange;
+          color: $orange;
         }
 	}
 	.dropdown-menu {
-		background-color: rgba(1, 1, 1, 0.9);
+		background-color: rgba(1, 1, 1, 0.1);
 		li a {
-			color: $gray;
+			color: $dark-gray;
 			font-weight: 200;
 			&:hover {
 				background-color: inherit;
 				color: white;
 			}
+            &:focus {
+              background-color: white;
+            }
 		}
 	}
 }
