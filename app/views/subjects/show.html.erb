@@ -145,7 +145,7 @@
                   <% sum += rating.value %>
               <% end %>
               <% if ratings.present? %>
-                  <p><%= (sum / ratings.count).round(2) %></p>
+                  <p>Current Rating - <%= (sum / ratings.count).round(2) %></p>
               <% end %>
               <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
                   <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
