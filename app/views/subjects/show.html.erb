@@ -1,14 +1,14 @@
 <% provide(:title, @subject.name) %>
 <div class="row">
-  <div class="col-md-6 col-sm-6 left_subject hidden-xs">
+  <div class="col-md-6 col-sm-6 col-lg-6 left_subject hidden-xs">
     <div class="row">
-      <div class="col-md-6 col-sm-6 hidden-xs">
+      <div class="col-md-6 col-sm-6 col-lg-6 hidden-xs">
         <img src="<%= @subject.image %>" alt="" class="subject_image"/>
       </div>
-      <div class="col-md-6 col-sm-6 subject_details">
+      <div class="col-md-6 col-sm-6 col-lg-6 subject_details">
         <h1 class="subject_title"><%= @subject.name %></h1>
         <div class="row">
-          <div class="col-md-12 col-sm-12">
+          <div class="col-md-12 col-sm-12 col-lg-12">
             <p class="subject_description"><%= @subject.description %></p>
           </div>
         </div>
@@ -18,7 +18,7 @@
             <% end %>
         </div>
         <div class="row">
-            <div class="col-md-12 col-sm-12">
+            <div class="col-md-12 col-sm-12 col-lg-12">
                 <div class="subject_button">
                     <% if user_signed_in? %>
                         <% if current_user.subject == @subject %>
@@ -35,16 +35,16 @@
       </div>
     </div>
     </br>
-    <div class="row hidden-xs subject_stats">
-      <div class="col-md-4 col-sm-4">
+    <div class="row hidden-xs col-md-12 col-sm-12 col-lg-12 subject_stats">
+      <div class="col-md-4 col-sm-4 col-lg-4">
         <p>Users Learning</p>
         <p class="main_stat"><%= User.where(subject_id: @subject.id).count %></p>
       </div>
-      <div class="col-md-4 col-sm-4">
+      <div class="col-md-4 col-sm-4 col-lg-4">
         <p>Resources</p>
         <p class="main_stat"><%= @resources.count %></p>
       </div>
-      <div class="col-md-4 col-sm-4">
+      <div class="col-md-4 col-sm-4 col-lg-4">
         <p>Average Rating</p>
         <p class="main_stat">
           <% totalSum = 0.0 %>
@@ -64,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div class="hidden-sm hidden-md col-xs-12 headspace subject_details">
+  <div class="hidden-sm hidden-md col-xs-12 hidden-lg headspace subject_details">
     <h1 class="subject_title"><%= @subject.name %></h1>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
@@ -92,7 +92,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 col-sm-6 hidden-xs right_subject">
+  <div class="col-md-6 col-sm-6 col-lg-5 hidden-xs right_subject">
     <div>
       <h1>Resources</h1>
         <% if @resources.present? %>
@@ -130,7 +130,7 @@
         <% end %>
     </div>
   </div>
-  <div class="hidden-md hidden-sm col-xs-12">
+  <div class="hidden-md hidden-sm hidden-lg col-xs-12">
     <h1>Resources</h1>
     <% if @resources.present? %>
         <% @resources.each do |resource| %>
