@@ -50,4 +50,8 @@ class Subject < ActiveRecord::Base
     order("id")
   end
 
+  def self.sort_name
+    order('lower(name)')
+  end
+
 end

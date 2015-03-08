@@ -6,4 +6,7 @@
   <data-source name="Rails educate_me: test" uuid="76085d7a-395c-44be-a486-88992b330390">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source name="Rails educate_me: production" uuid="e3519539-1bc9-46d3-8042-adf3dc50aa54">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
