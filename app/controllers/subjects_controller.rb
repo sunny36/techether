@@ -46,7 +46,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
     current_user.subject = @subject
     if current_user.save
-      flash[:success] = "Successfully added subject."
+      flash[:success] = "You are now learning #{@subject.name}"
       redirect_to @subject
     else
       flash[:danger] = "Failed to add subject."
