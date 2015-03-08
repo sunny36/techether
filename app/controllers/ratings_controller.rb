@@ -10,13 +10,19 @@ class RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
     resource = Resource.find(params[:rating][:resource])
     @rating.resource = resource
-    @rating.user = current_user
-    if @rating.save
-      flash[:success] = "Thanks for rating!"
+    user_rating = Rating.where("user_id LIKE ? and resource_id LIKE ?", current_user.id, resource)
+    if !user_rating.empty?
+      flash[:danger] = "You already rated this resource"
       redirect_to subject_url(resource.subject)
     else
-      flash[:danger] = "Failed to submit rating"
-      redirect_to new_rating_url
+      @rating.user = current_user
+      if @rating.save
+        flash[:success] = "Thanks for rating!"
+        redirect_to subject_url(resource.subject)
+      else
+        flash[:danger] = "Failed to submit rating"
+        redirect_to new_rating_url
+      end
     end
   end
 
