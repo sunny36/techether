@@ -215,7 +215,12 @@
   margin-top: 80px;
   margin-bottom: 15px;
   .subject_description {
-    font-size: 1.5em;
+    @media (min-width: 767px) {
+      font-size: 1.5vw;
+    }
+    @media (max-width: 766px) {
+      font-size: 1.5em;
+    }
     text-align: left;
   }
 
