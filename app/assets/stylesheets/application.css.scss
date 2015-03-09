@@ -73,8 +73,12 @@ a {
 	position: fixed;
 	border: none;
 	border-radius: 0;
-	//background-color: rgba(1, 1, 1, 0.9);
-    background-color: rgba(1, 1, 1, 0.1);
+    @media (max-width: 775px) {
+      background-color: rgba(1,1,1,0.9);
+    }
+    @media (min-width: 776px) {
+      background-color: rgba(1, 1, 1, 0.1);
+    }
     border-bottom: 1px solid $gray;
 	margin-bottom: 0;
     .navbar-right li a {
@@ -94,7 +98,12 @@ a {
         }
 	}
 	.dropdown-menu {
-		background-color: rgba(1, 1, 1, 0.1);
+        @media (max-width: 775px) {
+          background-color: rgba(1,1,1,0.9);
+        }
+        @media (min-width: 776px) {
+          background-color: rgba(1, 1, 1, 0.1);
+        }
 		li a {
 			color: $dark-gray;
 			font-weight: 200;
