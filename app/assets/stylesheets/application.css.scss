@@ -82,7 +82,13 @@ a {
     border-bottom: 1px solid $gray;
 	margin-bottom: 0;
     .navbar-right li a {
-      color: $dark-gray;
+      @media (max-width: 775px) {
+        color: $gray;
+      }
+      @media (min-width: 776px) {
+        color: $dark-gray;
+      }
+
       &:hover {
         color: white;
       }
@@ -105,7 +111,12 @@ a {
           background-color: rgba(1, 1, 1, 0.1);
         }
 		li a {
-			color: $dark-gray;
+            @media (max-width: 775px) {
+              color: $gray;
+            }
+            @media (min-width: 776px) {
+              color: $dark-gray;
+            }
 			font-weight: 400;
 			&:hover {
 				background-color: inherit;
