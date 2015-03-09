@@ -7,9 +7,11 @@ $(window).resize(function () {
     SetScrollableDivHeight($("#mainfooter"));
 });
 function SetScrollableDivHeight(div) {
-    var top = div.position().top;
-    var windowH = $(document).height();
-    var remaining = windowH - top;
+    if (div.length) {
+        var top = div.position().top;
+        var windowH = $(document).height();
+        var remaining = windowH - top;
 
-    div.height(remaining - 25);
+        div.height(remaining - 25);
+    }
 }
