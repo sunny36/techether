@@ -10,6 +10,7 @@ gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
 gem 'font-awesome-sass'
 gem 'faker'
+gem 'dynamic_sitemaps'
 
 group :development, :test do
   gem 'byebug'
