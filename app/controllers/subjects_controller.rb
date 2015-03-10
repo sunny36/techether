@@ -1,9 +1,12 @@
 class SubjectsController < ApplicationController
 
+  # Main subject results page
   def index
+    # If user has a search query
     if params[:search].present?
       @search = params[:search]
-      allSubjects = Subject.all.search(@search)
+      @allSubjects = Subject.all.search(@search)
+      # If user selected a filter from sidebar
       if params[:filter].present?
         @filter = params[:filter]
         @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_name
@@ -11,7 +14,8 @@ class SubjectsController < ApplicationController
         @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_name
       end
     else
-      allSubjects = Subject.all
+      # No search query
+      @allSubjects = Subject.all
       if params[:filter].present?
         @filter = params[:filter]
         @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_name
@@ -21,9 +25,9 @@ class SubjectsController < ApplicationController
     end
 
     categories = []
-    # Get all unique categories from results and put in categories
-    if allSubjects.present?
-      allSubjects.each do | subject |
+    # From all subject results, get categories relevant
+    if @allSubjects.present?
+      @allSubjects.each do | subject |
         tempCategories = subject.category.split(',')
         tempCategories.each do | category |
           if !categories.include?(category)
@@ -32,6 +36,7 @@ class SubjectsController < ApplicationController
         end
       end
     end
+    # Sort categories by predefined order
     if categories.present?
       @sortedCategories = Subject.sort(categories)
     end
