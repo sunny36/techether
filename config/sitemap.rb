@@ -37,4 +37,4 @@ sitemap_for Subject.all
 
 # Ping search engines after sitemap generation:
 #
-ping_with "http://#{host}/sitemap.xml"
+ping_with "http://#{host}/sitemaps/sitemap.xml"
