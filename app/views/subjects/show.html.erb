@@ -23,7 +23,7 @@
                 <div class="subject_button">
                     <% if user_signed_in? %>
                         <% if current_user.subject == @subject %>
-                            <%= link_to "Add a resource", new_resource_path, class:"subject_butt" %>
+                            <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt" %>
                         <% else %>
                             <%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"subject_butt" %>
                         <% end %>
@@ -91,17 +91,12 @@
             <% end %>
         <% else %>
             <h3>Unfortunately, we have no resources for this subject</h3>
-              <% if user_signed_in? %>
-                  <% if current_user.subject == @subject %>
-                      <%= link_to "Add a resource", new_resource_path, class:"links subject_butt" %>
-                  <% else %>
-                      <%= link_to "Start learning #{@subject.name} to add a resource", add_subject_path(@subject), method: :post, class:"links subject_butt" %>
-                  <% end %>
-              <% else %>
-                <%= link_to "Log in to learn #{@subject.name} and add a resource", new_user_session_path, class:"links subject_butt" %>
-              <% end %>
-
         <% end %>
+      <div class="subject_button">
+        <% if user_signed_in? %>
+            <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt botspace" %>
+        <% end %>
+      </div>
     </div>
   </div>
  </div>

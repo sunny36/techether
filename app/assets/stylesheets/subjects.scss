@@ -228,29 +228,27 @@
     }
     text-align: left;
   }
-
-  .subject_button {
-    //width: 22vw;
-    font-weight: 400;
-    height: 51px;
-    border-radius: 5px;
-    border: 1px solid $gray;
-    &:hover {
-      background-color: $gray-white;
-      color: $dark-gray;
-    }
-    .subject_butt {
-      display: block;
-      text-align: center;
-      vertical-align: middle;
-      //width: 22vw;
-      padding: 15px;
-      color: $dark-gray;
-    }
-  }
-
   .subject_tags {
     padding: 0 0 1.5vw 0;
+  }
+}
+.subject_button {
+  //width: 22vw;
+  font-weight: 400;
+  height: 51px;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  &:hover {
+    background-color: $gray-white;
+    color: $dark-gray;
+  }
+  .subject_butt {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    //width: 22vw;
+    padding: 15px;
+    color: $dark-gray;
   }
 }
 
