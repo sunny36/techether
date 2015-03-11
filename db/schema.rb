@@ -11,24 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311150706) do
+ActiveRecord::Schema.define(version: 20150311224627) do
 
   create_table "ratings", force: :cascade do |t|
-    t.integer "value"
-    t.integer "resource_id"
-    t.integer "user_id"
+    t.integer  "value"
+    t.integer  "resource_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "ratings", ["resource_id"], name: "index_ratings_on_resource_id"
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
   create_table "resources", force: :cascade do |t|
-    t.string  "title"
-    t.string  "source"
-    t.string  "difficulty"
-    t.integer "subject_id"
-    t.string  "link"
-    t.integer "user_id"
+    t.string   "title"
+    t.string   "source"
+    t.string   "difficulty"
+    t.integer  "subject_id"
+    t.string   "link"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "resources", ["subject_id"], name: "index_resources_on_subject_id"
