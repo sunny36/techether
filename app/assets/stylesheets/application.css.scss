@@ -74,21 +74,10 @@ a {
 	border: none;
 	border-radius: 0;
     background-color: $light-gray;
-    /* @media (max-width: 766px) {
-      background-color: rgba(1,1,1,0.9);
-    }
-    @media (min-width: 767px) {
-      background-color: $light-gray;
-    } */
     border-bottom: 1px solid $gray;
 	margin-bottom: 0;
     .navbar-right li a {
-      @media (max-width: 766px) {
-        color: $gray;
-      }
-      @media (min-width: 767px) {
-        color: $dark-gray;
-      }
+      color: $dark-gray;
 
       &:hover {
         color: white;
@@ -105,19 +94,9 @@ a {
         }
 	}
 	.dropdown-menu {
-        @media (max-width: 766px) {
-          background-color: rgba(1,1,1,0.9);
-        }
-        @media (min-width: 767px) {
-          background-color: rgba(1, 1, 1, 0.1);
-        }
+        background-color: $light-gray;
 		li a {
-            @media (max-width: 766px) {
-              color: $gray;
-            }
-            @media (min-width: 767px) {
-              color: $dark-gray;
-            }
+            color: $dark-gray;
 			font-weight: 400;
 			&:hover {
 				background-color: inherit;
