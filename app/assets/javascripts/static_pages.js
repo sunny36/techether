@@ -2,6 +2,15 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function () {
     SetScrollableDivHeight($("#mainfooter"));
+    $("#checktext").bind("Check if input empty", function() {
+        var value = $.trim($(this).val());
+        if (value.length == 0) {
+            $("#mainbutt").val("Browse Subjects");
+        }
+        else {
+            $("#mainbutt").val("Search Subjects");
+        }
+    });
 });
 $(window).resize(function () {
     SetScrollableDivHeight($("#mainfooter"));

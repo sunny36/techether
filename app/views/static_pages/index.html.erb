@@ -9,11 +9,11 @@
         <div class="panel-body">
           <%= form_tag subjects_path, method: :get do %>
             <div class="row">
-              <div class="col-md-6 col-md-offset-3 col-xs-12">
-                <%= text_field_tag :search, params[:search], placeholder: "Search for a programming language or framework", class:"form-control", autofocus: :true %>
+              <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+                <%= text_field_tag :search, params[:search], placeholder: "Search for a programming language or framework", class:"form-control", id:"checktext", autofocus: :true %>
               </div>
             </div>
-            <%= submit_tag "Find Resources", name: nil, class:"btn btn-default", id:"mainbutt" %>
+            <%= submit_tag "Browse Subjects", name: nil, class:"btn btn-default", id:"mainbutt" %>
           <% end %>
         </div>
     </div>
