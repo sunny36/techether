@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
 
   delegate :name, :description, to: :subject, prefix: true, allow_nil: true
 
+  def slug
+    name.downcase.gsub(" ", "-").gsub(".","")
+  end
+
+  def to_param
+    "#{id}-#{slug}"
+  end
+
 end
