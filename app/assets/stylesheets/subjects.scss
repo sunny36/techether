@@ -143,9 +143,10 @@
 /* side bar */
 
 #leftCol {
-  background-color: rgb(230, 230, 230);
+  background-color: $light-gray;
   height: 100vh;
   position: fixed;
+  border-right: 1px solid $gray;
   #sidebar {
     width: inherit;
     position: fixed;

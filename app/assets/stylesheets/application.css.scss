@@ -73,12 +73,13 @@ a {
 	position: fixed;
 	border: none;
 	border-radius: 0;
-    @media (max-width: 766px) {
+    background-color: $light-gray;
+    /* @media (max-width: 766px) {
       background-color: rgba(1,1,1,0.9);
     }
     @media (min-width: 767px) {
-      background-color: rgba(1, 1, 1, 0.1);
-    }
+      background-color: $light-gray;
+    } */
     border-bottom: 1px solid $gray;
 	margin-bottom: 0;
     .navbar-right li a {
