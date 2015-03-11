@@ -11,7 +11,7 @@
 
         <p><%= @user.subject_description %></p>
         <div class="actions">
-        <%= link_to "Add Resource", new_resource_path, class:"links" %></br>
+        <%= link_to "Add Resource to #{@user.subject_name}", new_resource_path, class:"links" %></br>
         <%= link_to "Stop Learning", @user.subject , method: :delete, class:"links" %>
         </div>
 
