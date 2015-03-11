@@ -92,11 +92,11 @@
         <% else %>
             <h3>Unfortunately, we have no resources for this subject</h3>
         <% end %>
-      <div class="subject_button">
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
+        <div class="subject_button">
             <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt botspace" %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
  </div>
