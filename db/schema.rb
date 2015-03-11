@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305180150) do
+ActiveRecord::Schema.define(version: 20150311150706) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "value"
@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 20150305180150) do
     t.string  "difficulty"
     t.integer "subject_id"
     t.string  "link"
+    t.integer "user_id"
   end
 
   add_index "resources", ["subject_id"], name: "index_resources_on_subject_id"
+  add_index "resources", ["user_id"], name: "index_resources_on_user_id"
 
   create_table "subjects", force: :cascade do |t|
     t.datetime "created_at",  null: false

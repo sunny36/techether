@@ -8,6 +8,7 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     @resource.subject = current_user.subject
+    @resource.user_id = current_user.id
     if @resource.save
       flash[:success] = "Successfully created resource"
       redirect_to subject_url(current_user.subject)
