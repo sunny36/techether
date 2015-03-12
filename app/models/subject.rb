@@ -32,8 +32,15 @@ class Subject < ActiveRecord::Base
           where("name LIKE ?", "%#{search}%")
       elsif self.where("tags LIKE ?", "%#{search}%").present?
         where("tags LIKE ?", "%#{search}%")
+      elsif where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%").present?
+        where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
       else
         where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+        # Search for each individual word in the search query and return all results
+        # array = search.split(' ')
+        # array.each do | word |
+
+        # end
       end
   	else
   		Subject.all
