@@ -4,6 +4,16 @@
 	<div class="col-md-7 col-md-offset-4 headspace">
 		<div class="indexcol">
             <% if @subjects.present? %>
+              <%= form_tag subjects_path, method: :get do %>
+                  <div class="row">
+                    <div class="col-lg-9 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-1 col-xs-6 col-xs-offset-1">
+                      <%= text_field_tag :search, params[:search], placeholder: "Search for a programming language or framework", class:"form-control checktext", autofocus: :true %>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-1">
+                      <%= submit_tag "Browse Subjects", name: nil, class:"btn btn-default", id:"mainbutt" %>
+                    </div>
+                  </div>
+              <% end %>
                 <%= render @subjects %>
                 <div class="apple_pagination">
                     <%= will_paginate %>
