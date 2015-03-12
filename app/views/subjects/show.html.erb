@@ -15,7 +15,7 @@
         </div>
         <% if @subject.tags.present? %>
             <div class="subject_tags">
-                <% @subject.tags.split(',').each do |tag| %>
+                <% @subject.parse_tags.each do |tag| %>
                     <div class="tags"><%= tag %></div>
                 <% end %>
             </div>

@@ -62,4 +62,16 @@ class Subject < ActiveRecord::Base
     "#{id}-#{slug}"
   end
 
+  # Parse tags
+  def parse_tags
+    tag_array = []
+    tags.split(',').each do | tag |
+      while tag[0] == ' '
+        tag = tag[1, tag.length]
+      end
+      tag_array << tag
+    end
+    return tag_array
+  end
+
 end

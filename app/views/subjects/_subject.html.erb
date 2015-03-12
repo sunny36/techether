@@ -2,7 +2,7 @@
   <h2><%= link_to subject.name, subject_path(subject)  %></h2>
   <p>
     <% if subject.tags.present? %>
-        <% subject.tags.split(',').each do |tag| %>
+        <% subject.parse_tags.each do |tag| %>
             <div class="tags"><%= tag %></div>
         <% end %>
     <% end %>

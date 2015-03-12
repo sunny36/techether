@@ -40,6 +40,7 @@ class SubjectsController < ApplicationController
     if categories.present?
       @sortedCategories = Subject.sort(categories)
     end
+
   end
 
   def show
