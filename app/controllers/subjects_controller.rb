@@ -65,12 +65,38 @@ class SubjectsController < ApplicationController
 
   def create
     @subject = Subject.new(subject_params)
+    categories = ""
+    if params[:gp]
+      categories << "General-Purpose,"
+    end
+    if params[:wd]
+      categories << "Web Development,"
+    end
+    if params[:md]
+      categories << "Mobile Development,"
+    end
+    if params[:f]
+      categories << "Frameworks,"
+    end
+    if params[:mo]
+      categories << "Mathematics-Oriented,"
+    end
+    if params[:dm]
+      categories << "Database Manipulation,"
+    end
+    if params[:cms]
+      categories << "Content Management System,"
+    end
+    if params[:other]
+      categories << "Other,"
+    end
+    @subject.category = categories
     # If subject already exists use that subject
     if check_name
       current_user.subject = check_name
       if current_user.save
         flash[:success] = "Subject already exists."
-        redirect_to current_user
+        redirect_to current_user.subject
       else
         flash[:danger] = "Failed to create."
         redirect_to new_subject_url
@@ -115,7 +141,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject_params
-    params.require(:subject).permit(:name, :description)
+    params.require(:subject).permit(:name, :description, :image, :tags)
   end
 
   def check_name

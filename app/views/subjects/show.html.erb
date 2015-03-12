@@ -13,11 +13,13 @@
             <p class="subject_description"><%= @subject.description %></p>
           </div>
         </div>
-        <div class="subject_tags">
-            <% @subject.tags.split(',').each do |tag| %>
-                <div class="tags"><%= tag %></div>
-            <% end %>
-        </div>
+        <% if @subject.tags.present? %>
+            <div class="subject_tags">
+                <% @subject.tags.split(',').each do |tag| %>
+                    <div class="tags"><%= tag %></div>
+                <% end %>
+            </div>
+        <% end %>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
                 <div class="subject_button">
