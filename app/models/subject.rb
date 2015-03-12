@@ -28,9 +28,7 @@ class Subject < ActiveRecord::Base
   # Main search bar functionality
   def self.search(search)
   	if search.present?
-      if self.where("name LIKE ?", "#{search}").present?
-        where("name LIKE ?", "#{search}")
-      elsif self.where("name LIKE ?", "%#{search}%").present?
+      if self.where("name LIKE ?", "%#{search}%").present?
           where("name LIKE ?", "%#{search}%")
       elsif self.where("tags LIKE ?", "%#{search}%").present?
         where("tags LIKE ?", "%#{search}%")
