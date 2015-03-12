@@ -7,7 +7,7 @@ You are able to give a rating to all posted resources and if it was good recomme
 With so many different ways to learn specific technologies this will be a way to filter
 out the less useful ones and focus on only the best material.
 
-This application is using Ruby on Rails, Bootstrap and JavaScript.
+This application is using Ruby on Rails, JavaScript, jQuery, Bootstrap and Sass.
 
 Database: SQLite3 for development and MySQL for production.
 
