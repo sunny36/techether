@@ -50,7 +50,7 @@ class SubjectsController < ApplicationController
 
   def add
     @subject = Subject.find(params[:id])
-    current_user.subject = @subject
+    inc_dec(@subject)
     if current_user.save
       flash[:success] = "You are now learning #{@subject.name}!"
       redirect_to @subject
@@ -92,9 +92,11 @@ class SubjectsController < ApplicationController
       categories << "Other,"
     end
     @subject.category = categories
+    @subject.user_count = 0
     # If subject already exists use that subject
     if check_name
-      current_user.subject = check_name
+      @subject = check_name
+      inc_dec(@subject)
       if current_user.save
         flash[:success] = "Subject already exists."
         redirect_to current_user.subject
@@ -104,7 +106,7 @@ class SubjectsController < ApplicationController
       end
     # Else use the new subject
     else
-      current_user.subject = @subject
+      inc_dec(@subject)
       if current_user.save
         flash[:success] = "Successfully created subject."
         redirect_to current_user
@@ -151,6 +153,16 @@ class SubjectsController < ApplicationController
 
   def search(query)
     Subject.where(name: query).first
+  end
+
+  def inc_dec(learn_subject)
+    if current_user.subject.present?
+      subject = Subject.find(current_user.subject_id)
+      subject.user_count = subject.user_count - 1
+      subject.save
+    end
+    current_user.subject = learn_subject
+    learn_subject.user_count = learn_subject.user_count + 1
   end
 
 end

@@ -11,12 +11,12 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'font-awesome-sass'
 gem 'faker'
 gem 'dynamic_sitemaps'
+gem 'mysql2'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sqlite3'
 end
 
 group :test do
@@ -28,6 +28,5 @@ end
 group :production do
   gem 'unicorn'
   gem 'rails_12factor', '0.0.2'
-  gem 'mysql2'
 end
 
