@@ -9,18 +9,57 @@ class SubjectsController < ApplicationController
       # If user selected a filter from sidebar
       if params[:filter].present?
         @filter = params[:filter]
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_name
+        # If user selected a filter and a sort from sidebar
+        if params[:sort].present?
+          @sort = params[:sort]
+          # The sort option picked is by user count
+          if @sort = "user_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_user_count
+          end
+        # The user selected just a filter from sidebar
+        else
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_name
+        end
+      # No filter is selected
       else
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_name
+        # Only a sort option is selected
+        if params[:sort].present?
+          if @sort = "user_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_user_count
+          end
+        # No Options were selected
+        else
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_name
+        end
       end
     else
       # No search query
       @allSubjects = Subject.all
+      # Category filter present
       if params[:filter].present?
         @filter = params[:filter]
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_name
+        # Category filter and sort filter present
+        if params[:sort].present?
+          @sort = params[:sort]
+          if @sort == "user_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_user_count
+          end
+        # Just Category filter present
+        else
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_name
+        end
+      # No category filter present
       else
-        @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_name
+        # Just sort filter present
+        if params[:sort].present?
+          @sort = params[:sort]
+          if @sort == "user_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_user_count
+          end
+        # No filters present
+        else
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_name
+        end
       end
     end
 
@@ -67,6 +106,7 @@ class SubjectsController < ApplicationController
   def create
     @subject = Subject.new(subject_params)
     categories = ""
+    # Loop through all checkboxes and assign categories
     if params[:gp]
       categories << "General-Purpose,"
     end
@@ -147,6 +187,7 @@ class SubjectsController < ApplicationController
     params.require(:subject).permit(:name, :description, :image, :tags)
   end
 
+  # Checks to see if subject name currently exists in database
   def check_name
     Subject.where(name: @subject[:name]).first
   end
@@ -155,6 +196,7 @@ class SubjectsController < ApplicationController
     Subject.where(name: query).first
   end
 
+  # Increment subjects user count column and if user was previously learning a subject, decrement that user count.
   def inc_dec(learn_subject)
     if current_user.subject.present?
       subject = Subject.find(current_user.subject_id)

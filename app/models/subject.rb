@@ -60,9 +60,16 @@ class Subject < ActiveRecord::Base
     order("id")
   end
 
+  # Alphabetical
   def self.sort_name
     order('lower(name)')
   end
+
+  # Sort by User count
+  def self.sort_user_count
+    order('user_count desc')
+  end
+
 
   def slug
     name.downcase.gsub(" ", "-").gsub(".","")

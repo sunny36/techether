@@ -12,12 +12,44 @@
           </p>
             <% @sortedCategories.each do | category | %>
               <% if category == @filter %>
-                  <p class="category_results" id="current"><%= category %></p>
-                  <%= link_to subjects_path(search: @search)  , class: "reset" do%>
+                  <% if @sort.present? %>
+                      <p class="category_results" id="current"><%= category %></p>
+                      <%= link_to subjects_path(sort: @sort, search: @search), class: "reset" do %>
+                          <i class="fa fa-times"></i>
+                      <% end %>
+                  <% else %>
+                      <p class="category_results" id="current"><%= category %></p>
+                      <%= link_to subjects_path(search: @search)  , class: "reset" do%>
+                          <i class="fa fa-times"></i>
+                      <% end %>
+                  <% end %>
+              <% else %>
+                  <% if @sort.present? %>
+                      <%= link_to category, subjects_path(filter: category, sort: @sort, search: @search), class: "category_results" %>
+                  <% else %>
+                      <%= link_to category, subjects_path(filter: category, search: @search), class: "category_results" %>
+                  <% end %>
+              <% end %>
+            <% end %>
+          <p class="side_titles" id="sort">
+            SORT BY
+          </p>
+            <% if "user_count" == @sort %>
+              <p class="category_results" id="current">Users Currently Learning</p>
+              <% if @filter.present? %>
+                  <%= link_to subjects_path(filter: @filter, search: @search), class: "reset" do %>
                       <i class="fa fa-times"></i>
                   <% end %>
               <% else %>
-                 <%= link_to category, subjects_path(filter: category, search: @search), class: "category_results" %>
+                  <%= link_to subjects_path(search: @search)  , class: "reset" do%>
+                      <i class="fa fa-times"></i>
+                  <% end %>
+              <% end %>
+            <% else %>
+              <% if @filter.present? %>
+                  <%= link_to "Users Currently Learning", subjects_path(filter: @filter, sort: "user_count", search: @search), class: "category_results" %>
+              <% else %>
+                 <%= link_to "Users Currently Learning", subjects_path(sort: "user_count", search: @search), class: "category_results" %>
               <% end %>
             <% end %>
       <% end %>
