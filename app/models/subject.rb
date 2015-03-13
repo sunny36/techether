@@ -4,6 +4,8 @@ class Subject < ActiveRecord::Base
   accepts_nested_attributes_for :users
   validates :name, presence: true
   validates :description, presence: true
+  validates :category, presence: true
+  validates :tags, presence: true
 
   # Method used to filter subject by category
   def self.in_category(category)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311224627) do
+ActiveRecord::Schema.define(version: 20150313164759) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "value"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150311224627) do
     t.string   "category"
     t.string   "tags"
     t.string   "image"
+    t.integer  "user_count"
   end
 
   create_table "users", force: :cascade do |t|
