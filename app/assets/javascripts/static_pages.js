@@ -5,10 +5,10 @@ $(document).ready(function () {
     $(".checktext").bind("Check if input empty", function() {
         var value = $.trim($(this).val());
         if (value.length == 0) {
-            $("#mainbutt").val("Browse Subjects");
+            $(".mainbutt").val("Browse Subjects");
         }
         else {
-            $("#mainbutt").val("Search Subjects");
+            $(".mainbutt").val("Search Subjects");
         }
     });
 });

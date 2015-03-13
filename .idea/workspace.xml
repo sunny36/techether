@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311340cb-cc32-4fd7-931c-4313424212b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/index.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/subjects/index.html.erb" afterPath="$PROJECT_DIR$/app/views/subjects/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/static_pages.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/static_pages.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" />
     </list>
     <ignored path="educate_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/subjects/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17937219" vertical-offset="0" max-vertical-offset="669">
-              <caret line="8" column="195" selection-start-line="8" selection-start-column="195" selection-end-line="8" selection-end-column="195" />
+            <state vertical-scroll-proportion="0.15695067" vertical-offset="75" max-vertical-offset="765">
+              <caret line="12" column="99" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/static_pages/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="465">
+              <caret line="15" column="88" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -89,7 +103,6 @@
         <option value="$PROJECT_DIR$/app/controllers/ratings_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/resource.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/sitemap.rb" />
         <option value="$PROJECT_DIR$/app/views/subjects/_sidebar.html.erb" />
@@ -104,7 +117,6 @@
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/_config.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/devise.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/app/views/subjects/new.html.erb" />
@@ -112,13 +124,15 @@
         <option value="$PROJECT_DIR$/app/views/subjects/_subject.html.erb" />
         <option value="$PROJECT_DIR$/app/views/subjects/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/subjects_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/static_pages/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/static_pages.js" />
-        <option value="$PROJECT_DIR$/app/views/subjects/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/shared/_links.html.erb" />
         <option value="$PROJECT_DIR$/app/models/subject.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/static_pages.js" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/subjects/index.html.erb" />
       </list>
     </option>
   </component>
@@ -1061,14 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3766816" vertical-offset="0" max-vertical-offset="1755">
-          <caret line="106" column="21" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/_config.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11210762" vertical-offset="0" max-vertical-offset="669">
@@ -1151,38 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/subjects.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11210762" vertical-offset="2145" max-vertical-offset="4215">
-          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2690583" vertical-offset="0" max-vertical-offset="669">
-          <caret line="12" column="154" selection-start-line="12" selection-start-column="154" selection-end-line="12" selection-end-column="154" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/static_pages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.064935066" vertical-offset="0" max-vertical-offset="693">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/subjects/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19282511" vertical-offset="6" max-vertical-offset="675">
-          <caret line="9" column="173" selection-start-line="9" selection-start-column="173" selection-end-line="9" selection-end-column="173" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="555">
@@ -1215,6 +1189,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17937219" vertical-offset="0" max-vertical-offset="669">
+          <caret line="8" column="195" selection-start-line="8" selection-start-column="195" selection-end-line="8" selection-end-column="195" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/subject.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
@@ -1223,10 +1205,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17937219" vertical-offset="0" max-vertical-offset="669">
-          <caret line="8" column="195" selection-start-line="8" selection-start-column="195" selection-end-line="8" selection-end-column="195" />
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="465">
+          <caret line="15" column="88" selection-start-line="15" selection-start-column="88" selection-end-line="15" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/subjects.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.5" vertical-offset="2355" max-vertical-offset="4275">
+          <caret line="193" column="21" selection-start-line="193" selection-start-column="21" selection-end-line="193" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="666" max-vertical-offset="1755">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/static_pages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19480519" vertical-offset="0" max-vertical-offset="693">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/subjects/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15695067" vertical-offset="75" max-vertical-offset="765">
+          <caret line="12" column="99" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
           <folding />
         </state>
       </provider>
