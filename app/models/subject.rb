@@ -35,12 +35,13 @@ class Subject < ActiveRecord::Base
       elsif where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%").present?
         where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
       else
-        where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
         # Search for each individual word in the search query and return all results
-        # array = search.split(' ')
-        # array.each do | word |
-
-        # end
+        array = search.split(' ')
+        relation = where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{array[0]}%", "%#{array[0]}%", "%#{array[0]}%")
+        array.each do | word |
+          relation.merge(where("category LIKE ? OR name LIKE ? OR tags LIKE ?", "%#{word}%", "%#{word}%", "%#{word}%"))
+        end
+        return relation
       end
   	else
   		Subject.all
