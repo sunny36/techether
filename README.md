@@ -9,7 +9,7 @@ out the less useful ones and focus on only the best material.
 
 This application is using Ruby on Rails, JavaScript, jQuery, Bootstrap and Sass.
 
-Database: SQLite3 for development and MySQL for production.
+Database: MySQL for both development and production.
 
 address: http://www.techether.com
 
