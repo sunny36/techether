@@ -15,6 +15,8 @@ class ResourcesController < ApplicationController
     @resource.user_id = current_user.id
     if @resource.save
       flash[:success] = "Successfully created resource"
+      subject.resource_count = subject.resource_count + 1
+      subject.save
       redirect_to subject_url(subject)
     else
       flash[:danger] = "Failed to create resource"

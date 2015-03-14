@@ -11,63 +11,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313164759) do
+ActiveRecord::Schema.define(version: 20150314174752) do
 
   create_table "ratings", force: :cascade do |t|
-    t.integer  "value"
-    t.integer  "resource_id"
-    t.integer  "user_id"
+    t.integer  "value",       limit: 4
+    t.integer  "resource_id", limit: 4
+    t.integer  "user_id",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "ratings", ["resource_id"], name: "index_ratings_on_resource_id"
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
+  add_index "ratings", ["resource_id"], name: "index_ratings_on_resource_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "resources", force: :cascade do |t|
-    t.string   "title"
-    t.string   "source"
-    t.string   "difficulty"
-    t.integer  "subject_id"
-    t.string   "link"
-    t.integer  "user_id"
+    t.string   "title",      limit: 255
+    t.string   "source",     limit: 255
+    t.string   "difficulty", limit: 255
+    t.integer  "subject_id", limit: 4
+    t.string   "link",       limit: 255
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "resources", ["subject_id"], name: "index_resources_on_subject_id"
-  add_index "resources", ["user_id"], name: "index_resources_on_user_id"
+  add_index "resources", ["subject_id"], name: "index_resources_on_subject_id", using: :btree
+  add_index "resources", ["user_id"], name: "index_resources_on_user_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "name"
-    t.string   "description"
-    t.string   "category"
-    t.string   "tags"
-    t.string   "image"
-    t.integer  "user_count"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "name",           limit: 255
+    t.string   "description",    limit: 255
+    t.string   "category",       limit: 255
+    t.string   "tags",           limit: 255
+    t.string   "image",          limit: 255
+    t.integer  "user_count",     limit: 4
+    t.integer  "resource_count", limit: 4
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.integer  "subject_id"
+    t.string   "name",                   limit: 255
+    t.integer  "subject_id",             limit: 4
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["subject_id"], name: "index_users_on_subject_id"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["subject_id"], name: "index_users_on_subject_id", using: :btree
 
 end

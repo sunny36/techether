@@ -89,9 +89,9 @@ class SubjectsController < ApplicationController
 
   def add
     @subject = Subject.find(params[:id])
-    inc_dec(@subject)
     if current_user.save
       flash[:success] = "You are now learning #{@subject.name}!"
+      inc_dec(@subject)
       redirect_to @subject
     else
       flash[:danger] = "Failed to add subject."
@@ -136,9 +136,9 @@ class SubjectsController < ApplicationController
     # If subject already exists use that subject
     if check_name
       @subject = check_name
-      inc_dec(@subject)
       if current_user.save
         flash[:success] = "Subject already exists."
+        inc_dec(@subject)
         redirect_to current_user.subject
       else
         flash[:danger] = "Failed to create."
@@ -146,9 +146,9 @@ class SubjectsController < ApplicationController
       end
     # Else use the new subject
     else
-      inc_dec(@subject)
       if current_user.save
         flash[:success] = "Successfully created subject."
+        inc_dec(@subject)
         redirect_to current_user
       else
         flash[:danger] = "Failed to create."
