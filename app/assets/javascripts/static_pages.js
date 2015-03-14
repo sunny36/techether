@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function () {
     SetScrollableDivHeight($("#mainfooter"));
+
     $(".checktext").bind("keyup keydown keypress", function() {
         var value = $.trim($(this).val());
         if (value.length == 0) {
@@ -15,6 +16,7 @@ $(document).ready(function () {
 $(window).resize(function () {
     SetScrollableDivHeight($("#mainfooter"));
 });
+
 function SetScrollableDivHeight(div) {
     if (div.length) {
         var top = div.position().top;
