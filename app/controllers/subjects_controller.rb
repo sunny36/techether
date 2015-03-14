@@ -98,7 +98,11 @@ class SubjectsController < ApplicationController
   def add
     @subject = Subject.find(params[:id])
     if current_user.save
-      flash[:success] = "You are now learning #{@subject.name}!"
+      if params[:link]
+        flash[:success] = "Now learning #{@subject.name}, click the link again."
+      else
+        flash[:success] = "You are now learning #{@subject.name}!"
+      end
       inc_dec(@subject)
       redirect_to @subject
     else

@@ -73,9 +73,15 @@
       <h1>Resources</h1>
         <% if @resources.present? %>
             <% @resources.each do |resource| %>
-                <div class="resource">
+                <div class="resource" id="<%= resource.link %>">
                   <h4>
-                    <%= link_to resource.title, resource.link, target: "_blank" %>
+                    <% if user_signed_in? && current_user.subject != @subject%>
+                        <span class="resource_link">
+                          <%= link_to resource.title, add_subject_path(@subject, link: true), method: :post%>
+                        </span>
+                    <% else %>
+                        <%= link_to resource.title, resource.link, target: "_blank" %>
+                    <% end %>
                   </h4>
                   <h5><%= resource.difficulty %> - <%= resource.source %></h5>
                   <% ratings = Rating.where(resource_id:resource.id) %>
