@@ -213,6 +213,7 @@ class SubjectsController < ApplicationController
     end
     current_user.subject = learn_subject
     learn_subject.user_count = learn_subject.user_count + 1
+    current_user.save
   end
 
 end
