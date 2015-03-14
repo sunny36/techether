@@ -34,7 +34,7 @@
           <p class="side_titles" id="sort">
             SORT BY
           </p>
-            <% if "user_count" == @sort %>
+          <% if "user_count" == @sort %>
               <p class="category_results" id="current">Users Currently Learning</p>
               <% if @filter.present? %>
                   <%= link_to subjects_path(filter: @filter, search: @search), class: "reset" do %>
@@ -45,13 +45,31 @@
                       <i class="fa fa-times"></i>
                   <% end %>
               <% end %>
-            <% else %>
+          <% else %>
               <% if @filter.present? %>
                   <%= link_to "Users Currently Learning", subjects_path(filter: @filter, sort: "user_count", search: @search), class: "category_results" %>
               <% else %>
                  <%= link_to "Users Currently Learning", subjects_path(sort: "user_count", search: @search), class: "category_results" %>
               <% end %>
-            <% end %>
+          <% end %>
+          <% if "resource_count" == @sort %>
+              <p class="category_results" id="current">Number of Resources</p>
+              <% if @filter.present? %>
+                  <%= link_to subjects_path(filter: @filter, search: @search), class: "reset" do %>
+                      <i class="fa fa-times"></i>
+                  <% end %>
+              <% else %>
+                  <%= link_to subjects_path(search: @search)  , class: "reset" do%>
+                      <i class="fa fa-times"></i>
+                  <% end %>
+              <% end %>
+          <% else %>
+              <% if @filter.present? %>
+                  <%= link_to "Number of Resources", subjects_path(filter: @filter, sort: "resource_count", search: @search), class: "category_results" %>
+              <% else %>
+                  <%= link_to "Number of Resources", subjects_path(sort: "resource_count", search: @search), class: "category_results" %>
+              <% end %>
+          <% end %>
       <% end %>
     </li>
   </ul>

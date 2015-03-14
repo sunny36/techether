@@ -70,6 +70,10 @@ class Subject < ActiveRecord::Base
     order('user_count desc')
   end
 
+  # Sort by Resource count
+  def self.sort_resource_count
+    order('resource_count desc')
+  end
 
   def slug
     name.downcase.gsub(" ", "-").gsub(".","")

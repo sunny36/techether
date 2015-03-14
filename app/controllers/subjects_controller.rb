@@ -13,8 +13,10 @@ class SubjectsController < ApplicationController
         if params[:sort].present?
           @sort = params[:sort]
           # The sort option picked is by user count
-          if @sort = "user_count"
+          if @sort == "user_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_user_count
+          elsif @sort == "resource_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_resource_count
           end
         # The user selected just a filter from sidebar
         else
@@ -26,6 +28,8 @@ class SubjectsController < ApplicationController
         if params[:sort].present?
           if @sort = "user_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_user_count
+          elsif @sort == "resource_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_resource_count
           end
         # No Options were selected
         else
@@ -43,6 +47,8 @@ class SubjectsController < ApplicationController
           @sort = params[:sort]
           if @sort == "user_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_user_count
+          elsif @sort == "resource_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_resource_count
           end
         # Just Category filter present
         else
@@ -55,6 +61,8 @@ class SubjectsController < ApplicationController
           @sort = params[:sort]
           if @sort == "user_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_user_count
+          elsif @sort == "resource_count"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_resource_count
           end
         # No filters present
         else
