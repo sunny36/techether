@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function () {
     SetScrollableDivHeight($("#mainfooter"));
-    $(".checktext").bind("Check if input empty", function() {
+    $(".checktext").bind("keyup keydown keypress", function() {
         var value = $.trim($(this).val());
         if (value.length == 0) {
             $(".mainbutt").val("Browse Subjects");
