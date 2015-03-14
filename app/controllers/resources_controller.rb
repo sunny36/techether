@@ -18,7 +18,7 @@ class ResourcesController < ApplicationController
       redirect_to subject_url(subject)
     else
       flash[:danger] = "Failed to create resource"
-      redirect_to new_subject_url
+      redirect_to new_resource_url
     end
   end
 
