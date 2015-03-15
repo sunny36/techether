@@ -145,6 +145,7 @@ class SubjectsController < ApplicationController
     end
     @subject.category = categories
     @subject.user_count = 0
+    @subject.resource_count = 0
     # If subject already exists use that subject
     if check_name
       @subject = check_name
