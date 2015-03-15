@@ -116,3 +116,19 @@ a:focus {
   color: $dark-orange;
   text-decoration: none;
 }
+
+input, button, select, textarea {
+  letter-spacing: 0.3px;
+}
+
+.subjectbutt {
+  font-family: $paragraph;
+  font-weight: 300;
+  background-color: $nice-blue;
+  color: #fff;
+  border-color: $nice-blue;
+  &:hover {
+    background-color: $dark-blue;
+    color: white;
+  }
+}
