@@ -102,7 +102,11 @@
         <% end %>
       <% if user_signed_in? %>
         <div class="subject_button">
-            <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt botspace" %>
+          <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt botspace" %>
+        </div>
+      <% else %>
+        <div class="subject_button">
+          <%= link_to "Log in to add a resource", new_user_session_path, class:"subject_butt botspace" %>
         </div>
       <% end %>
     </div>
