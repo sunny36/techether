@@ -111,3 +111,8 @@ a {
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
   color: $dark-orange;
 }
+
+a:focus {
+  color: $dark-orange;
+  text-decoration: none;
+}
