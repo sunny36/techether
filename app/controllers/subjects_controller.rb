@@ -26,7 +26,8 @@ class SubjectsController < ApplicationController
       else
         # Only a sort option is selected
         if params[:sort].present?
-          if @sort = "user_count"
+          @sort = params[:sort]
+          if @sort == "user_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_user_count
           elsif @sort == "resource_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_resource_count
