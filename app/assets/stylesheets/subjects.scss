@@ -21,8 +21,9 @@
 }
 .tags {
   display: inline-block;
-  color: $dark-gray;
-  border: 1px solid $gray;
+  background-color: $gray-white;
+  /*color: $dark-gray;
+  border: 1px solid $gray;*/
   border-radius: 5px;
   padding: 4px 6px;
   font-family: $paragraph;

@@ -80,7 +80,7 @@ a {
       color: $dark-gray;
 
       &:hover {
-        color: white;
+        color: $dark-orange;
       }
     }
 	.navbar-brand {
@@ -100,14 +100,14 @@ a {
 			font-weight: 400;
 			&:hover {
 				background-color: inherit;
-				color: white;
+				color: $dark-orange;
 			}
             &:focus {
-              background-color: white;
+              background-color: inherit;
             }
 		}
 	}
 }
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
-  color: white;
+  color: $dark-orange;
 }
