@@ -1,11 +1,23 @@
 <% provide(:title, 'About') %>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 conbout">
+<div class="headspace conbout">
     <h1>About</h1>
-    <p>Welcome to techether! This website is to be used as a vast bank of different learning resources to help you
-    become familiar with various programming languages and frameworks. I encourage you to <%= link_to "sign up", new_user_registration_path, class: "links" %>
-    for an account with which you can add subjects, resources and ratings to existing resources. With the amount of learning aid
-    we have at our disposal nowadays, this is a way to filter through all of them and find the best material.
-    Hope you enjoy it, have a great day!</p>
-  </div>
+    <h2>Welcome to techether!</h2>
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 leftside">
+        <i class="fa fa-graduation-cap"></i>
+        <p>A vast bank of different learning resources to help you
+          become familiar with various programming languages and frameworks.</p>
+      </div>
+      <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 ">
+        <i class="fa fa-search"></i>
+        <p>You can browse amazing content, search for a specific programming language, add subjects, resources and ratings
+        to existing resources.</p>
+      </div>
+      <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 rightside">
+        <i class="fa fa-laptop"></i>
+        <p>techether helps you filter through the vast amounts of learning aid we have at our disposal nowadays and find
+          the best material.</p>
+      </div>
+    </div>
+    <h3 class="botspace">I encourage you to <%= link_to "sign up", new_user_registration_path, class: "links" %> for an account.</h3>
 </div>

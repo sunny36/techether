@@ -89,14 +89,44 @@
 .conbout {
 	h1 {
 		text-align: center;
-		margin-top: 20vh;
 		margin-bottom: 5vh;
+        @media (min-width: 767px) {
+          font-size: 3vw;
+        }
+
 	}
+    h2, h3 {
+      text-align: center;
+      @media (min-width: 767px) {
+        font-size: 2vw;
+      }
+    }
 	p {
 		text-align: center;
 		line-height: 200%;
-		font-size: 1.5em;
+        @media (min-width: 767px) {
+          font-size: 1.7vw;
+        }
+        @media (max-width: 767px) {
+          font-size: 1.5em;
+        }
 	}
+    .leftside {
+      padding-left: 5vw;
+    }
+    .rightside {
+      padding-right: 5vw;
+    }
+    .fa-graduation-cap, .fa-search, .fa-laptop {
+      text-align: center;
+      width: 100%;
+      @media (min-width: 767px) {
+        font-size: 15vw;
+      }
+      @media (max-width: 766px) {
+        font-size: 25vw;
+      }
+    }
 }
 
 /* General */
