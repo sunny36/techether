@@ -203,7 +203,9 @@ class SubjectsController < ApplicationController
     if params[:other]
       categories << "Other,"
     end
-    @subject.category = categories
+    if categories.present?
+      @subject.category = categories
+    end
     if @subject.update_attributes(subject_params)
       flash[:success] = "Successfully edited #{@subject.name}"
       redirect_to @subject
