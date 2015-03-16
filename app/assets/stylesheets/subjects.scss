@@ -146,12 +146,16 @@
 
 #leftCol {
   background-color: $light-gray;
-  height: 100vh;
+  //height: 100vh;
   position: fixed;
   border-right: 1px solid $gray;
+  padding-right: 0;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
   #sidebar {
-    width: inherit;
-    position: fixed;
+    width: 100%;
+    //position: fixed;
     padding: 16px;
     #search_query {
       width: 96%;
@@ -182,7 +186,7 @@
       width: 90%;
     }
     .reset {
-      width: 9%;
+      width: 22%;
       height: 39px;
       display: inline-block;
       position: absolute;
