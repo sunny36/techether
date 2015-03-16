@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="311340cb-cc32-4fd7-931c-4313424212b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/subjects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/subjects_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" />
     </list>
     <ignored path="educate_me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,65 +40,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/subjects/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="420" max-vertical-offset="1110">
-              <caret line="30" column="96" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/subjects/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25" vertical-offset="240" max-vertical-offset="1110">
-              <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subjects.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/subjects.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1320">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subjects.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="subjects.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/subjects.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.75" vertical-offset="3336" max-vertical-offset="4440">
-              <caret line="246" column="16" selection-start-line="246" selection-start-column="16" selection-end-line="246" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.48430493" vertical-offset="2151" max-vertical-offset="4440">
+              <caret line="165" column="18" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subjects_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/subjects_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47619048" vertical-offset="2535" max-vertical-offset="3870">
-              <caret line="191" column="33" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/subjects/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="1830">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-              <folding>
-                <marker date="1426535112000" expanded="true" signature="830:1177" placeholder="if ... end" />
-                <marker date="1426535112000" expanded="true" signature="858:1177" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -160,8 +107,8 @@
         <option value="$PROJECT_DIR$/app/views/subjects/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/subjects.js" />
         <option value="$PROJECT_DIR$/app/views/subjects/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" />
         <option value="$PROJECT_DIR$/app/controllers/subjects_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/subjects.scss" />
       </list>
     </option>
   </component>
@@ -845,7 +792,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -855,7 +802,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22767204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1280,29 +1227,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/subjects_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47619048" vertical-offset="2535" max-vertical-offset="3870">
+          <caret line="191" column="33" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/subjects/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="1830">
+        <state vertical-scroll-proportion="0.40358743" vertical-offset="0" max-vertical-offset="1830">
           <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
           <folding>
-            <marker date="1426535112000" expanded="true" signature="830:1177" placeholder="if ... end" />
-            <marker date="1426535112000" expanded="true" signature="858:1177" placeholder="..." />
+            <marker date="1426535112000" expanded="true" signature="-1:-1" placeholder="if ... end" />
+            <marker date="1426535112000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/subjects.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.75" vertical-offset="3336" max-vertical-offset="4440">
-          <caret line="246" column="16" selection-start-line="246" selection-start-column="16" selection-end-line="246" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/subjects_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47619048" vertical-offset="2535" max-vertical-offset="3870">
-          <caret line="191" column="33" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.48430493" vertical-offset="2151" max-vertical-offset="4440">
+          <caret line="165" column="18" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
           <folding />
         </state>
       </provider>
