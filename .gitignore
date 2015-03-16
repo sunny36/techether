@@ -20,4 +20,4 @@
 /config/database.yml
 /db/seeds1.rb
 /db/seeds2.rb
-/config/initializers
+/config/initializers/*
