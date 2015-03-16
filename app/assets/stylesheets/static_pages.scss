@@ -62,9 +62,9 @@
 			margin-top: 5vh;
 			padding: 10px 20px;
 			color: white;
-			background-color: rgba(1, 1, 1, 0.4);
+			background-color: $nice-blue;
 			&:hover {
-				background-color: rgba(1, 1, 1, 0.6);
+				background-color: $dark-blue;
 			}
 		}
 	}

@@ -132,3 +132,30 @@ input, button, select, textarea {
     color: white;
   }
 }
+
+#content .container-fluid .panel-heading {
+   margin-top: 17vh;
+  #secondarytitle {
+    font-family: $paragraph;
+    font-size: 4.5vw;
+    color: $dark-gray;
+  }
+}
+
+
+#content .container-fluid .panel-heading #maintitle {
+  font-size: 10vw;
+}
+
+#content .container-fluid .panel-body .form-control {
+   height: 38px;
+
+}
+
+#content .container-fluid .mainbutt {
+   background-color: $nice-blue;
+}
+
+.btn-default {
+   border: none;
+}
