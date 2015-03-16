@@ -14,7 +14,7 @@
           <div class="field">
             <%= f.label :source %>
             <%= f.select :source do %>
-              <% ['Book', 'Video', 'Guide', 'Course'].each do |c| -%>
+              <% ['Book', 'Video', 'Guide', 'Course', 'Blog/Website'].each do |c| -%>
                 <%= content_tag(:option, c, value: c) %>
               <% end %>
             <% end %>
