@@ -11,6 +11,52 @@
           <%= f.label :description %> <br />
           <%= f.text_field :description, class:"form-control" %>
         </div>
+        <div class="field">
+          <%= f.label :image, "Image URL" %><br />
+          <%= f.text_field :image, class:"form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :tags, "Tags (seperate each one by a comma)" %>
+          <%= f.text_field :tags, maxlength: 65, class: "form-control" %>
+        </div>
+        <p>Categories</p>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-lg-6">
+            <div class="field">
+              <%= check_box_tag :gp, 'yes', false, onClick: "CountChecks('gp')" %>
+              <%= label_tag(:gp, "General-Purpose") %>
+            </div>
+            <div class="field">
+              <%= check_box_tag :wd, 'yes', false, onClick: "CountChecks('wd')" %>
+              <%= label_tag(:wd, "Web Development") %>
+            </div>
+            <div class="field">
+              <%= check_box_tag :md, 'yes', false, onClick: "CountChecks('md')" %>
+              <%= label_tag(:md, "Mobile Development") %>
+            </div>
+            <div class="field">
+              <%= check_box_tag :f, 'yes', false, onClick: "CountChecks('f')" %>
+              <%= label_tag(:f, "Frameworks") %>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-lg-6">
+            <div class="field">
+              <%= check_box_tag :mo, 'yes', false, onClick: "CountChecks('mo')" %>
+              <%= label_tag(:mo, "Mathematics-Oriented") %>
+            </div>
+            <div class="field">
+              <%= check_box_tag :dm, 'yes', false, onClick: "CountChecks('dm')" %>
+              <%= label_tag(:dm, "Database Manipulation") %>
+            </div>
+            <div class="field">
+              <%= check_box_tag :cms, 'yes', false, onClick: "CountChecks('cms')" %>
+              <%= label_tag(:cms, "Content Management Systems") %>
+            </div>
+            <div class="field">
+              <%= check_box_tag :other, 'yes', false, onClick: "CountChecks('other')" %>
+              <%= label_tag(:other, "Other") %>
+            </div>
+          </div>
 
         <div class="actions">
           <%= f.submit "Start learning", class:"btn btn-default" %>

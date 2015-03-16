@@ -172,18 +172,43 @@ class SubjectsController < ApplicationController
   end
 
   def edit
-    if current_user.subject.nil?
-      @subject = current_user.build_subject
-    else
-      @subject = current_user.subject
-    end
+    @subject = Subject.find(params[:id])
   end
 
   def update
     @subject = Subject.find(params[:id])
+    categories = ""
+    # Loop through all checkboxes and assign categories
+    if params[:gp]
+      categories << "General-Purpose,"
+    end
+    if params[:wd]
+      categories << "Web Development,"
+    end
+    if params[:md]
+      categories << "Mobile Development,"
+    end
+    if params[:f]
+      categories << "Frameworks,"
+    end
+    if params[:mo]
+      categories << "Mathematics-Oriented,"
+    end
+    if params[:dm]
+      categories << "Database Manipulation,"
+    end
+    if params[:cms]
+      categories << "Content Management System,"
+    end
+    if params[:other]
+      categories << "Other,"
+    end
+    @subject.category = categories
     if @subject.update_attributes(subject_params)
-      redirect_to current_user
+      flash[:success] = "Successfully edited #{@subject.name}"
+      redirect_to @subject
     else
+      flash[:danger] = "Failed to edit #{@subject.name}"
       redirect_to edit_subject_url
     end
   end

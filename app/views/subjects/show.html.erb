@@ -18,6 +18,9 @@
                 <% @subject.parse_tags.each do |tag| %>
                     <div class="tags"><%= tag %></div>
                 <% end %>
+                <% if user_signed_in? %>
+                    <%= link_to "Edit Subject", edit_subject_path(@subject), class: "links" %>
+                <% end %>
             </div>
         <% end %>
         <div class="row">
