@@ -13,16 +13,16 @@
             <p class="subject_description"><%= @subject.description %></p>
           </div>
         </div>
-        <% if @subject.tags.present? %>
-            <div class="subject_tags">
+        <div class="subject_tags">
+            <% if @subject.tags.present? %>
                 <% @subject.parse_tags.each do |tag| %>
                     <div class="tags"><%= tag %></div>
                 <% end %>
-                <% if user_signed_in? %>
-                    <%= link_to "Edit Subject", edit_subject_path(@subject), class: "links" %>
-                <% end %>
-            </div>
-        <% end %>
+            <% end %>
+            <% if user_signed_in? %>
+                <%= link_to "Edit Subject", edit_subject_path(@subject), class: "links edit_link" %>
+            <% end %>
+        </div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
                 <div class="subject_button">

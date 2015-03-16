@@ -241,6 +241,11 @@
   }
   .subject_tags {
     padding: 0 0 1.5vw 0;
+    .edit_link {
+      width: 100%;
+      float: left;
+      margin: 10px 0;
+    }
   }
 }
 .subject_button {
