@@ -82,3 +82,14 @@ function CountChecksE(which, id) {
         alert('Sorry, only ' + maxchecked + ' may be checked.');
     }
 }
+
+$(document).ready(function() {
+    $('.rate_button').click(function(event) {
+        event.preventDefault();
+        $(this).css('display', 'none');
+        $(this).parent().children('.rating_form').css('display', 'inline');
+        $('select#rating_value').change(function() {
+            $(this).closest('form').submit();
+        });
+    });
+});

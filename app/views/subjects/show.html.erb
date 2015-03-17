@@ -105,8 +105,20 @@
                       <p>Current Rating - <%= (sum / ratings.count).round(2) %>/5</p>
                   <% end %>
                   <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
-                      <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links" %>
-                  <% end %>  
+                      <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links rate_button" %>
+                  <% end %>
+                  <div class="rating_form" style="display:none">
+                      <%= form_for @rating do |f| %>
+                        <div class="field">
+                            <%= f.select :value  do %>
+                                <% ["Rating out of 5", 1, 2, 3, 4, 5].each do |c| %>
+                                    <%= content_tag(:option, c, value: c) %>
+                                <% end %>
+                            <% end %>
+                        </div>
+                        <%= f.hidden_field :resource, value: resource.id%>
+                      <% end %>
+                  </div>
                 </div>
             <% end %>
         <% else %>

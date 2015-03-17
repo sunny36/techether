@@ -1,5 +1,7 @@
 class RatingsController < ApplicationController
 
+  respond_to :html, :js
+
   def new
     @rating = Rating.new
     @resource = Resource.find(params[:resource_id])

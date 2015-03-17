@@ -94,6 +94,7 @@ class SubjectsController < ApplicationController
   def show
     @subject = Subject.find(params[:id])
     @resources = Resource.sort(Resource.where(subject_id: @subject.id).to_a)
+    @rating = Rating.new
   end
 
   def add
