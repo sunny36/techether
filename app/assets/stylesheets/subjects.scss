@@ -248,10 +248,10 @@
   margin-top: 80px;
   margin-bottom: 15px;
   .subject_description {
-    @media (min-width: 767px) {
+    @media (min-width: 992px) {
       font-size: 1.3vw;
     }
-    @media (max-width: 766px) {
+    @media (max-width: 991px) {
       font-size: 1.5em;
     }
     text-align: left;
@@ -259,10 +259,10 @@
   .subject_tags {
     padding: 0 0 1.5vw 0;
     .tags {
-      @media (min-width: 767px) {
+      @media (min-width: 992px) {
         font-size: 1.3vw;
       }
-      @media (max-width: 766px) {
+      @media (max-width: 991px) {
         font-size: 1.5em;
       }
     }
@@ -280,7 +280,7 @@
   border-radius: 5px;
   letter-spacing: 0.3px;
   background-color: $nice-blue;
-  @media (min-width: 767px) {
+  @media (min-width: 992px) {
     margin-left: 20px;
   }
   &:hover {
