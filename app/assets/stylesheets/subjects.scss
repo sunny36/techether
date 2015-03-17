@@ -227,8 +227,11 @@
 
 .subject_image {
   margin-top: 100px;
-  max-height: 52vh;
+  height: 100%;
   width: 100%;
+  max-height: 40vh;
+  max-width: 24vw;
+  margin-bottom: 20px;
 }
 
 .subject_details {
@@ -256,7 +259,7 @@
     .edit_link {
       width: 100%;
       float: left;
-      margin: 10px 0;
+      margin: 10px 0 0 0;
     }
   }
 }
@@ -266,9 +269,12 @@
   height: 51px;
   border-radius: 5px;
   border: 1px solid $gray;
+  background-color: $nice-blue;
+  @media (min-width: 767px) {
+    margin-left: 20px;
+  }
   &:hover {
-    background-color: $gray-white;
-    color: $dark-gray;
+    background-color: $dark-blue;
   }
   .subject_butt {
     display: block;
@@ -276,7 +282,8 @@
     vertical-align: middle;
     //width: 22vw;
     padding: 15px;
-    color: $dark-gray;
+    color: white;
+    font-weight: 300;
   }
 }
 
@@ -289,7 +296,7 @@
   }
   p {
     margin-top: 2vh;
-    font-size: 1.3em;
+    font-size: 1.3vw;
     text-align: center;
   }
   .main_stat {
@@ -297,6 +304,11 @@
     text-align: center;
     padding: 1vh 0;
   }
+}
+
+.resource_butt {
+  margin-left: 0;
+  margin-right: 20px;
 }
 
 

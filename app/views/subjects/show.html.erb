@@ -23,20 +23,20 @@
                 <%= link_to "Edit Subject", edit_subject_path(@subject), class: "links edit_link" %>
             <% end %>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-                <div class="subject_button">
-                    <% if user_signed_in? %>
-                        <% if current_user.subject == @subject %>
-                            <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt" %>
-                        <% else %>
-                            <%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"subject_butt" %>
-                        <% end %>
-                    <% else %>
-                        <%= link_to "Log in to learn #{@subject.name}", new_user_session_path, class:"subject_butt" %>
-                    <% end %>
-                </div>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+          <div class="subject_button">
+            <% if user_signed_in? %>
+                <% if current_user.subject == @subject %>
+                    <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt" %>
+                <% else %>
+                    <%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post, class:"subject_butt" %>
+                <% end %>
+            <% else %>
+                <%= link_to "Log in to learn #{@subject.name}", new_user_session_path, class:"subject_butt" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -75,6 +75,15 @@
     <div>
       <h1>Resources</h1>
         <% if @resources.present? %>
+          <% if user_signed_in? %>
+              <div class="subject_button resource_butt">
+                <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt botspace" %>
+              </div>
+          <% else %>
+              <div class="subject_button resource_butt">
+                <%= link_to "Log in to add a resource", new_user_session_path, class:"subject_butt botspace" %>
+              </div>
+          <% end %>
             <% @resources.each do |resource| %>
                 <div class="resource" id="<%= resource.link %>">
                   <h4>
@@ -104,11 +113,11 @@
             <h3>Unfortunately, we have no resources for this subject</h3>
         <% end %>
       <% if user_signed_in? %>
-        <div class="subject_button">
+        <div class="subject_button resource_butt">
           <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"subject_butt botspace" %>
         </div>
       <% else %>
-        <div class="subject_button">
+        <div class="subject_button resource_butt">
           <%= link_to "Log in to add a resource", new_user_session_path, class:"subject_butt botspace" %>
         </div>
       <% end %>
