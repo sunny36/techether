@@ -145,7 +145,7 @@
 /* side bar */
 
 #leftCol {
-  background-color: $light-gray;
+  background-color: $gray-white;
   //height: 100vh;
   position: fixed;
   border-right: 1px solid $gray;
@@ -273,28 +273,58 @@
     }
   }
 }
-.subject_button {
-  //width: 22vw;
-  font-weight: 400;
-  height: 51px;
-  border-radius: 5px;
-  letter-spacing: 0.3px;
-  background-color: $nice-blue;
+
+.subject_butt {
   @media (min-width: 992px) {
     margin-left: 20px;
   }
-  &:hover {
-    background-color: $dark-blue;
-  }
-  .subject_butt {
+  height: 51px;
+  border-radius: 5px;
+  a {
+    color: $dark-gray;
     display: block;
     text-align: center;
     vertical-align: middle;
+    font-family: $paragraph;
+    letter-spacing: 0.3px;
     //width: 22vw;
     padding: 15px;
-    color: white;
     font-weight: 300;
+    border-radius: 5px;
+    &:hover {
+      color: $dark-gray;
+      background: -webkit-linear-gradient(top, $grayish, $light-gray);
+      background: -moz-linear-gradient(top, $grayish, $light-gray);
+      background: -o-linear-gradient(top, $grayish, $light-gray);
+      background: -ms-linear-gradient(top, $grayish, $light-gray);
+      background: linear-gradient(top, $grayish, $light-gray);
+    }
   }
+  /* Base color */
+  background: $gray-white;
+  border: $gray;
+
+  /*Step 3: Text Styles*/
+  color: white;
+  text-align: center;
+
+  /*Step 4: Fancy CSS3 Styles*/
+  background: -webkit-linear-gradient(top, $gray-white, $grayish);
+  background: -moz-linear-gradient(top, $gray-white, $grayish);
+  background: -o-linear-gradient(top, $gray-white, $grayish);
+  background: -ms-linear-gradient(top, $gray-white, $grayish);
+  background: linear-gradient(top, $gray-white, $grayish);
+
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 0 5px 0 $gray;
+  -moz-box-shadow: 0 5px 0 $gray;
+  box-shadow: 0 5px 0 $gray;
+
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
 }
 
 .subject_stats {
@@ -317,8 +347,56 @@
 }
 
 .resource_butt {
-  margin-left: 0;
-  margin-right: 20px;
+  @media (min-width: 992px) {
+    margin-right: 20px;
+  }
+  height: 51px;
+  border-radius: 5px;
+  a {
+    color: $dark-gray;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    font-family: $paragraph;
+    letter-spacing: 0.3px;
+    //width: 22vw;
+    padding: 15px;
+    font-weight: 300;
+    border-radius: 5px;
+    &:hover {
+      color: $dark-gray;
+      background: -webkit-linear-gradient(top, $grayish, $light-gray);
+      background: -moz-linear-gradient(top, $grayish, $light-gray);
+      background: -o-linear-gradient(top, $grayish, $light-gray);
+      background: -ms-linear-gradient(top, $grayish, $light-gray);
+      background: linear-gradient(top, $grayish, $light-gray);
+    }
+  }
+  /* Base color */
+  background: $gray-white;
+  border: $gray;
+
+  /*Step 3: Text Styles*/
+  color: white;
+  text-align: center;
+
+  /*Step 4: Fancy CSS3 Styles*/
+  background: -webkit-linear-gradient(top, $gray-white, $grayish);
+  background: -moz-linear-gradient(top, $gray-white, $grayish);
+  background: -o-linear-gradient(top, $gray-white, $grayish);
+  background: -ms-linear-gradient(top, $gray-white, $grayish);
+  background: linear-gradient(top, $gray-white, $grayish);
+
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 0 5px 0 $gray;
+  -moz-box-shadow: 0 5px 0 $gray;
+  box-shadow: 0 5px 0 $gray;
+
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
 }
 
 .rate_button {
@@ -329,6 +407,40 @@
     color: $dark-orange;
   }
 
+}
+
+.subjectbutt {
+  background: $nice-blue;
+  border: $dark-blue;
+  font-weight: 300;
+
+  color: white;
+  text-align: center;
+
+  background: -webkit-linear-gradient(top, $nice-blue, $dark-blue);
+  background: -moz-linear-gradient(top, $nice-blue, $dark-blue);
+  background: -o-linear-gradient(top, $nice-blue, $dark-blue);
+  background: -ms-linear-gradient(top, $nice-blue, $dark-blue);
+  background: linear-gradient(top, $nice-blue, $dark-blue);
+
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 0 5px 0 $darkest-blue;
+  -moz-box-shadow: 0 5px 0 $darkest-blue;
+  box-shadow: 0 5px 0 $darkest-blue;
+
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
+  &:hover {
+    background: -webkit-linear-gradient(top, $dark-blue, $darker-blue);
+    background: -moz-linear-gradient(top, $dark-blue, $darker-blue);
+    background: -o-linear-gradient(top, $dark-blue, $darker-blue);
+    background: -ms-linear-gradient(top, $dark-blue, $darker-blue);
+    background: linear-gradient(top, $dark-blue, $darker-blue);
+    color: white;
+  }
 }
 
 

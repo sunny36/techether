@@ -26,21 +26,23 @@
                 </div>
                 <p id="spacer">Can't find what you're looking for?</p>
                   <% if user_signed_in? %>
-                      <div class="subject_button resource_butt">
-                        <%= link_to "Click here to add a subject", new_subject_path, class:"subject_butt botspace" %>
+                      <div class="subject_butt">
+                        <%= link_to "Click here to add a subject", new_subject_path, class:"botspace" %>
                       </div>
                   <% else %>
-                      <div class="subject_button resource_butt">
-                        <%= link_to "Log in to add a subject", new_user_session_path, class:"subject_butt botspace" %>
+                      <div class="subject_butt">
+                        <%= link_to "Log in to add a subject", new_user_session_path, class:"botspace" %>
                       </div>
                   <% end %>
             <% else %>
                 <h4>Unfortunately, we have no results for your search.</h4>
+                <div class="subject_butt">
                   <% if user_signed_in? %>
                       <p><%= link_to "Click here", new_subject_path, class:"links" %> to create a new subject.</p>
                   <% else %>
                       <p><%= link_to "Log in", new_user_session_path, class:"links" %> to create a new subject.</p>
                   <% end %>
+                </div>
             <% end %>
 
 
