@@ -105,10 +105,10 @@
                       <p>Current Rating - <%= (sum / ratings.count).round(2) %>/5</p>
                   <% end %>
                   <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
-                      <%= link_to "Rate me!", new_rating_path(resource_id: resource), class:"links rate_button" %>
+                      <p class="links rate_button" id="rating_<%= resource.id %>" onclick="rating_form(<%= resource.id %>)">Rate Me!</p>
                   <% end %>
-                  <div class="rating_form" style="display:none">
-                      <%= form_for @rating do |f| %>
+                  <div id="rating_form_<%= resource.id %>" style="display:none">
+                      <%= form_for @rating  do |f| %>
                         <div class="field">
                             <%= f.select :value  do %>
                                 <% ["Rating out of 5", 1, 2, 3, 4, 5].each do |c| %>

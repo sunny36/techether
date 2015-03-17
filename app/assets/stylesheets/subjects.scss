@@ -321,4 +321,14 @@
   margin-right: 20px;
 }
 
+.rate_button {
+  color: $orange;
+  display: inline-block;
+  &:hover {
+    cursor: pointer;
+    color: $dark-orange;
+  }
+
+}
+
 

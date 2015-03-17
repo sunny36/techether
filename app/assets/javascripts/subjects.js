@@ -83,13 +83,15 @@ function CountChecksE(which, id) {
     }
 }
 
+function rating_form(id) {
+    var rate_button = document.getElementById('rating_' + id);
+    rate_button.style.display = "none";
+    var current_form = document.getElementById('rating_form_' + id);
+    current_form.style.display = "inline";
+}
+
 $(document).ready(function() {
-    $('.rate_button').click(function(event) {
-        event.preventDefault();
-        $(this).css('display', 'none');
-        $(this).parent().children('.rating_form').css('display', 'inline');
-        $('select#rating_value').change(function() {
-            $(this).closest('form').submit();
-        });
+    $('select#rating_value').change(function() {
+        $(this).closest('form').submit();
     });
 });
