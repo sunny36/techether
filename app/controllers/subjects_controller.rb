@@ -162,6 +162,8 @@ class SubjectsController < ApplicationController
     else
       if current_user.save
         flash[:success] = "Successfully created subject."
+        @subject.user_id = current_user.id
+        @subject.save
         inc_dec(@subject)
         redirect_to current_user
       else
