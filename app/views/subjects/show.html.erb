@@ -108,9 +108,9 @@
                       <p class="links rate_button" id="rating_<%= resource.id %>" onclick="rating_form(<%= resource.id %>)">Rate Me!</p>
                   <% end %>
                   <div id="rating_form_<%= resource.id %>" style="display:none">
-                      <%= form_for @rating  do |f| %>
+                      <%= form_for @rating, id: "hello"  do |f| %>
                         <div class="field">
-                            <%= f.select :value  do %>
+                            <%= f.select :value, :html => { :id => "hello" }  do %>
                                 <% ["Rating out of 5", 1, 2, 3, 4, 5].each do |c| %>
                                     <%= content_tag(:option, c, value: c) %>
                                 <% end %>

@@ -88,10 +88,11 @@ function rating_form(id) {
     rate_button.style.display = "none";
     var current_form = document.getElementById('rating_form_' + id);
     current_form.style.display = "inline";
+    submit_form(current_form.children[0]);
 }
 
-$(document).ready(function() {
-    $('select#rating_value').change(function() {
-        $(this).closest('form').submit();
-    });
-});
+function submit_form(form) {
+    form.children[2].children[0].onchange = function() {
+        form.submit();
+    }
+}
