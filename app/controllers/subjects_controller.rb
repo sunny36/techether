@@ -13,28 +13,28 @@ class SubjectsController < ApplicationController
         if params[:sort].present?
           @sort = params[:sort]
           # The sort option picked is by user count
-          if @sort == "user_count"
-            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_user_count
+          if @sort == "alphabetical"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_name
           elsif @sort == "resource_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_resource_count
           end
         # The user selected just a filter from sidebar
         else
-          @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_name
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).in_category(@filter).sort_user_count
         end
       # No filter is selected
       else
         # Only a sort option is selected
         if params[:sort].present?
           @sort = params[:sort]
-          if @sort == "user_count"
-            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_user_count
+          if @sort == "alphabetical"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_name
           elsif @sort == "resource_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_resource_count
           end
         # No Options were selected
         else
-          @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_name
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).search(@search).sort_user_count
         end
       end
     else
@@ -46,28 +46,28 @@ class SubjectsController < ApplicationController
         # Category filter and sort filter present
         if params[:sort].present?
           @sort = params[:sort]
-          if @sort == "user_count"
-            @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_user_count
+          if @sort == "alphabetical"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_name
           elsif @sort == "resource_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_resource_count
           end
         # Just Category filter present
         else
-          @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_name
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).in_category(@filter).sort_user_count
         end
       # No category filter present
       else
         # Just sort filter present
         if params[:sort].present?
           @sort = params[:sort]
-          if @sort == "user_count"
-            @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_user_count
+          if @sort == "alphabetical"
+            @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_name
           elsif @sort == "resource_count"
             @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_resource_count
           end
         # No filters present
         else
-          @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_name
+          @subjects = Subject.paginate(page: params[:page], per_page: 10).sort_user_count
         end
       end
     end
