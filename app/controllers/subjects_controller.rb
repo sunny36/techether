@@ -175,6 +175,7 @@ class SubjectsController < ApplicationController
 
   def edit
     @subject = Subject.find(params[:id])
+    @categories = @subject.category
   end
 
   def update

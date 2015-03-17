@@ -24,44 +24,44 @@
         <div class="row">
           <div class="col-md-6 col-sm-6 col-lg-6">
             <div class="field">
-              <%= check_box_tag :gp, 'yes', false, onClick: "CountChecksE('gp', '#{@subject.id}')" %>
+              <%= check_box_tag :gp, 'yes', @categories.include?("General-Purpose"), onClick: "CountChecksE('gp', '#{@subject.id}')" %>
               <%= label_tag(:gp, "General-Purpose") %>
             </div>
             <div class="field">
-              <%= check_box_tag :wd, 'yes', false, onClick: "CountChecksE('wd', #{@subject.id})" %>
+              <%= check_box_tag :wd, 'yes', @categories.include?("Web Development"), onClick: "CountChecksE('wd', #{@subject.id})" %>
               <%= label_tag(:wd, "Web Development") %>
             </div>
             <div class="field">
-              <%= check_box_tag :md, 'yes', false, onClick: "CountChecksE('md', #{@subject.id})" %>
+              <%= check_box_tag :md, 'yes', @categories.include?("Mobile Development"), onClick: "CountChecksE('md', #{@subject.id})" %>
               <%= label_tag(:md, "Mobile Development") %>
             </div>
             <div class="field">
-              <%= check_box_tag :f, 'yes', false, onClick: "CountChecksE('f', #{@subject.id})" %>
+              <%= check_box_tag :f, 'yes', @categories.include?("Frameworks"), onClick: "CountChecksE('f', #{@subject.id})" %>
               <%= label_tag(:f, "Frameworks") %>
             </div>
           </div>
           <div class="col-md-6 col-sm-6 col-lg-6">
             <div class="field">
-              <%= check_box_tag :mo, 'yes', false, onClick: "CountChecksE('mo', #{@subject.id})" %>
+              <%= check_box_tag :mo, 'yes', @categories.include?("Mathematics-Oriented"), onClick: "CountChecksE('mo', #{@subject.id})" %>
               <%= label_tag(:mo, "Mathematics-Oriented") %>
             </div>
             <div class="field">
-              <%= check_box_tag :dm, 'yes', false, onClick: "CountChecksE('dm', #{@subject.id})" %>
+              <%= check_box_tag :dm, 'yes', @categories.include?("Database Manipulation"), onClick: "CountChecksE('dm', #{@subject.id})" %>
               <%= label_tag(:dm, "Database Manipulation") %>
             </div>
             <div class="field">
-              <%= check_box_tag :cms, 'yes', false, onClick: "CountChecksE('cms', #{@subject.id})" %>
+              <%= check_box_tag :cms, 'yes', @categories.include?("Content Management Systems"), onClick: "CountChecksE('cms', #{@subject.id})" %>
               <%= label_tag(:cms, "Content Management Systems") %>
             </div>
             <div class="field">
-              <%= check_box_tag :other, 'yes', false, onClick: "CountChecksE('other', #{@subject.id})" %>
+              <%= check_box_tag :other, 'yes', @categories.include?("Other"), onClick: "CountChecksE('other', #{@subject.id})" %>
               <%= label_tag(:other, "Other") %>
             </div>
           </div>
         </div>
 
         <div class="actions">
-          <%= f.submit "Edit Subject", class:"btn btn-default" %>
+          <%= f.submit "Edit Subject", class:"btn btn-default botspace" %>
         </div>
 
       <% end %>
