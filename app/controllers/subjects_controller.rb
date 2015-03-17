@@ -160,12 +160,12 @@ class SubjectsController < ApplicationController
       end
     # Else use the new subject
     else
-      if current_user.save
+      if @subject.save
         flash[:success] = "Successfully created subject."
         @subject.user_id = current_user.id
         @subject.save
         inc_dec(@subject)
-        redirect_to current_user
+        redirect_to @subject
       else
         flash[:danger] = "Failed to create."
         redirect_to new_subject_url
