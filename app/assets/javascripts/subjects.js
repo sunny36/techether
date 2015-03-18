@@ -1,5 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
+//Function to check how many categories have been checked in the new subject page
 function CountChecksE(which) {
     var maxchecked = 2;
     var count = 0;
@@ -41,6 +43,8 @@ function CountChecksE(which) {
         alert('Sorry, only ' + maxchecked + ' may be checked.');
     }
 }
+
+// Function to check how many categories have been checked in the edit subject page
 function CountChecksE(which, id) {
     var maxchecked = 2;
     var count = 0;
@@ -83,6 +87,7 @@ function CountChecksE(which, id) {
     }
 }
 
+// Function to hide "Rate me!" and display rating form
 function rating_form(id) {
     var rate_button = document.getElementById('rating_' + id);
     rate_button.style.display = "none";
@@ -91,8 +96,25 @@ function rating_form(id) {
     submit_form(current_form.children[0]);
 }
 
+// Function to submit rating form on selection
 function submit_form(form) {
     form.children[2].children[0].onchange = function() {
         form.submit();
     }
 }
+
+$(document).ready(function() {
+    var count = 0;
+    var adjust_subject = function() {
+        var bottom_of_butt = $('.subject_butt').offset().top + $('.subject_butt').height();
+        var fixed_start = $(window).height() * 0.75;
+        if (bottom_of_butt > fixed_start) {
+            $('.subject_tags div:last-child').hide();
+            count++;
+            if (count < 5) {
+                adjust_subject();
+            }
+        }
+    }
+    adjust_subject();
+});

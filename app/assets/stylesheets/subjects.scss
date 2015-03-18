@@ -160,6 +160,11 @@
     #search_query {
       width: 96%;
       background-color: $nice-blue;
+      background: -webkit-linear-gradient(top, $nice-blue, $dark-blue);
+      background: -moz-linear-gradient(top, $nice-blue, $dark-blue);
+      background: -o-linear-gradient(top, $nice-blue, $dark-blue);
+      background: -ms-linear-gradient(top, $nice-blue, $dark-blue);
+      background: linear-gradient(top, $nice-blue, $dark-blue);
       border-radius: 5px;
       text-align: center;
       padding: 15px 0;
