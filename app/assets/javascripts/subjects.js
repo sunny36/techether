@@ -104,19 +104,69 @@ function submit_form(form) {
 }
 
 $(document).ready(function() {
-    var count = 0;
-    var adjust_subject = function() {
+    var hide_count = 0;
+    var show_count = 0;
+    var adjust_doc_subject = function() {
         if ($('.subject_butt').length) {
             var bottom_of_butt = $('.subject_butt').offset().top + $('.subject_butt').height();
             var fixed_start = $(window).height() * 0.75;
             if (bottom_of_butt > fixed_start) {
-                $('.subject_tags div:last-child').hide();
-                count++;
-                if (count < 5) {
-                    adjust_subject();
+                var tag_to_hide = $('.subject_tags div:last-child');
+                while (tag_to_hide.css("display") == "none") {
+                    tag_to_hide = tag_to_hide.prev();
+                }
+                tag_to_hide.hide();
+                hide_count++;
+                if (hide_count < 15) {
+                    adjust_doc_subject();
+                }
+            }
+            else if (bottom_of_butt <= fixed_start) {
+                var tag_to_show = $('.subject_tags div:first-child');
+                while (tag_to_show.css("display") == "inline-block") {
+                    tag_to_show = tag_to_show.next();
+                }
+                tag_to_show.css("display", "inline-block");
+                show_count++;
+                if (show_count < 15) {
+                    adjust_doc_subject();
                 }
             }
         }
     };
-    adjust_subject();
+    adjust_doc_subject();
+});
+
+$(window).resize(function() {
+    var hide_count = 0;
+    var show_count = 0;
+    var adjust_window_subject = function() {
+        if ($('.subject_butt').length) {
+            var bottom_of_butt = $('.subject_butt').offset().top + $('.subject_butt').height();
+            var fixed_start = $(window).height() * 0.75;
+            if (bottom_of_butt > fixed_start) {
+                var tag_to_hide = $('.subject_tags div:last-child');
+                while (tag_to_hide.css("display") == "none") {
+                    tag_to_hide = tag_to_hide.prev();
+                }
+                tag_to_hide.hide();
+                hide_count++;
+                if (hide_count < 15) {
+                    adjust_window_subject();
+                }
+            }
+            else if (fixed_start - bottom_of_butt >= $('.tags').height()) {
+                var tag_to_show = $('.subject_tags div:first-child');
+                while (tag_to_show.css("display") == "inline-block") {
+                    tag_to_show = tag_to_show.next();
+                }
+                tag_to_show.css("display", "inline-block");
+                show_count++;
+                if (show_count < 15) {
+                    adjust_window_subject();
+                }
+            }
+        }
+    };
+    adjust_window_subject();
 });
