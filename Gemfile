@@ -12,6 +12,7 @@ gem 'font-awesome-sass'
 gem 'faker'
 gem 'dynamic_sitemaps'
 gem 'mysql2'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'byebug'

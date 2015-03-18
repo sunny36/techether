@@ -106,15 +106,17 @@ function submit_form(form) {
 $(document).ready(function() {
     var count = 0;
     var adjust_subject = function() {
-        var bottom_of_butt = $('.subject_butt').offset().top + $('.subject_butt').height();
-        var fixed_start = $(window).height() * 0.75;
-        if (bottom_of_butt > fixed_start) {
-            $('.subject_tags div:last-child').hide();
-            count++;
-            if (count < 5) {
-                adjust_subject();
+        if ($('.subject_butt').length) {
+            var bottom_of_butt = $('.subject_butt').offset().top + $('.subject_butt').height();
+            var fixed_start = $(window).height() * 0.75;
+            if (bottom_of_butt > fixed_start) {
+                $('.subject_tags div:last-child').hide();
+                count++;
+                if (count < 5) {
+                    adjust_subject();
+                }
             }
         }
-    }
+    };
     adjust_subject();
 });
