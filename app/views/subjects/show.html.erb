@@ -91,17 +91,17 @@
                         <span class="resource_link">
                           <%= link_to resource.title, add_subject_path(@subject, link: true), method: :post%>
                         </span>
-                        <% if user_signed_in? %>
-                            <%= link_to favourite_resource_path(resource_id: resource.id), method: :post, class: "favourite_link" do %>
-                                <% if current_user.favourite_resources.present? && current_user.favourite_resources.split(',').include?(resource.id.to_s) %>
-                                    <i class="fa fa-star fa-lg include favourite"></i>
-                                <% else %>
-                                    <i class="fa fa-star-o fa-lg favourite"></i>
-                                <% end %>
-                            <% end %>
-                        <% end %>
                     <% else %>
                         <%= link_to resource.title, resource.link, target: "_blank" %>
+                    <% end %>
+                    <% if user_signed_in? %>
+                        <%= link_to favourite_resource_path(resource_id: resource.id), method: :post, class: "favourite_link" do %>
+                            <% if current_user.favourite_resources.present? && current_user.favourite_resources.split(',').include?(resource.id.to_s) %>
+                                <i class="fa fa-star fa-lg include favourite"></i>
+                            <% else %>
+                                <i class="fa fa-star-o fa-lg favourite"></i>
+                            <% end %>
+                        <% end %>
                     <% end %>
                   </h4>
                   <h5><%= resource.difficulty %> - <%= resource.source %></h5>
