@@ -1,3 +1,49 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'config.scss';
+
+.user_image {
+  img {
+    width: 100%;
+    border-radius: 100%;
+    float: left;
+    right: 0;
+  }
+}
+.floatRight {
+  float: right;
+}
+
+.user_mid {
+  @media (min-width: 767px) {
+    margin-left: 10px;
+  }
+  .user_mid_top {
+    .user_desc {
+      margin-left: 20px;
+    }
+    padding-bottom: 20px;
+    border-bottom: 3px solid $dark-blue;
+  }
+  .user_mid_bot {
+    .activity_row {
+      margin-left: 20px;
+    }
+    .activity {
+      padding: 10px 0;
+    }
+  }
+}
+
+.user_right {
+  .fav_row {
+    margin-left: 20px;
+    .sidebarlink {
+      display: block;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $dark-blue;
+    }
+  }
+}

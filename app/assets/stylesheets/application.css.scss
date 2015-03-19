@@ -68,7 +68,7 @@ a {
 /* Navbar */
 
 .navbar {
-	z-index: 9999;
+	z-index: 10000;
 	width: 100vw;
 	position: fixed;
 	border: none;
@@ -95,6 +95,7 @@ a {
 	}
 	.dropdown-menu {
         background-color: $gray-white;
+        z-index: 10000;
 		li a {
             color: $dark-gray;
 			font-weight: 400;

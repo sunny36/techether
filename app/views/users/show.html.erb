@@ -1,32 +1,114 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <div class="col-md-4 col-md-offset-4 headspace">
-    <h2><%= @user.name %></h2>
-    <p>
-      <% if @user.subject.nil? %>
-        You should start learning a subject!
-        <%= link_to "Learn a subject", subjects_path, class:"links" %>
-      <% else %>
-        You are learning <%= link_to @user.subject_name, subject_path(@user.subject), class:"links" %>! Good luck.
+<% if false %>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 headspace">
+        <h2><%= @user.name %></h2>
+        <p>
+          <% if @user.subject.nil? %>
+            You should start learning a subject!
+            <%= link_to "Learn a subject", subjects_path, class:"links" %>
+          <% else %>
+            You are learning <%= link_to @user.subject_name, subject_path(@user.subject), class:"links" %>! Good luck.
 
-        <p><%= @user.subject_description %></p>
-        <div class="actions">
-        <%= link_to "Add Resource to #{@user.subject_name}", new_resource_path(subject_id: @user.subject_id), class:"links" %></br>
-        <%= link_to "Stop Learning", @user.subject , method: :delete, class:"links" %>
-        </div>
+            <p><%= @user.subject_description %></p>
+            <div class="actions">
+            <%= link_to "Add Resource to #{@user.subject_name}", new_resource_path(subject_id: @user.subject_id), class:"links" %></br>
+            <%= link_to "Stop Learning", @user.subject , method: :delete, class:"links" %>
+            </div>
 
-        <% if false #@resources.present? %>
-            <h3>Resources for <%= @user.subject_name %></h3>
-            <% @resources.each do |resource| %>
-                <div class="resource">
-                  <h4><%= resource.title %></h4>
-                  <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-                  <p><%= resource.link %></p></br>
-                </div>
+            <% if false #@resources.present? %>
+                <h3>Resources for <%= @user.subject_name %></h3>
+                <% @resources.each do |resource| %>
+                    <div class="resource">
+                      <h4><%= resource.title %></h4>
+                      <h5><%= resource.difficulty %> - <%= resource.source %></h5>
+                      <p><%= resource.link %></p></br>
+                    </div>
+                <% end %>
             <% end %>
-        <% end %>
 
+          <% end %>
+        </p>
+      </div>
+    </div>
+<% end %>
+
+<div class="row headspace">
+  <div class="col-md-2 col-md-offset-2">
+    <div class="row">
+        <div class="user_image">
+          <% if current_user.image.nil? %>
+              <%= image_tag "http://www.imran.com/xyper_images/icon-user-default.png" %>
+          <% else %>
+              <img src="<%= current_user.image %>"/>
+          <% end %>
+        </div>
+    </div>
+    <div class="row">
+      <h2>Activity</h2>
+      <p>Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
+      <p>Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
+      <p>Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+    </div>
+  </div>
+  <div class="col-md-4 user_mid">
+    <div class="row user_mid_top">
+      <h1><%= @user.name %></h1>
+      <% if @user.subject.present? %>
+          <p class="user_desc">I am currently learning <%= link_to @user.subject_name, subject_path(@user.subject), class: "links" %>!</p>
+          <p class="user_desc"><%= @user.subject_description %></p>
+      <% else %>
+          <p class="user_desc">You should start learning a subject!</p>
+          <%= link_to "Learn a subject", subjects_path, class:"links user_desc" %>
       <% end %>
-    </p>
+    </div>
+    <div class="row user_mid_bot">
+      <h2>Recent Activity</h2>
+      <div class="row activity_row">
+          <% if @recent_activity %>
+            <% @recent_activity.take(15).each do | activity | %>
+                  <!-- activity is a rating -->
+                  <% if activity.has_attribute?(:value) %>
+                      <p class="activity">Rated <%= link_to Resource.find(activity.resource_id).title, Resource.find(activity.resource_id).link, class: "links" %> - <%= activity.value %> / 5</p>
+                  <!-- activity is a resource -->
+                  <% elsif activity.has_attribute?(:title) %>
+                      <p class="activity">Added the resource <%= link_to activity.title, activity.link, class: "links" %> to the subject <%= link_to Subject.find(activity.subject_id).name, subject_path(activity.subject_id), class: "links" %></p>
+                  <!-- activity is a subject -->
+                  <% else %>
+                      <p class="activity">Created the subject <%= link_to activity.name, subject_path(activity), class: "links" %></p>
+                  <% end %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-2 user_right">
+    <h2>Favourites</h2>
+    <div class="row fav_row">
+        <h4 class="paragraphfont">Subjects</h4>
+        <div class="row fav_row">
+            <% if @favourite_subjects.present? %>
+                <% @favourite_subjects.each do | subject | %>
+                    <%= link_to subject.name, subject_path(subject), class: "links sidebarlink" %><br>
+                <% end %>
+            <% else %>
+                <p>You have no favourite subjects!</p>
+                <%= link_to "Find a subject", subjects_path, class: "links" %><br>
+            <% end %>
+        </div>
+    </div>
+    <div class="row fav_row">
+      <h4 class="paragraphfont">Resources</h4>
+      <div class="row fav_row">
+        <% if @favourite_resources.present? %>
+            <% @favourite_resources.each do | resource | %>
+                <%= link_to resource.title, resource.link, class: "links sidebarlink" %><br>
+            <% end %>
+        <% else %>
+            <p>You have no favourite resources!</p>
+            <%= link_to "Find a subject", subjects_path, class: "links" %><br>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
