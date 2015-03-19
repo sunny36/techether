@@ -332,6 +332,54 @@
   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
 }
 
+.index_butt {
+  height: 51px;
+  border-radius: 5px;
+  a {
+    color: white;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    font-family: $paragraph;
+    letter-spacing: 0.3px;
+    //width: 22vw;
+    padding: 15px;
+    font-weight: 300;
+    border-radius: 5px;
+    &:hover {
+      background: -webkit-linear-gradient(top, $dark-blue, $darker-blue);
+      background: -moz-linear-gradient(top, $dark-blue, $darker-blue);
+      background: -o-linear-gradient(top, $dark-blue, $darker-blue);
+      background: -ms-linear-gradient(top, $dark-blue, $darker-blue);
+      background: linear-gradient(top, $dark-blue, $darker-blue);
+      color: white;
+    }
+  }
+  background: $nice-blue;
+  border: $dark-blue;
+  font-weight: 300;
+
+  color: white;
+  text-align: center;
+
+  background: -webkit-linear-gradient(top, $nice-blue, $dark-blue);
+  background: -moz-linear-gradient(top, $nice-blue, $dark-blue);
+  background: -o-linear-gradient(top, $nice-blue, $dark-blue);
+  background: -ms-linear-gradient(top, $nice-blue, $dark-blue);
+  background: linear-gradient(top, $nice-blue, $dark-blue);
+
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 0 5px 0 $darkest-blue;
+  -moz-box-shadow: 0 5px 0 $darkest-blue;
+  box-shadow: 0 5px 0 $darkest-blue;
+
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
+}
+
 .subject_stats {
   @media(min-width: 992px) {
     top: 75vh;
