@@ -24,6 +24,9 @@
     border-radius: 0;
     z-index: 100;
     background-color: $opaque-orange;
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .alert, .alert-success, .alert-danger {

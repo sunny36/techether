@@ -158,3 +158,10 @@ input, button, select, textarea {
    background-color: $nice-blue;
 }
 
+.edit_link {
+  color: $dark-blue;
+  &:hover, &:focus {
+    color: $darker-blue;
+  }
+}
+

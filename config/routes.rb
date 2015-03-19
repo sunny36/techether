@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   resources :subjects do
     member do
       post 'add'
+      post 'favourite'
     end
   end
-  resources :resources
+  resources :resources do
+    member do
+      post 'favourite'
+    end
+  end
   resources :ratings
 end

@@ -252,6 +252,9 @@
 .subject_details {
   margin-top: 80px;
   margin-bottom: 15px;
+  .subject_title {
+    display: inline-block;
+  }
   .subject_description {
     @media (min-width: 992px) {
       font-size: 1.3vw;
@@ -453,11 +456,11 @@
 }
 
 .rate_button {
-  color: $orange;
+  color: $nice-blue;
   display: inline-block;
   &:hover {
     cursor: pointer;
-    color: $dark-orange;
+    color: $dark-blue;
   }
 
 }
@@ -498,5 +501,16 @@
 
 .viewheight {
   height: 100vh;
+}
+
+.favourite_link {
+  display: inline-block;
+  color: $dark-blue;
+  &:hover {
+    color: $dark-blue;
+  }
+  &:focus {
+    color: $dark-blue;
+  }
 }
 

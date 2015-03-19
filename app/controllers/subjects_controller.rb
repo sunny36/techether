@@ -97,6 +97,7 @@ class SubjectsController < ApplicationController
     @rating = Rating.new
   end
 
+  # Method to start learning a subject
   def add
     @subject = Subject.find(params[:id])
     if current_user.save
@@ -224,6 +225,43 @@ class SubjectsController < ApplicationController
     @subject.users.delete(current_user)
     flash[:danger] = "Stopped learning #{@subject.name}"
     redirect_to current_user
+  end
+
+  # Add subject to favourites list
+  def favourite
+    subject_id = params[:subject_id]
+    subject = Subject.find(subject_id)
+    # No previous favourited subjects
+    if current_user.favourite_subjects.nil?
+      current_user.favourite_subjects = subject_id + ','
+    else
+      favourites = current_user.favourite_subjects.split(',')
+      # If already favourited this subject, remove it instead
+      if favourites.include?(subject_id)
+        favourites.delete(subject_id)
+        current_user.favourite_subjects = favourites.join(',')
+        if current_user.save
+          flash[:success] = "Removed #{subject.name} from favourites."
+          redirect_to subject and return
+        else
+          flash[:success] = "Failed to remove #{subject.name} from favourites."
+          redirect_to subject and return
+        end
+      end
+      # If last character does not equal ',' then append ','
+      if current_user.favourite_subjects[current_user.favourite_subjects.length - 1] != ','
+        current_user.favourite_subjects << ','
+      end
+      # Append newly favourited subject id
+      current_user.favourite_subjects << subject_id + ','
+    end
+    if current_user.save
+      flash[:success] = "Added #{subject.name} to favourites."
+      redirect_to subject
+    else
+      flash[:success] = "Failed to add #{subject.name} to favourites."
+      redirect_to subject
+    end
   end
 
   private

@@ -135,6 +135,31 @@ $(document).ready(function() {
         }
     };
     adjust_doc_subject();
+
+    $('.favourite').mouseenter(function() {
+        if ($(this).hasClass('include')) {
+            $(this).removeClass("fa-star");
+            $(this).addClass("fa-star-o");
+        }
+        else {
+            $(this).removeClass("fa-star-o");
+            $(this).addClass("fa-star");
+        }
+    });
+    $('.favourite').mouseleave(function() {
+        if ($(this).hasClass('include')) {
+            $(this).removeClass("fa-star-o");
+            $(this).addClass("fa-star");
+        }
+        else {
+            $(this).removeClass("fa-star");
+            $(this).addClass("fa-star-o");
+        }
+    });
+
+    $('.alert').click(function() {
+        $(this).hide();
+    });
 });
 
 $(window).resize(function() {
@@ -170,3 +195,4 @@ $(window).resize(function() {
     };
     adjust_window_subject();
 });
+
