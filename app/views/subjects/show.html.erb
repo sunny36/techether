@@ -10,11 +10,11 @@
         <h1 class="subject_title"><%= @subject.name %></h1>
         <% if user_signed_in? %>
             <%= link_to favourite_subject_path(subject_id: @subject.id), method: :post, class: "favourite_link" do %>
-                <% if current_user.favourite_subjects.split(',').include?(@subject.id.to_s) %>
-                    <i class="fa fa-star fa-3x include favourite"></i>
-                <% else %>
-                    <i class="fa fa-star-o fa-3x favourite"></i>
-                <% end %>
+                    <% if current_user.favourite_subjects.present? && current_user.favourite_subjects.split(',').include?(@subject.id.to_s) %>
+                        <i class="fa fa-star fa-3x include favourite"></i>
+                    <% else %>
+                        <i class="fa fa-star-o fa-3x favourite"></i>
+                    <% end %>
             <% end %>
         <% end %>
         <div class="row">
@@ -93,7 +93,7 @@
                         </span>
                         <% if user_signed_in? %>
                             <%= link_to favourite_resource_path(resource_id: resource.id), method: :post, class: "favourite_link" do %>
-                                <% if current_user.favourite_resources.split(',').include?(resource.id.to_s) %>
+                                <% if current_user.favourite_resources.present? && current_user.favourite_resources.split(',').include?(resource.id.to_s) %>
                                     <i class="fa fa-star fa-lg include favourite"></i>
                                 <% else %>
                                     <i class="fa fa-star-o fa-lg favourite"></i>

@@ -65,7 +65,7 @@
     <div class="row user_mid_bot">
       <h2>Recent Activity</h2>
       <div class="row activity_row">
-          <% if @recent_activity %>
+          <% if @recent_activity.present? %>
             <% @recent_activity.take(15).each do | activity | %>
                   <!-- activity is a rating -->
                   <% if activity.has_attribute?(:value) %>
