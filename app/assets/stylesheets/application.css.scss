@@ -139,14 +139,14 @@ input, button, select, textarea {
     font-family: $paragraph;
     font-size: 4.5vw;
     color: $dark-gray;
-    text-shadow: 0 2px 5px $dark-gray;
+    text-shadow: 0 2px 2px $grayer;
   }
 }
 
 
 #content .container-fluid .panel-heading #maintitle {
   font-size: 10vw;
-  text-shadow: 0 2px 2px $dark-gray;
+  text-shadow: 0 2px 5px $grayer;
 }
 
 #content .container-fluid .panel-body .form-control {
