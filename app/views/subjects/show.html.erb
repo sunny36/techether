@@ -104,30 +104,32 @@
                         <% end %>
                     <% end %>
                   </h4>
-                  <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-                  <% ratings = Rating.where(resource_id:resource.id) %>
-                  <% sum = 0.0 %>
-                  <% ratings.each do | rating | %>
-                      <% sum += rating.value %>
-                  <% end %>
-                  <% if ratings.present? %>
-                      <p>Current Rating - <%= (sum / ratings.count).round(2) %>/5</p>
-                  <% end %>
-                  <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
-                      <p class="links rate_button" id="rating_<%= resource.id %>" onclick="rating_form(<%= resource.id %>)">Rate Me!</p>
-                  <% end %>
-                  <div id="rating_form_<%= resource.id %>" style="display:none">
-                      <%= form_for @rating, id: "hello"  do |f| %>
-                        <div class="field">
-                            <%= f.select :value, :html => { :id => "hello" }  do %>
-                                <% ["Rating out of 5", 1, 2, 3, 4, 5].each do |c| %>
-                                    <%= content_tag(:option, c, value: c) %>
-                                <% end %>
-                            <% end %>
-                        </div>
-                        <%= f.hidden_field :resource, value: resource.id%>
+                  <div class="resource_details">
+                      <h5><%= resource.difficulty %> - <%= resource.source %></h5>
+                      <% ratings = Rating.where(resource_id:resource.id) %>
+                      <% sum = 0.0 %>
+                      <% ratings.each do | rating | %>
+                          <% sum += rating.value %>
                       <% end %>
-                  </div>
+                      <% if ratings.present? %>
+                          <p>Current Rating - <%= (sum / ratings.count).round(2) %>/5</p>
+                      <% end %>
+                      <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
+                          <p class="links rate_button" id="rating_<%= resource.id %>" onclick="rating_form(<%= resource.id %>)">Rate Me!</p>
+                      <% end %>
+                      <div id="rating_form_<%= resource.id %>" style="display:none">
+                          <%= form_for @rating, id: "hello"  do |f| %>
+                            <div class="field">
+                                <%= f.select :value, :html => { :id => "hello" }  do %>
+                                    <% ["Rating out of 5", 1, 2, 3, 4, 5].each do |c| %>
+                                        <%= content_tag(:option, c, value: c) %>
+                                    <% end %>
+                                <% end %>
+                            </div>
+                            <%= f.hidden_field :resource, value: resource.id%>
+                          <% end %>
+                      </div>
+                   </div>
                 </div>
             <% end %>
         <% else %>

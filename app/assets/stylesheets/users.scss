@@ -23,6 +23,7 @@
   .user_mid_top {
     .user_desc {
       margin-left: 20px;
+      line-height: 200%;
     }
     padding-bottom: 20px;
     border-bottom: 3px solid $dark-blue;
@@ -39,11 +40,16 @@
 
 .user_right {
   .fav_row {
-    margin-left: 20px;
+    margin-left: 10px;
     .sidebarlink {
       display: block;
-      padding-bottom: 10px;
-      border-bottom: 1px solid $dark-blue;
+      padding: 10px 0;
+      border-bottom: 1px solid $grayish;
+      line-height: 200%;
     }
   }
+}
+
+.addMargins {
+  margin: 15px 0;
 }

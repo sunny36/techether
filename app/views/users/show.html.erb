@@ -12,19 +12,19 @@
     </div>
     <div class="row">
       <h2>Activity</h2>
-      <p>Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
-      <p>Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
-      <p>Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+      <p class="addMargins">Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
+      <p class="addMargins">Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
+      <p class="addMargins">Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
     </div>
   </div>
   <div class="col-md-4 col-xs-offset-0 col-sm-4 col-xs-offset-0 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-0 user_mid">
     <div class="row user_mid_top">
       <h1><%= @user.name %></h1>
       <% if @user.subject.present? %>
-          <p class="user_desc">I am currently learning <%= link_to @user.subject_name, subject_path(@user.subject), class: "links" %>!</p>
-          <p class="user_desc"><%= @user.subject_description %></p>
-      <% else %>
-          <p class="user_desc">You should start learning a subject!</p>
+          <p class="user_desc addMargins">I am currently learning <%= link_to @user.subject_name, subject_path(@user.subject), class: "links" %>!</p>
+          <p class="user_desc addMargins"><%= @user.subject_description %></p>
+      <% elsif current_user == @user %>
+          <p class="user_desc addMargins">You should start learning a subject!</p>
           <%= link_to "Learn a subject", subjects_path, class:"links user_desc" %>
       <% end %>
     </div>
@@ -53,14 +53,14 @@
   <div class="col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-0 user_right">
     <h2>Favourites</h2>
     <div class="row fav_row">
-        <h4 class="paragraphfont">Subjects</h4>
-        <div class="row fav_row">
+        <h4>Subjects</h4>
+        <div class="row">
           <div class="col-md-12 col-sm-12 col-lg-12 col-xs-11">
             <% if @favourite_subjects.present? %>
                 <% @favourite_subjects.each do | subject | %>
                     <%= link_to subject.name, subject_path(subject), class: "links sidebarlink" %><br>
                 <% end %>
-            <% else %>
+            <% elsif current_user == @user %>
                 <p>You have no favourite subjects!</p>
                 <%= link_to "Find a subject", subjects_path, class: "links" %><br>
             <% end %>
@@ -68,14 +68,14 @@
         </div>
     </div>
     <div class="row fav_row">
-      <h4 class="paragraphfont">Resources</h4>
-      <div class="row fav_row">
+      <h4>Resources</h4>
+      <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-xs-11">
         <% if @favourite_resources.present? %>
             <% @favourite_resources.each do | resource | %>
                 <%= link_to resource.title, resource.link, class: "links sidebarlink" %><br>
             <% end %>
-        <% else %>
+        <% elsif current_user == @user %>
             <p>You have no favourite resources!</p>
             <%= link_to "Find a subject", subjects_path, class: "links" %><br>
         <% end %>

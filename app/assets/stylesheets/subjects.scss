@@ -6,13 +6,14 @@
 
 .indexcol {
 	.subjects {
-		padding-bottom: 15px;
+		padding: 15px 0;
 		h2 {
           text-align: left;
 		}
         p {
           /* margin-left: 15px; */
           text-align: left;
+          line-height: 200%;
         }
 	}
 	#spacer {
@@ -24,6 +25,7 @@
   background-color: $gray-white;
   /*color: $dark-gray;
   border: 1px solid $gray;*/
+  margin-right: 10px;
   border-radius: 5px;
   padding: 4px 6px;
   font-family: $paragraph;
@@ -230,6 +232,11 @@
       margin-top: 100px;
     }
   }
+  .resource {
+    .resource_details {
+      margin-left: 5px;
+    }
+  }
 }
 
 .subject_image {
@@ -257,11 +264,12 @@
   }
   .subject_description {
     @media (min-width: 992px) {
-      font-size: 1.3vw;
+      font-size: 2vh;
     }
     @media (max-width: 991px) {
       font-size: 1.5em;
     }
+    line-height: 200%;
     text-align: left;
   }
   .subject_tags {
@@ -273,6 +281,7 @@
       @media (max-width: 991px) {
         font-size: 1.5em;
       }
+      margin: 0 5px 5px 0;
     }
     .edit_link {
       width: 100%;
