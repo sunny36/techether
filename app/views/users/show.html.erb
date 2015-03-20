@@ -1,6 +1,7 @@
 <% provide(:title, @user.name) %>
+<div class="container-fluid">
 <div class="row headspace">
-  <div class="col-md-2 col-md-offset-2 col-sm-3 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-2">
+  <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-1">
     <div class="row">
         <div class="user_image">
           <% if current_user.image.nil? %>
@@ -10,14 +11,16 @@
           <% end %>
         </div>
     </div>
-    <div class="row">
-      <h2>Activity</h2>
-      <p class="addMargins">Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
-      <p class="addMargins">Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
-      <p class="addMargins">Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+    <div class="container-fluid hidden-xs">
+        <div class="row">
+          <h2>Activity</h2>
+          <p class="addMargins">Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
+          <p class="addMargins">Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
+          <p class="addMargins">Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+        </div>
     </div>
   </div>
-  <div class="col-md-4 col-xs-offset-0 col-sm-4 col-xs-offset-0 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-0 user_mid">
+  <div class="user_mid col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-1">
     <div class="row user_mid_top">
       <h1><%= @user.name %></h1>
       <% if @user.subject.present? %>
@@ -27,6 +30,14 @@
           <p class="user_desc addMargins">You should start learning a subject!</p>
           <%= link_to "Learn a subject", subjects_path, class:"links user_desc" %>
       <% end %>
+    </div>
+    <div class="container-fluid hidden-sm hidden-md hidden-lg">
+      <div class="row">
+        <h2>Activity</h2>
+        <p class="addMargins">Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
+        <p class="addMargins">Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
+        <p class="addMargins">Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+      </div>
     </div>
     <div class="row user_mid_bot">
       <h2>Recent Activity</h2>
@@ -50,7 +61,7 @@
         </div>
     </div>
   </div>
-  <div class="col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-0 user_right">
+  <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-1 user_right">
     <h2>Favourites</h2>
     <div class="row fav_row">
         <h4>Subjects</h4>
@@ -83,4 +94,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

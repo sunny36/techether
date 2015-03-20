@@ -17,9 +17,6 @@
 }
 
 .user_mid {
-  @media (min-width: 767px) {
-    margin-left: 10px;
-  }
   .user_mid_top {
     .user_desc {
       margin-left: 20px;
@@ -30,7 +27,7 @@
   }
   .user_mid_bot {
     .activity_row {
-      margin-left: 20px;
+      margin-left: 10px;
     }
     .activity {
       padding: 10px 0;
