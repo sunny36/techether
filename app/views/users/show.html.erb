@@ -84,7 +84,7 @@
         <div class="col-md-12 col-sm-12 col-lg-12 col-xs-11">
         <% if @favourite_resources.present? %>
             <% @favourite_resources.each do | resource | %>
-                <%= link_to resource.title, resource.link, class: "links sidebarlink" %><br>
+                <%= link_to resource.title, resource.link, class: "links sidebarlink", target: '_blank' %><br>
             <% end %>
         <% elsif current_user == @user %>
             <p>You have no favourite resources!</p>
