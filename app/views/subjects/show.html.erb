@@ -62,19 +62,7 @@
       <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
         <p>Average Rating</p>
         <p class="main_stat">
-          <% totalSum = 0.0 %>
-          <% count = 0 %>
-          <% if @resources.present? %>
-            <% @resources.each do |resource| %>
-              <% ratings = Rating.where(resource_id: resource.id) %>
-              <% ratings.each do | rating | %>
-                  <% totalSum += rating.value %>
-                  <% count += 1 %>
-              <% end %>
-            <% end %>
-          <% end %>
-          <% nan = totalSum / count %>
-          <%= (nan.is_a?(Float) && nan.nan?) ? 0 : nan.round(2) %>
+          <%= @averageRating %>
         </p>
       </div>
     </div>
@@ -84,54 +72,10 @@
     <div>
       <h1>Resources</h1>
         <% if @resources.present? %>
-            <% @resources.each do |resource| %>
-                <div class="resource" id="<%= resource.link %>">
-                  <h4>
-                    <% if user_signed_in? && current_user.subject != @subject%>
-                        <span class="resource_link">
-                          <%= link_to resource.title, add_subject_path(@subject, link: true), method: :post%>
-                        </span>
-                    <% else %>
-                        <%= link_to resource.title, resource.link, target: "_blank" %>
-                    <% end %>
-                    <% if user_signed_in? %>
-                        <%= link_to favourite_resource_path(resource_id: resource.id), method: :post, class: "favourite_link" do %>
-                            <% if current_user.favourite_resources.present? && current_user.favourite_resources.split(',').include?(resource.id.to_s) %>
-                                <i class="fa fa-star fa-lg include favourite"></i>
-                            <% else %>
-                                <i class="fa fa-star-o fa-lg favourite"></i>
-                            <% end %>
-                        <% end %>
-                    <% end %>
-                  </h4>
-                  <div class="resource_details">
-                      <h5><%= resource.difficulty %> - <%= resource.source %></h5>
-                      <% ratings = Rating.where(resource_id:resource.id) %>
-                      <% sum = 0.0 %>
-                      <% ratings.each do | rating | %>
-                          <% sum += rating.value %>
-                      <% end %>
-                      <% if ratings.present? %>
-                          <p>Current Rating - <%= (sum / ratings.count).round(2) %>/5</p>
-                      <% end %>
-                      <% if user_signed_in? && !current_user.ratings.where(resource_id: resource).exists? %>
-                          <p class="links rate_button" id="rating_<%= resource.id %>" onclick="rating_form(<%= resource.id %>)">Rate Me!</p>
-                      <% end %>
-                      <div id="rating_form_<%= resource.id %>" style="display:none">
-                          <%= form_for @rating, id: "hello"  do |f| %>
-                            <div class="field">
-                                <%= f.select :value, :html => { :id => "hello" }  do %>
-                                    <% ["Rating out of 5", 1, 2, 3, 4, 5].each do |c| %>
-                                        <%= content_tag(:option, c, value: c) %>
-                                    <% end %>
-                                <% end %>
-                            </div>
-                            <%= f.hidden_field :resource, value: resource.id%>
-                          <% end %>
-                      </div>
-                   </div>
-                </div>
-            <% end %>
+            <%= render Resource.sort(@resources) %>
+              <div class="apple_pagination">
+                <%= will_paginate @resources%>
+              </div>
         <% else %>
             <h3>Unfortunately, we have no resources for this subject</h3>
         <% end %>

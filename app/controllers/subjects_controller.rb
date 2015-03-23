@@ -93,7 +93,19 @@ class SubjectsController < ApplicationController
 
   def show
     @subject = Subject.find(params[:id])
-    @resources = Resource.sort(Resource.where(subject_id: @subject.id).to_a)
+    @allResources = Resource.where(subject_id: @subject.id)
+    @resources = Resource.paginate(page: params[:page], per_page: 10).where(subject_id: @subject.id)
+    totalSum = 0.0
+    count = 0
+    @allResources.to_a.each do | resource |
+      ratings = Rating.where(resource_id: resource.id)
+      ratings.to_a.each do | rating |
+        totalSum += rating.value
+        count += 1
+      end
+    end
+    @averageRating = totalSum / count
+    @averageRating = (@averageRating.is_a?(Float) && @averageRating.nan?) ? 0 : @averageRating.round(2)
     @rating = Rating.new
   end
 
