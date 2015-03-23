@@ -57,10 +57,10 @@ class ResourcesController < ApplicationController
       end
     end
     if current_user.save
-      flash[:success] = "Added #{resource.title} to favourites."
+      flash[:success] = "Added #{resource.title} to favourites to user page."
       redirect_to Subject.find(resource.subject_id)
     else
-      flash[:success] = "Failed to add #{resource.title} to favourites."
+      flash[:success] = "Failed to add #{resource.title} to favourites to user page."
       redirect_to Subject.find(resource.subject_id)
     end
   end

@@ -256,10 +256,10 @@ class SubjectsController < ApplicationController
       current_user.favourite_subjects << subject_id + ','
     end
     if current_user.save
-      flash[:success] = "Added #{subject.name} to favourites."
+      flash[:success] = "Added #{subject.name} to favourites to user page."
       redirect_to subject
     else
-      flash[:success] = "Failed to add #{subject.name} to favourites."
+      flash[:success] = "Failed to add #{subject.name} to favourites to user page."
       redirect_to subject
     end
   end
