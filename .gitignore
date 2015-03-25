@@ -18,6 +18,5 @@
 
 /config/secrets.yml
 /config/database.yml
-/db/seeds1.rb
-/db/seeds2.rb
+/db/seeds*
 /config/initializers/*
