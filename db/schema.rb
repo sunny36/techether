@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319161137) do
+ActiveRecord::Schema.define(version: 20150330162055) do
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer "subject_id",  limit: 4
+    t.integer "resource_id", limit: 4
+    t.integer "user_id",     limit: 4
+    t.boolean "is_subject",  limit: 1
+  end
+
+  add_index "favourites", ["resource_id"], name: "index_favourites_on_resource_id", using: :btree
+  add_index "favourites", ["subject_id"], name: "index_favourites_on_subject_id", using: :btree
+  add_index "favourites", ["user_id"], name: "index_favourites_on_user_id", using: :btree
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "value",       limit: 4
@@ -77,5 +88,8 @@ ActiveRecord::Schema.define(version: 20150319161137) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["subject_id"], name: "index_users_on_subject_id", using: :btree
 
+  add_foreign_key "favourites", "resources"
+  add_foreign_key "favourites", "subjects"
+  add_foreign_key "favourites", "users"
   add_foreign_key "subjects", "users"
 end

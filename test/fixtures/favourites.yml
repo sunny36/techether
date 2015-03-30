@@ -1,0 +1,7 @@
+rails_favourite:
+  user: userone
+  subject: rails
+
+hartl_favourite:
+  resource: hartl
+  user: userone

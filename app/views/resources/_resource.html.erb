@@ -8,10 +8,12 @@
         <%= link_to resource.title, resource.link, target: "_blank" %>
     <% end %>
     <% if user_signed_in? %>
-        <%= link_to favourite_resource_path(resource_id: resource.id), method: :post, class: "favourite_link" do %>
-            <% if current_user.favourite_resources.present? && current_user.favourite_resources.split(',').include?(resource.id.to_s) %>
+        <% if Favourite.resource_favourited?(resource, current_user) %>
+            <%= link_to favourite_path(subject_id: @subject, resource_id: resource.id), method: :delete, class:"favourite_link" do %>
                 <i class="fa fa-star fa-lg include favourite"></i>
-            <% else %>
+            <% end %>
+        <% else %>
+            <%= link_to favourite_path(subject_id: @subject, resource_id: resource.id), method: :post, class:"favourite_link" do %>
                 <i class="fa fa-star-o fa-lg favourite"></i>
             <% end %>
         <% end %>

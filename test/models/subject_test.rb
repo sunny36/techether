@@ -5,4 +5,12 @@ class SubjectTest < ActiveSupport::TestCase
   #   assert true
   # end
 
+  def setup
+    @subject = subjects(:rails)
+  end
+
+  test 'Rails subject valid' do
+    assert @subject.valid?
+  end
+
 end

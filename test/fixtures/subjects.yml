@@ -4,23 +4,28 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+rails:
   name: Rails
   description: Web framework written in ruby
+  category: Web Development
+  tags: Framework, Web-Focused
 #
-two:
+angular:
   name: AngularJS
   description: Front end JavaScript framework
-three:
+  category: Web Development
+  tags: Framework, Web-Focused
+
+php:
   name: PHP
   description: Scripting programming language
-four:
+wordpress:
   name: WordPress
   description: Library written in PHP
-five:
+java:
   name: Java
   description: Object-oriented programming language
-six:
+sinatra:
   name: Sinatra
   description: Lightweight Web framework written in ruby.
 

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
     end
   end
   resources :ratings
+  post 'favourite' => 'favourites#add'
+  delete 'favourite' => 'favourites#remove'
 end

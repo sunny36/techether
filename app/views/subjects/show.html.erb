@@ -9,12 +9,14 @@
       <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 col-xs-10 col-xs-offset-1 subject_details">
         <h1 class="subject_title"><%= @subject.name %></h1>
         <% if user_signed_in? %>
-            <%= link_to favourite_subject_path(subject_id: @subject.id), method: :post, class: "favourite_link" do %>
-                    <% if current_user.favourite_subjects.present? && current_user.favourite_subjects.split(',').include?(@subject.id.to_s) %>
-                        <i class="fa fa-star fa-3x include favourite"></i>
-                    <% else %>
-                        <i class="fa fa-star-o fa-3x favourite"></i>
-                    <% end %>
+            <% if Favourite.subject_favourited?(@subject, current_user)%>
+                <%= link_to favourite_path(subject_id: @subject.id), method: :delete, class: "favourite_link" do %>
+                    <i class="fa fa-star fa-3x include favourite"></i>
+                <% end %>
+            <% else %>
+                <%= link_to favourite_path(subject_id: @subject.id), method: :post, class: "favourite_link" do %>
+                    <i class="fa fa-star-o fa-3x favourite"></i>
+                <% end %>
             <% end %>
         <% end %>
         <div class="row">
