@@ -42,13 +42,17 @@ test:
 Then I commented out all lines referencing devise
 
 config/routes.rb
+```
+# resources :users, only: [:show]
+# devise_for :users, :controllers => { registrations: 'registrations' }
+```
 
-`# resources :users, only: [:show]`
-`# devise_for :users, :controllers => { registrations: 'registrations' }`
 app/models/user.rb
+```
+#   devise :database_authenticatable, :registerable,
+#        :recoverable, :rememberable, :trackable, :validatable
+```
 
-`#   devise :database_authenticatable, :registerable,`
-`#        :recoverable, :rememberable, :trackable, :validatable`
 $ rails g devise:install
 
 Uncomment out the lines
@@ -60,4 +64,4 @@ This will give an error for a missing devise secret key. Copy and pasted that ke
 $touch config/secrets.yml
 
 development:
-  secret_key_base: **secret key**
+  secret_key_base: `**secret key**`
