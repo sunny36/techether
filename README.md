@@ -41,7 +41,7 @@ test:
   database: techether_test
 ```
 
-Then I commented out all lines referencing devise
+Then comment out all lines referencing devise
 
 `config/routes.rb`
 ```
@@ -61,10 +61,10 @@ Uncomment out the lines
 
 `$ rake db:setup`
 
-This will give an error for a missing devise secret key. Copy and pasted that key into config/initializers/devise.rb
+This will give an error for a missing devise secret key. Copy and paste that key into config/initializers/devise.rb
 
 `$ touch config/secrets.yml`
 ```
 development:
-  secret_key_base: `**secret key**`
+  secret_key_base: **secret key**
 ```
