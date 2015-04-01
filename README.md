@@ -1,4 +1,4 @@
-techether
+##techether
 
 This website is to be used as a bank of resources used to learn various
 technologies and subjects. You are able to signup for a profile where you can
@@ -15,6 +15,8 @@ address: http://www.techether.com
 
 Feel free to create an account and play around with the
 mechanics of adding and rating resources.
+
+#Setup
 
 For those of you who would like to contribute to the project, here is a nice setup guide for you after
 you fork the repository. Thank you PJonestown for putting this together:
