@@ -1,4 +1,4 @@
-##techether
+#techether
 
 This website is to be used as a bank of resources used to learn various
 technologies and subjects. You are able to signup for a profile where you can
@@ -16,13 +16,13 @@ address: http://www.techether.com
 Feel free to create an account and play around with the
 mechanics of adding and rating resources.
 
-#Setup
+##Setup
 
 For those of you who would like to contribute to the project, here is a nice setup guide for you after
 you fork the repository. Thank you PJonestown for putting this together:
 
-$ touch config/databse.yml
-
+`$ touch config/database.yml`
+```
 common: &common
   adapter: mysql2
   encoding: utf8
@@ -39,29 +39,32 @@ development:
 test:
   <<: *common
   database: techether_test
+```
+
 Then I commented out all lines referencing devise
 
-config/routes.rb
+`config/routes.rb`
 ```
 # resources :users, only: [:show]
 # devise_for :users, :controllers => { registrations: 'registrations' }
 ```
 
-app/models/user.rb
+`app/models/user.rb`
 ```
 #   devise :database_authenticatable, :registerable,
 #        :recoverable, :rememberable, :trackable, :validatable
 ```
 
-$ rails g devise:install
+`$ rails g devise:install`
 
 Uncomment out the lines
 
-$ rake db:setup
+`$ rake db:setup`
 
 This will give an error for a missing devise secret key. Copy and pasted that key into config/initializers/devise.rb
 
-$touch config/secrets.yml
-
+`$ touch config/secrets.yml`
+```
 development:
   secret_key_base: `**secret key**`
+```
