@@ -41,12 +41,12 @@ Then I commented out all lines referencing devise
 
 config/routes.rb
 
-# resources :users, only: [:show]
+`# resources :users, only: [:show]
 # devise_for :users, :controllers => { registrations: 'registrations' }
 app/models/user.rb
 
 #   devise :database_authenticatable, :registerable,
-#        :recoverable, :rememberable, :trackable, :validatable
+#        :recoverable, :rememberable, :trackable, :validatable`
 $ rails g devise:install
 
 Uncomment out the lines
