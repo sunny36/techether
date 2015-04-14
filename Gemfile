@@ -13,6 +13,7 @@ gem 'faker'
 gem 'dynamic_sitemaps'
 gem 'mysql2'
 gem 'jquery-turbolinks'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'byebug'
