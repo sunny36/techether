@@ -23,14 +23,17 @@
 	text-align: center;
     border-radius: 0;
     z-index: 9999;
-    background-color: $opaque-orange;
+    background-color: $nice-blue;
+    border-bottom: 1px solid $dark-blue;
+    border-top: 1px solid $dark-blue;
     &:hover {
       cursor: pointer;
     }
 }
 
 .alert, .alert-success, .alert-danger {
-    color: $dark-gray;
+    color: white;
+    font-family: $paragraph;
 }
 
 /* Forms */

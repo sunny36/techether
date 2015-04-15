@@ -15,154 +15,157 @@
  *= require_self
  */
 
- @import "font-awesome-sprockets";
- @import "font-awesome";
- @import 'config';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'config';
+
+@keyframes bottomBorder {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
 
 /* Universal */
 
 html, body {
-	letter-spacing: 1.5px;
-	font-weight: 200;
-	overflow-x: hidden;
+    letter-spacing: 1.5px;
+    font-weight: 200;
+    overflow-x: hidden;
 }
 
 .btn-default {
-  font-family: $paragraph;
+    font-family: $paragraph;
 }
 
 .form-control:focus {
-  border-color: $orange;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+    border-color: $orange;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
 }
 
 /* Font Config */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $head;
-  font-weight: 700;
+    font-family: $head;
+    font-weight: 700;
 }
 
 p, li, label {
-  font-family: $paragraph;
-  font-weight: 400;
+    font-family: $paragraph;
+    font-weight: 400;
 }
 
 .paragraphfont {
-  font-family: $paragraph;
+    font-family: $paragraph;
 }
 
 .headfont {
-  font-family: $head;
+    font-family: $head;
 }
 
 a {
-  color: $orange;
-  &:hover {
-    color: $dark-orange;
-    text-transform: none;
-    text-decoration: none;
-  }
+    color: $orange;
+    &:hover {
+        color: $dark-orange;
+        text-transform: none;
+        text-decoration: none;
+    }
 }
 
 /* Navbar */
 
 .navbar {
-	z-index: 10000;
-	width: 100vw;
-	position: fixed;
-	border: none;
-	border-radius: 0;
+    z-index: 10000;
+    width: 100vw;
+    position: fixed;
+    border: none;
+    border-radius: 0;
     background-color: $gray-white;
     border-bottom: 1px solid $gray;
-	margin-bottom: 0;
-    .navbar-right li a {
-      color: $dark-gray;
-
-      &:hover {
-        color: $dark-orange;
-      }
+    margin-bottom: 0;
+    .navbar-right li {
+        a {
+            height: 45px;
+            color: $dark-gray;
+            &:hover {
+                color: $orange;
+            }
+        }
+        .bottomBorder {
+            height: 5px;
+            background-color: inherit;
+        }
+        .bottomBorderAnimation {
+            background-color: $orange;
+            animation: bottomBorder 200ms linear;
+        }
     }
-	.navbar-brand {
-		font-size: 20px;
+    .navbar-brand {
+        font-size: 20px;
         font-family: $head;
         font-weight: 700;
-		letter-spacing: 1.3px;
+        letter-spacing: 1.3px;
         color: $orange;
         &:hover {
           color: $dark-orange;
-        }
 	}
 	.dropdown-menu {
-        background-color: $gray-white;
-        z-index: 10000;
-		li a {
-            color: $dark-gray;
-			font-weight: 400;
-			&:hover {
-				background-color: inherit;
-				color: $dark-orange;
-			}
-            &:focus {
-              background-color: inherit;
+            background-color: $gray-white;
+            z-index: 10000;
+            li a {
+                color: $dark-gray;
+                font-weight: 400;
+                &:hover {
+                    background-color: inherit;
+                    color: $dark-orange;
+                }
+                &:focus {
+                    background-color: inherit;
+                }
             }
-		}
 	}
+    }
 }
+
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
-  color: $dark-orange;
+    color: $dark-orange;
 }
 
 a:focus {
-  color: $dark-orange;
-  text-decoration: none;
+    color: $dark-orange;
+    text-decoration: none;
 }
 
 input, button, select, textarea {
-  letter-spacing: 0.3px;
+    letter-spacing: 0.3px;
 }
 
-/* .subjectbutt {
-  font-family: $paragraph;
-  font-weight: 300;
-  background-color: $nice-blue;
-  color: #fff;
-  border-color: $nice-blue;
-  &:hover {
-    background-color: $dark-blue;
-    color: white;
-  }
-} */
-
 #content .container-fluid .panel-heading {
-   margin-top: 17vh;
-  #secondarytitle {
-    font-family: $paragraph;
-    font-size: 4.5vw;
-    color: $dark-gray;
-    text-shadow: 0 2px 2px $grayer;
-  }
+    margin-top: 17vh;
+    #secondarytitle {
+        font-family: $paragraph;
+        font-size: 4.5vw;
+        color: $dark-gray;
+        text-shadow: 0 2px 2px $grayer;
+    }
 }
 
 
 #content .container-fluid .panel-heading #maintitle {
-  font-size: 10vw;
-  text-shadow: 0 2px 5px $grayer;
+    font-size: 10vw;
+    text-shadow: 0 2px 5px $grayer;
 }
 
 #content .container-fluid .panel-body .form-control {
-   height: 38px;
-
+    height: 38px;
 }
 
 #content .container-fluid .mainbutt {
-   background-color: $nice-blue;
+    background-color: $nice-blue;
 }
 
 .edit_link {
-  color: $dark-blue;
-  &:hover, &:focus {
-    color: $darker-blue;
-  }
+    color: $dark-blue;
+    &:hover, &:focus {
+        color: $darker-blue;
+    }
 }
 
