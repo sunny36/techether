@@ -387,11 +387,11 @@
 .favourite_link {
     display: inline-block;
     color: $dark-blue;
-    &:hover {
+    &:hover, &:focus {
         color: $dark-blue;
     }
-    &:focus {
-        color: $dark-blue;
+    .fa-3x {
+        font-size: 200%;
     }
 }
 
