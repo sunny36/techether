@@ -1,19 +1,19 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require bootstrap
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require bootstrap
+*= require_tree .
+*= require_self
+*/
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -105,9 +105,9 @@ a {
         letter-spacing: 1.3px;
         color: $orange;
         &:hover {
-          color: $dark-orange;
-	}
-	.dropdown-menu {
+            color: $dark-orange;
+        }
+        .dropdown-menu {
             background-color: $gray-white;
             z-index: 10000;
             li a {
@@ -121,7 +121,7 @@ a {
                     background-color: inherit;
                 }
             }
-	}
+        }
     }
 }
 
@@ -152,14 +152,6 @@ input, button, select, textarea {
 #content .container-fluid .panel-heading #maintitle {
     font-size: 10vw;
     text-shadow: 0 2px 5px $grayer;
-}
-
-#content .container-fluid .panel-body .form-control {
-    height: 38px;
-}
-
-#content .container-fluid .mainbutt {
-    background-color: $nice-blue;
 }
 
 .edit_link {

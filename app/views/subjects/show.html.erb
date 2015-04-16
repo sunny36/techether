@@ -1,95 +1,95 @@
 <% provide(:title, @subject.name) %>
 <div class="row">
-  <!-- Left side of subject page for all devices -->
-  <div class="col-md-6 col-sm-12 col-lg-6 left_subject col-xs-12">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-0 col-lg-offset-0 col-lg-6 hidden-xs hidden-sm">
-        <img src="<%= @subject.image %>" alt="" class="subject_image"/>
-      </div>
-      <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 col-xs-10 col-xs-offset-1 subject_details">
-        <h1 class="subject_title"><%= @subject.name %></h1>
-        <% if user_signed_in? %>
-            <% if Favourite.subject_favourited?(@subject, current_user)%>
-                <%= link_to favourite_path(subject_id: @subject.id), method: :delete, class: "favourite_link" do %>
-                    <i class="fa fa-star fa-3x include favourite"></i>
-                <% end %>
-            <% else %>
-                <%= link_to favourite_path(subject_id: @subject.id), method: :post, class: "favourite_link" do %>
-                    <i class="fa fa-star-o fa-3x favourite"></i>
-                <% end %>
-            <% end %>
-        <% end %>
+    <!-- Left side of subject page for all devices -->
+    <div class="col-md-6 col-sm-12 col-lg-6 left_subject col-xs-12">
         <div class="row">
-          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-            <p class="subject_description"><%= @subject.description %></p>
-          </div>
-        </div>
-        <div class="subject_tags">
-            <% if @subject.tags.present? %>
-                <% @subject.parse_tags.each do |tag| %>
-                    <div class="tags"><%= tag %></div>
+            <div class="col-md-6 col-md-offset-0 col-lg-offset-0 col-lg-6 hidden-xs hidden-sm">
+                <img src="<%= @subject.image %>" alt="" class="subject_image"/>
+            </div>
+            <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 col-xs-10 col-xs-offset-1 subject_details">
+                <h1 class="subject_title"><%= @subject.name %></h1>
+                <% if user_signed_in? %>
+                    <% if Favourite.subject_favourited?(@subject, current_user)%>
+                        <%= link_to favourite_path(subject_id: @subject.id), method: :delete, class: "favourite_link" do %>
+                            <i class="fa fa-star fa-3x include favourite"></i>
+                        <% end %>
+                    <% else %>
+                        <%= link_to favourite_path(subject_id: @subject.id), method: :post, class: "favourite_link" do %>
+                            <i class="fa fa-star-o fa-3x favourite"></i>
+                        <% end %>
+                    <% end %>
                 <% end %>
-            <% end %>
-        </div>
-        <% if user_signed_in? %>
-            <%= link_to "Edit Subject", edit_subject_path(@subject), class: "links edit_link" %>
-        <% end %>
-      </div>
-      <div class="row">
-        <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-12 col-lg-offset-0 col-xs-10 col-xs-offset-1">
-          <div class="subject_butt">
-            <% if user_signed_in? %>
-                <% if current_user.subject == @subject %>
-                    <%= link_to "Add a resource", new_resource_path(subject_id: @subject) %>
-                <% else %>
-                    <%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post %>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                        <p class="subject_description"><%= @subject.description %></p>
+                    </div>
+                </div>
+                <div class="subject_tags">
+                    <% if @subject.tags.present? %>
+                        <% @subject.parse_tags.each do |tag| %>
+                            <div class="tags"><%= tag %></div>
+                        <% end %>
+                    <% end %>
+                </div>
+                <% if user_signed_in? %>
+                    <%= link_to "Edit Subject", edit_subject_path(@subject), class: "links edit_link" %>
                 <% end %>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-12 col-lg-offset-0 col-xs-10 col-xs-offset-1">
+                    <div class="index_butt">
+                        <% if user_signed_in? %>
+                            <% if current_user.subject == @subject %>
+                                <%= link_to "Add a resource", new_resource_path(subject_id: @subject) %>
+                            <% else %>
+                                <%= link_to "I want to learn #{@subject.name}", add_subject_path(@subject), method: :post %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to "Log in to learn #{@subject.name}", new_user_session_path  %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+        <div class="row col-xs-12 col-md-12 col-sm-12 col-lg-12 subject_stats">
+            <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                <p>Currently Learning</p>
+                <p class="main_stat"><%= @subject.user_count %></p>
+            </div>
+            <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                <p>Resources Added</p>
+                <p class="main_stat"><%= @resources.count %></p>
+            </div>
+            <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                <p>Average Rating</p>
+                <p class="main_stat">
+                <%= @averageRating %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Right side of subject page for all devices-->
+    <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 col-xs-10 col-xs-offset-1 right_subject">
+        <div>
+            <h1>Resources</h1>
+            <% if @resources.present? %>
+                <%= render Resource.sort(@resources) %>
+                <div class="apple_pagination">
+                    <%= will_paginate @resources%>
+                </div>
             <% else %>
-                <%= link_to "Log in to learn #{@subject.name}", new_user_session_path  %>
+                <h3>Unfortunately, we have no resources for this subject</h3>
             <% end %>
-          </div>
+            <% if user_signed_in? %>
+                <div class="index_butt">
+                    <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"botspace" %>
+                </div>
+            <% else %>
+                <div class="index_butt">
+                    <%= link_to "Log in to add a resource", new_user_session_path, class:"botspace" %>
+                </div>
+            <% end %>
         </div>
-      </div>
     </div>
-    </br>
-    <div class="row col-xs-12 col-md-12 col-sm-12 col-lg-12 subject_stats">
-      <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
-        <p>Currently Learning</p>
-        <p class="main_stat"><%= @subject.user_count %></p>
-      </div>
-      <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
-        <p>Resources Added</p>
-        <p class="main_stat"><%= @resources.count %></p>
-      </div>
-      <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
-        <p>Average Rating</p>
-        <p class="main_stat">
-          <%= @averageRating %>
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Right side of subject page for all devices-->
-  <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0 col-xs-10 col-xs-offset-1 right_subject">
-    <div>
-      <h1>Resources</h1>
-        <% if @resources.present? %>
-            <%= render Resource.sort(@resources) %>
-              <div class="apple_pagination">
-                <%= will_paginate @resources%>
-              </div>
-        <% else %>
-            <h3>Unfortunately, we have no resources for this subject</h3>
-        <% end %>
-      <% if user_signed_in? %>
-        <div class="resource_butt">
-          <%= link_to "Add a resource", new_resource_path(subject_id: @subject), class:"botspace" %>
-        </div>
-      <% else %>
-        <div class="resource_butt">
-          <%= link_to "Log in to add a resource", new_user_session_path, class:"botspace" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
- </div>
+</div>

@@ -5,48 +5,48 @@
 @import 'config.scss';
 
 .user_image {
-  img {
-    width: 100%;
-    border-radius: 100%;
-    float: left;
-    right: 0;
-  }
+    img {
+        width: 100%;
+        border-radius: 100%;
+        float: left;
+        right: 0;
+    }
 }
 .floatRight {
-  float: right;
+    float: right;
 }
 
 .user_mid {
-  .user_mid_top {
-    .user_desc {
-      margin-left: 20px;
-      line-height: 200%;
+    .user_mid_top {
+        .user_desc {
+            margin-left: 20px;
+            line-height: 200%;
+        }
+        padding-bottom: 20px;
+        border-bottom: 3px solid $dark-blue;
     }
-    padding-bottom: 20px;
-    border-bottom: 3px solid $dark-blue;
-  }
-  .user_mid_bot {
-    .activity_row {
-      margin-left: 10px;
+    .user_mid_bot {
+        .activity_row {
+            margin-left: 10px;
+        }
+        .activity {
+            padding: 10px 0;
+        }
     }
-    .activity {
-      padding: 10px 0;
-    }
-  }
 }
 
 .user_right {
-  .fav_row {
-    margin-left: 10px;
-    .sidebarlink {
-      display: block;
-      padding: 10px 0;
-      border-bottom: 1px solid $grayish;
-      line-height: 200%;
+    .fav_row {
+        margin-left: 10px;
+        .sidebarlink {
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid $grayish;
+            line-height: 200%;
+        }
     }
-  }
 }
 
 .addMargins {
-  margin: 15px 0;
+    margin: 15px 0;
 }
