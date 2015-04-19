@@ -19,11 +19,6 @@
 @import "font-awesome";
 @import 'config';
 
-@keyframes bottomBorder {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
-
 /* Universal */
 
 html, body {
@@ -91,11 +86,12 @@ a {
         }
         .bottomBorder {
             height: 5px;
-            background-color: inherit;
+            background-color: $orange;
+            width: 0;
+            transition: width 250ms;
         }
         .bottomBorderAnimation {
-            background-color: $orange;
-            animation: bottomBorder 200ms linear;
+            width: 100%;
         }
     }
     .navbar-brand {
