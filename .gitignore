@@ -20,3 +20,4 @@
 /config/database.yml
 /db/seeds*
 /config/initializers/*
+/vendor/*
