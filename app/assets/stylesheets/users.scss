@@ -4,7 +4,7 @@
 
 @import 'config.scss';
 
-.user_image {
+.user-image {
     img {
         width: 100%;
         border-radius: 100%;
@@ -12,21 +12,21 @@
         right: 0;
     }
 }
-.floatRight {
+.float-right {
     float: right;
 }
 
-.user_mid {
-    .user_mid_top {
-        .user_desc {
+.user-mid {
+    .user-mid-top {
+        .user-desc {
             margin-left: 20px;
             line-height: 200%;
         }
         padding-bottom: 20px;
         border-bottom: 3px solid $dark-blue;
     }
-    .user_mid_bot {
-        .activity_row {
+    .user-mid-bottom {
+        .activity-row {
             margin-left: 10px;
         }
         .activity {
@@ -35,10 +35,10 @@
     }
 }
 
-.user_right {
-    .fav_row {
+.user-right {
+    .favourites-row {
         margin-left: 10px;
-        .sidebarlink {
+        .sidebar-link {
             display: block;
             padding: 10px 0;
             border-bottom: 1px solid $grayish;
@@ -47,6 +47,9 @@
     }
 }
 
-.addMargins {
-    margin: 15px 0;
+.small-top {
+    margin-top: 15px;
+}
+.small-bottom {
+    margin-bottom: 15px;
 }

@@ -3,7 +3,7 @@
 <div class="row headspace">
   <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-1">
     <div class="row">
-        <div class="user_image">
+        <div class="user-image">
           <% if current_user.image.nil? %>
               <%= image_tag "http://www.imran.com/xyper_images/icon-user-default.png" %>
           <% else %>
@@ -14,34 +14,70 @@
     <div class="container-fluid hidden-xs">
         <div class="row">
           <h2>Activity</h2>
-          <p class="addMargins">Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
-          <p class="addMargins">Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
-          <p class="addMargins">Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+          <p class="small-top small-bottom">
+            Ratings
+            <span class="float-right">
+              <%= @ratings.present? ? @ratings.count : 0 %>
+            </span>
+          </p>
+          <p class="small-top small-bottom">
+            Resources
+            <span class="float-right">
+              <%= @resources.present? ? @resources.count : 0 %>
+            </span>
+          </p>
+          <p class="small-top small-bottom">
+            Subjects
+            <span class="float-right">
+              <%= @subjects.present? ? @subjects.count : 0 %>
+            </span>
+          </p>
         </div>
     </div>
   </div>
-  <div class="user_mid col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-1">
-    <div class="row user_mid_top">
+  <div class="user-mid col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-1">
+    <div class="row user-mid-top">
       <h1><%= @user.name %></h1>
       <% if @user.subject.present? %>
-          <p class="user_desc addMargins">I am currently learning <%= link_to @user.subject_name, subject_path(@user.subject), class: "links" %>!</p>
-          <p class="user_desc addMargins"><%= @user.subject_description %></p>
+          <p class="user-desc small-top small-bottom">
+            I am currently learning <%= link_to @user.subject_name, subject_path(@user.subject), class: "links" %>!
+          </p>
+          <p class="user-desc small-top small-bottom">
+            <%= @user.subject_description %>
+          </p>
       <% elsif current_user == @user %>
-          <p class="user_desc addMargins">You should start learning a subject!</p>
-          <%= link_to "Learn a subject", subjects_path, class:"links user_desc" %>
+          <p class="user-desc small-top small-bottom">
+            You should start learning a subject!
+          </p>
+          <%= link_to "Learn a subject", subjects_path, class:"links user-desc" %>
       <% end %>
     </div>
     <div class="container-fluid hidden-sm hidden-md hidden-lg">
       <div class="row">
         <h2>Activity</h2>
-        <p class="addMargins">Ratings <span class="floatRight"><%= @ratings.present? ? @ratings.count : 0 %></span></p>
-        <p class="addMargins">Resources <span class="floatRight"><%= @resources.present? ? @resources.count : 0 %></span></p>
-        <p class="addMargins">Subjects <span class="floatRight"><%= @subjects.present? ? @subjects.count : 0 %></span></p>
+        <p class="small-top small-bottom">
+          Ratings
+          <span class="float-right">
+            <%= @ratings.present? ? @ratings.count : 0 %>
+          </span>
+        </p>
+        <p class="small-top small-bottom">
+          Resources
+          <span class="float-right">
+            <%= @resources.present? ? @resources.count : 0 %>
+          </span>
+        </p>
+        <p class="small-top small-bottom">
+          Subjects
+          <span class="float-right">
+            <%= @subjects.present? ? @subjects.count : 0 %>
+          </span>
+        </p>
       </div>
     </div>
-    <div class="row user_mid_bot">
+    <div class="row user-mid-bottom">
       <h2>Recent Activity</h2>
-      <div class="row activity_row">
+      <div class="row activity-row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-xs-11">
           <% if @recent_activity.present? %>
             <% @recent_activity.take(15).each do | activity | %>
@@ -61,16 +97,16 @@
         </div>
     </div>
   </div>
-  <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-1 user_right">
+  <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-1 user-right">
     <h2>Favourites</h2>
-    <div class="row fav_row">
+    <div class="row favourites-row">
         <h4>Subjects</h4>
         <div class="row">
           <div class="col-md-12 col-sm-12 col-lg-12 col-xs-11">
             <% if @favourite_subjects.present? %>
                 <% @favourite_subjects.each do | subject_relation | %>
                     <% subject = Subject.find(subject_relation.subject_id) %>
-                    <%= link_to subject.name, subject_path(subject), class: "links sidebarlink" %><br>
+                    <%= link_to subject.name, subject_path(subject), class: "links sidebar-link" %><br>
                 <% end %>
             <% elsif current_user == @user %>
                 <p>You have no favourite subjects!</p>
@@ -81,14 +117,14 @@
           </div>
         </div>
     </div>
-    <div class="row fav_row">
+    <div class="row favourites-row">
       <h4>Resources</h4>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-xs-11">
         <% if @favourite_resources.present? %>
             <% @favourite_resources.each do | resource_relation | %>
                 <% resource = Resource.find(resource_relation.resource_id) %>
-                <%= link_to resource.title, resource.link, class: "links sidebarlink", target: '_blank' %><br>
+                <%= link_to resource.title, resource.link, class: "links sidebar-link", target: '_blank' %><br>
             <% end %>
         <% elsif current_user == @user %>
             <p>You have no favourite resources!</p>
