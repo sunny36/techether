@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @resources = Resource.where(user_id: @user.id)
+    @image_source = current_user.image || "http://www.imran.com/xyper_images/icon-user-default.png"
     @ratings = Rating.where(user_id: @user.id)
     @subjects = Subject.where(user_id: @user.id)
     @favourite_subjects = Favourite.where(user_id: @user.id, is_subject: true).select('subject_id')

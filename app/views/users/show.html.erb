@@ -4,11 +4,7 @@
   <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-1">
     <div class="row">
         <div class="user-image">
-          <% if current_user.image.nil? %>
-              <%= image_tag "http://www.imran.com/xyper_images/icon-user-default.png" %>
-          <% else %>
-              <img src="<%= current_user.image %>"/>
-          <% end %>
+          <%= image_tag @image_source %>
         </div>
     </div>
     <div class="container-fluid hidden-xs">
@@ -21,7 +17,7 @@
             </span>
           </p>
           <p class="small-top small-bottom">
-            Resources
+          Resources
             <span class="float-right">
               <%= @resources.present? ? @resources.count : 0 %>
             </span>
