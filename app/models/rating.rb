@@ -5,5 +5,6 @@ class Rating < ActiveRecord::Base
 
   validates :value, presence: true
 
+  scope :for_user, lambda{|id| where(user_id: id)}
 
 end

@@ -6,6 +6,8 @@ class Resource < ActiveRecord::Base
   validates :title, presence: true
   validates :link, presence: true
 
+  scope :for_user, lambda{|id| where(user_id: id)}
+
   def self.sort(unsorted)
     predefined = ["Beginner", "Intermediate", "Advanced"]
     sorted = []
@@ -18,6 +20,4 @@ class Resource < ActiveRecord::Base
     end
     return sorted
   end
-  
-
 end
