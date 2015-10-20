@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       @recent_activity.sort_by!(&:created_at).reverse!
     end
 
-    @image_source = current_user.image || "http://www.imran.com/xyper_images/icon-user-default.png"
+    @image_source = @user.image || "http://www.imran.com/xyper_images/icon-user-default.png" 
+
     @ratings_count = Rating.for_user(@user.id).count
     @subjects_count = Subject.for_user(@user.id).count
     @resouces_count = Resource.for_user(@user.id).count
