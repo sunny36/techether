@@ -9,7 +9,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
 gem 'font-awesome-sass'
-gem 'faker'
 gem 'dynamic_sitemaps'
 gem 'mysql2'
 gem 'jquery-turbolinks'
@@ -27,6 +26,7 @@ group :test do
   gem 'mini_backtrace', '0.1.3'
   gem 'guard-minitest', '2.3.1'
   gem 'fabrication'
+  gem 'faker'
 end
 
 group :production do

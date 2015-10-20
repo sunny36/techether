@@ -6,7 +6,7 @@ require 'active_record/railtie'
 require 'action_controller/railtie'
 require 'action_view/railtie'
 # require 'action_mailer/railtie'
-require 'rails/test_unit/railtie'
+# require 'rails/test_unit/railtie'
 require 'sprockets/railtie'
 
 # Require the gems listed in Gemfile, including any gems
@@ -33,5 +33,10 @@ module EducateMe
     config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official","assets","fonts")
 
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
+
+    config.generators do |g|
+      g.test_framework      :rspec, fixture: true
+      g.fixture_replacement :fabrication
+    end
   end
 end
