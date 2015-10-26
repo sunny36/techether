@@ -17,6 +17,37 @@ describe UsersController, :type => :controller do
       expect(response_user).to_not be_nil
       expect(response_user).to eq(user)
     end
+
+    it "retrieves the correct amount of favourite subjects" do
+    end
+
+    it "retrieves the correct amount of favourited subjects" do
+    end
+
+    it "retrieves the correct amount of favourited resources" do
+    end
+
+    context "when the user has no image set" do
+      it "returns the default user image" do
+      end
+    end
+
+    context "when the user has an image set" do
+      it "returns the user's image" do
+      end
+    end
+
+    it "returns all recent activity done by the user" do
+    end
+
+    it "returns the right count for ratings from the user" do
+    end
+
+    it "returns the right count for subjects from the user" do
+    end
+
+    it "returns the right count for resources from the user" do
+    end
   end
 end
 
