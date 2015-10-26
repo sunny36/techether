@@ -14,6 +14,6 @@ class UsersController < ApplicationController
 
     @ratings_count = Rating.for_user(@user.id).count
     @subjects_count = Subject.for_user(@user.id).count
-    @resouces_count = Resource.for_user(@user.id).count
+    @resources_count = Resource.for_user(@user.id).count
   end
 end
